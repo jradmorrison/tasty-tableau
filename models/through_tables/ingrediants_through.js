@@ -1,6 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../../config/connection');
 
+class Ingrediant_Through extends Model {}
+
 Ingrediant_Through.init(
   {
     id: {
