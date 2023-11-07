@@ -1,15 +1,13 @@
 const User = require('./user');
 const Recipe = require('./recipe');
 const Macros = require('./macros');
-const User = require('./user');
 const Review = require('./review');
 const Likes = require('./likes');
-const User = require('./user');
 const Ingredient = require('./ingrediant');
 const Tag = require('./tag');
 
-const IngredientsThrough = require('./through_table/ingrediants_through');
-const TagThrough = require('./through_table/tag_through');
+const IngredientsThrough = require('./through_tables/ingrediants_through');
+const TagThrough = require('./through_tables/tag_through');
 const CategoryThrough = require('./through_tables/category_through');
 
 User.belongsTo(Recipe, { foreignKey: 'user_id' });
