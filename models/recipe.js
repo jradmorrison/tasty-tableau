@@ -9,7 +9,7 @@ Recipe.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    author_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
