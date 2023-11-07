@@ -1,5 +1,5 @@
 router = require('express').Router();
-const { Ingredient } = require('../../models');
+const { Ingredient, IngredientsThrough } = require('../../models');
 
 // ROUTE: /api/ingredients
 
@@ -23,10 +23,10 @@ router.get('/:ingName', async (req, res) => {
             },
             include: [
                 {
-                    model: Ingredient,
-                },
-                {
                     model: Recipe,
+                    through: {
+                        model: IngredientsThrough,
+                    },
                 },
             ],
         });

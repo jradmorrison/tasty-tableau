@@ -15,7 +15,7 @@ Ingredient_Through.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    ingrediant_id: {
+    ingredient_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
