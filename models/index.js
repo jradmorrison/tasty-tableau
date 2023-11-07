@@ -34,4 +34,4 @@ Tag.belongsTo(TagThrough, { foreignKey: 'tag_id' });
 
 Review.belongsTo(Recipe, { foreignKey: 'reviews_id' });
 
-module.exports = { User, Recipe, Macros, Review, Favorite, Ingredient, Tag, IngredientsThrough, TagThrough, CategoryThrough };
+module.exports = { User, Recipe, Macros, Review, Favorite, Ingredient, Tag, IngredientsThrough, TagThrough, CategoryThrough, Category };
