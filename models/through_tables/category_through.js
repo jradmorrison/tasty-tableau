@@ -15,7 +15,7 @@ Category_Through.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    tag_id: {
+    category_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
@@ -26,6 +26,14 @@ Category_Through.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'category_through',
+    indexes: [
+      {
+        name: 'category_tag_index',
+        // type: DataTypes.INTEGER,
+        unique: true,
+        fields: ['recipe_id', 'category_id'],
+      }
+    ],
   }
 );
 

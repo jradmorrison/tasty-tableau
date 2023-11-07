@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
 // Get tag by ID
 router.get('/:id', async (req, res) => {
     try {
-        const recipeData = await Recipe.findbyPk(req.params.id, {
+        const tagData = await Tag.findbyPk(req.params.id, {
             include: [
                 {
                     model: Recipe,
@@ -38,6 +38,18 @@ router.get('/:id', async (req, res) => {
         });
 
         res.status(200).json(recipeData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+// Create a new tag
+router.post('/', async (req, res) => {
+    try {
+        const tagData = await Tag.create({
+            name: req.body.name,
+        });
+        res.status(200).json(tagData);
     } catch (err) {
         res.status(500).json(err);
     }
