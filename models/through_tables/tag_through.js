@@ -1,7 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../../config/connection');
 
-TagRecipe.init(
+class Tag_Through extends Model {}
+
+Tag_Through.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -23,8 +25,8 @@ TagRecipe.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'tagrecipe',
+    modelName: 'tag_through',
   }
 );
 
-module.exports = TagRecipe;
+module.exports = Tag_Through;
