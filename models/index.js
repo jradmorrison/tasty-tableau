@@ -2,8 +2,9 @@ const User = require('./user');
 const Recipe = require('./recipe');
 const Macros = require('./macros');
 const Review = require('./review');
-const Likes = require('./likes');
-const Ingredient = require('./ingrediant');
+const Favorite = require('./favorites');
+const Ingredient = require('./ingredient');
+const Category = require('./category');
 const Tag = require('./tag');
 
 const IngredientsThrough = require('./through_tables/ingrediants_through');
@@ -17,8 +18,8 @@ Recipe.belongsTo(Macros, { foreignKey: 'macros_id' });
 
 User.belongsTo(Review, { foreignKey: 'user_id' });
 
-User.belongsTo(Likes, { foreignKey: 'user_id' });
-Recipe.belongsTo(Likes, { foreignKey: 'recipe_id' });
+User.belongsTo(Favorite, { foreignKey: 'user_id' });
+Recipe.belongsTo(Favorite, { foreignKey: 'recipe_id' });
 
 IngredientsThrough.belongsTo(Recipe, { foreignKey: 'recipe_id' });
 Recipe.hasMany(IngredientsThrough, { foreignKey: 'recipe_id' });
@@ -33,4 +34,4 @@ Tag.belongsTo(TagThrough, { foreignKey: 'tag_id' });
 
 Review.belongsTo(Recipe, { foreignKey: 'reviews_id' });
 
-module.exports = { User, Recipe, Macros, Review, Likes, Ingredient, Tag, IngredientsThrough, TagThrough, CategoryThrough };
+module.exports = { User, Recipe, Macros, Review, Favorite, Ingredient, Tag, IngredientsThrough, TagThrough, CategoryThrough };
