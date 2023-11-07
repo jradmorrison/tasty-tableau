@@ -1,0 +1,57 @@
+[
+  {
+    "calaries": 171,
+    "fat": 3,
+    "saturated_fat": 1,
+    "cholesterol": 8,
+    "sodium": 30,
+    "carbohydrate": 37,
+    "fiber": 4,
+    "sugar": 30,
+    "protein": 3
+  },
+  {
+    "calaries": 1111,
+    "fat": 59,
+    "saturated_fat": 17,
+    "cholesterol": 373,
+    "sodium": 368,
+    "carbohydrate": 84,
+    "fiber": 9,
+    "sugar": 20,
+    "protein": 63
+  },
+  {
+    "calaries": 311,
+    "fat": 0,
+    "saturated_fat": 0,
+    "cholesterol": 0,
+    "sodium": 2,
+    "carbohydrate": 82,
+    "fiber": 0,
+    "sugar": 77,
+    "protein": 0
+  },
+  {
+    "calaries": 536,
+    "fat": 24,
+    "saturated_fat": 4,
+    "cholesterol": 0,
+    "sodium": 1559,
+    "carbohydrate": 64,
+    "fiber": 17,
+    "sugar": 32,
+    "protein": 29
+  },
+  {
+    "calaries": 104,
+    "fat": 0,
+    "saturated_fat": 0,
+    "cholesterol": 0,
+    "sodium": 959,
+    "carbohydrate": 25,
+    "fiber": 5,
+    "sugar": 18,
+    "protein": 4
+  }
+]

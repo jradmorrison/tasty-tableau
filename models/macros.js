@@ -1,5 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../../config/connection');
+const sequelize = require('../config/connection');
+
+class Macro extends Model {}
 
 Macro.init(
   {

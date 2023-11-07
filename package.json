@@ -1,8 +1,9 @@
 {
-  "name": "",
+  "name": "project-2",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "tailwind:css": "postcss public/css/tailwind.css -o public/css/style.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
@@ -12,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "autoprefixer": "^10.4.16",
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
     "dotenv": "^8.2.0",
@@ -19,6 +21,9 @@
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5"
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "sequelize": "^6.3.5",
+    "tailwindcss": "^3.3.5"
   }
 }
