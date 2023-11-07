@@ -34,7 +34,7 @@ User.init(
       allowNull: false,
     },
     isAdmin: {
-      type: DataTypes.Bool,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
   },

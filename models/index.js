@@ -1,10 +1,8 @@
 const User = require('./user');
 const Recipe = require('./recipe');
 const Macros = require('./macros');
-const User = require('./user');
 const Review = require('./review');
 const Favorite = require('./favorites');
-const User = require('./user');
 const Ingredient = require('./ingrediant');
 const Tag = require('./tag');
 
