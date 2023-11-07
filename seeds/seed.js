@@ -1,12 +1,5 @@
 const sequelize = require('../config/connection');
-const User = require('./user');
-const Recipe = require('./recipe');
-const Macros = require('./macros');
-const Review = require('./review');
-const Favorite = require('./favorites');
-const Ingredient = require('./ingredient');
-const Category = require('./category');
-const Tag = require('./tag');
+const { User, Recipe, Macros, Review, Favorite, Ingredient, Tag, IngredientsThrough, TagThrough, CategoryThrough, Category } = require('../models');
 
 const userData = require('./data/userData.json');
 const categoryData = require('./data/categoryData.json');
