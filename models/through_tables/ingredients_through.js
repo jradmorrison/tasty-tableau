@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../../config/connection');
 
-Ingrediant_Through.init(
+Ingredient_Through.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -27,8 +27,8 @@ Ingrediant_Through.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'ingrediant_through',
+    modelName: 'ingredient_through',
   }
 );
 
-module.exports = Ingrediant_Through;
+module.exports = Ingredient_Through;
