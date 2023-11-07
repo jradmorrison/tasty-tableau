@@ -23,7 +23,7 @@ Recipe.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    time_totel: {
+    time_total: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -47,7 +47,7 @@ Recipe.init(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    tags_id: {
+    tag_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },

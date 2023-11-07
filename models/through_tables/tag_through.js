@@ -26,6 +26,14 @@ Tag_Through.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'tag_through',
+    indexes: [
+      {
+        name: 'recipe_tag_index',
+        // type: DataTypes.INTEGER,
+        unique: true,
+        fields: ['recipe_id', 'tag_id'],
+      }
+    ],
   }
 );
 
