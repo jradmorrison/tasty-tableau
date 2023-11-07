@@ -11,7 +11,7 @@ Macro.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    calaries: {
+    calories: {
       type: DataTypes.DOUBLE,
       allowNull: true,
     },
