@@ -7,6 +7,7 @@ const reviewRoutes = require('./reviewRoutes');
 const macroRoutes = require('./macrosRoutes');
 const tagRoutes = require('./tagRoutes');
 
+// ROUTE: /api
 
 router.use('/users', userRoutes);
 router.use('/favorites', favoritesRoutes);

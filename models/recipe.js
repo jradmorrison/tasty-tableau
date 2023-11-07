@@ -23,7 +23,7 @@ Recipe.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    time_totel: {
+    time_total: {
       type: DataTypes.STRING,
       allowNull: true,
     },

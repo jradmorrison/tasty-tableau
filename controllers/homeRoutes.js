@@ -2,8 +2,9 @@ const router = require('express').Router();
 const {  } = require('../models');
 const withAuth = require('../utils/auth');
 
-// GET ROUTES for all views
+// ROUTE: /
 
+// GET ROUTES for all views
 // Home
 router.get('/', async (req, res) => {
   try {
