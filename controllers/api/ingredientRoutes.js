@@ -14,28 +14,39 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Get Ingredient by name
-router.get('/:ingName', async (req, res) => {
+// GET ingredient by ID
+router.get('/:id', async (req, res) => {
     try {
-        const ingredientData = await Ingredient.findOne({
-            where: {
-                name: ingName,
-            },
-            include: [
-                {
-                    model: Recipe,
-                    through: {
-                        model: IngredientsThrough,
-                    },
-                },
-            ],
-        });
+        const ingredientData = await Ingredient.findByPk();
 
         res.status(200).json(ingredientData);
     } catch (err) {
         res.status(500).json(err);
     }
 });
+
+// Get Ingredient by name
+// router.get('/:ingName', async (req, res) => {
+//     try {
+//         const ingredientData = await Ingredient.findOne({
+//             where: {
+//                 name: ingName,
+//             },
+//             include: [
+//                 {
+//                     model: Recipe,
+//                     through: {
+//                         model: IngredientsThrough,
+//                     },
+//                 },
+//             ],
+//         });
+
+//         res.status(200).json(ingredientData);
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
 
 module.exports = router;

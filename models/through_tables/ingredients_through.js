@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../../config/connection');
 
-class Ingredient_Through extends Model {}
+class Ingredients_Through extends Model {}
 
-Ingredient_Through.init(
+Ingredients_Through.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -29,8 +29,16 @@ Ingredient_Through.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'ingredient_through',
+    modelName: 'ingredients_through',
+    indexes: [
+      {
+        name: 'ingredient_recipe_index',
+        // type: DataTypes.INTEGER,
+        unique: true,
+        fields: ['ingredient_id', 'recipe_id'],
+      }
+    ]
   }
 );
 
-module.exports = Ingredient_Through;
+module.exports = Ingredients_Through;

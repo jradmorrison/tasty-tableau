@@ -6,6 +6,7 @@ const { User, Recipe, Macros, Review,
 const userData = require('./data/userData.json');
 const categoryData = require('./data/categoryData.json');
 const macroData = require('./data/macrosData.json');
+const ingredientData = require('./data/ingredientData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -30,16 +31,20 @@ const seedDatabase = async () => {
   console.log(' CATEGORIES SEEDED');
   console.log('====================================================');
 
-  console.trace(User);
-  console.trace(Category);
-  console.trace(Macros);
-
   const macros = await Macros.bulkCreate(macroData, {
     individualHooks: true,
     returning: true,
   });
   console.log('====================================================');
   console.log(' MACROS SEEDED');
+  console.log('====================================================');
+
+  const ingredients = await Ingredient.bulkCreate(ingredientData, {
+    individualHooks: true,
+    returning: true,
+  });
+  console.log('====================================================');
+  console.log(' INGREDIENTS SEEDED');
   console.log('====================================================');
 
   process.exit(0);
