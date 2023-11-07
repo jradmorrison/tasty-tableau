@@ -7,7 +7,7 @@ const Ingredient = require('./ingredient');
 const Category = require('./category');
 const Tag = require('./tag');
 
-const IngredientsThrough = require('./through_tables/ingrediants_through');
+const IngredientsThrough = require('./through_tables/ingredients_through');
 const TagThrough = require('./through_tables/tag_through');
 const CategoryThrough = require('./through_tables/category_through');
 
