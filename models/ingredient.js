@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-Ingredient.init(
+Ingrediant.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -23,4 +23,4 @@ Ingredient.init(
   }
 );
 
-module.exports = Ingredient;
+module.exports = Ingrediant;
