@@ -47,7 +47,7 @@ Recipe.init(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    tags_id: {
+    tag_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },

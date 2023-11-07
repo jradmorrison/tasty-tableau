@@ -80,4 +80,5 @@ Review.belongsTo(User, { foreignKey: 'user_id' });
 
 
 module.exports = { User, Recipe, Macros, Review, Favorite, 
-    Ingredient, Tag, Ingredients_Through, Tag_Through, Category_Through, Category };
+    Ingredient, Tag, Ingredients_Through, Tag_Through, 
+    Category_Through, Category };
