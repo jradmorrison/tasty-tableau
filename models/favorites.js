@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../../config/connection');
 
-Like.init(
+Favorite.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -23,8 +23,8 @@ Like.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'like',
+    modelName: 'favorite',
   }
 );
 
-module.exports = Like;
+module.exports = Favorite;
