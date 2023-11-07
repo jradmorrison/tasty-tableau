@@ -36,4 +36,4 @@ Review.belongsTo(Recipe, { foreignKey: 'recipe_id' });
 Recipe.hasMany(Review, { foreignKey: 'recipe_id' });
 
 
-module.exports = { User, Recipe, Macros, Review, Favorite, Ingredient, Tag, IngredientsThrough, TagThrough, CategoryThrough };
+module.exports = { User, Recipe, Macros, Review, Favorite, Ingredient, Tag, IngredientsThrough, TagThrough, CategoryThrough, Category };
