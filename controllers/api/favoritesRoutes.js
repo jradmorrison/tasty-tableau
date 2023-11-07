@@ -3,12 +3,21 @@ const { Favorite } = require('../../models');
 
 // ROUTE: /api/recipes
 
-// Get favorite by ID
+// Get favorites by user ID
 router.get('/:id', async (req, res) => {
     try {
-        const favoriteData = await Favorite.findbyPk(req.params.id);
+        const favoritesData = await Favorite.findAll({
+            where: {
+                user_id: req.params.id,
+            },
+        });
 
-        res.status(200).json(favoriteData);
+        if(!favoritesData) {
+            res.status(404).json({ message: `No favorites found for user with id: ${id}.`});
+            return;
+        };
+
+        res.status(200).json(favoritesData);
     } catch (err) {
         res.status(500).json(err);
     }
