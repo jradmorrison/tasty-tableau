@@ -47,10 +47,6 @@ Recipe.init(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    tag_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
     macros_id: {
       type: DataTypes.INTEGER,
       allowNull: true,

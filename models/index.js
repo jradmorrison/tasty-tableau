@@ -36,7 +36,7 @@ Recipe.belongsTo(User, { foreignKey: 'user_id' });
 User.hasMany(Recipe, { foreignKey: 'user_id' });
 
 // Recipe to Macros -- one to one
-Recipe.belongsTo(Macros);
+Recipe.belongsTo(Macros, { foreignKey: 'macros_id' });
 
 // User to Favorite -- one to many
 User.hasMany(Favorite, { foreignKey: 'user_id' });
@@ -46,6 +46,7 @@ Favorite.belongsTo(User, { foreignKey: 'user_id' })
 Recipe.hasMany(Favorite, { foreignKey: 'recipe_id' });
 Favorite.belongsTo(Recipe, { foreignKey: 'recipe_id' });
 
+// COMMENT BACK IN
 // Recipe to Review -- one to many
 Recipe.hasMany(Review, { foreignKey: 'recipe_id' });
 Review.belongsTo(Recipe, { foreignKey: 'recipe_id' });
