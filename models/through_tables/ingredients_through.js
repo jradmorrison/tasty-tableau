@@ -14,10 +14,18 @@ Ingredients_Through.init(
     recipe_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'recipe',
+        key: 'id',
+      }
     },
     ingredient_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'ingredient',
+        key: 'id',
+      }
     },
     quantity: {
       type: DataTypes.STRING,

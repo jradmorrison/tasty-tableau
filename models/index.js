@@ -31,8 +31,6 @@ User.hasMany(Recipe, { foreignKey: 'user_id' });
 Recipe.belongsTo(User, { foreignKey: 'user_id' });
 
 // Recipe to Macros -- one to one
-// REVERSE this
-// Recipe.belongsTo(Macros, { foreignKey: 'macros_id' });
 Macros.belongsTo(Recipe, { foreignKey: 'recipe_id' });
 
 // User to Favorite -- one to many
