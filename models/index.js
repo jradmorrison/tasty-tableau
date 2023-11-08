@@ -32,12 +32,11 @@ Recipe.belongsToMany(Category, { through: Category_Through });
 // REGULAR ASSOCIATIONS                              //
 ///////////////////////////////////////////////////////
 // User to Recipes -- one to many
-User.belongsTo(Recipe, { foreignKey: 'user_id' });
-Recipe.hasOne(User, { foreignKey: 'user_id' });
+Recipe.belongsTo(User, { foreignKey: 'user_id' });
+User.hasMany(Recipe, { foreignKey: 'user_id' });
 
 // Recipe to Macros -- one to one
 Recipe.belongsTo(Macros);
-Macros.hasOne(Recipe);
 
 // User to Favorite -- one to many
 User.hasMany(Favorite, { foreignKey: 'user_id' });

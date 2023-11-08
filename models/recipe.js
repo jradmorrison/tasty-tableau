@@ -54,6 +54,10 @@ Recipe.init(
     macros_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
+      references: {
+        model: 'macros',
+        key: 'id',
+      }
     },
     servings: {
       type: DataTypes.INTEGER,
