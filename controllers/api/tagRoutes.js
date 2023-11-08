@@ -16,6 +16,36 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/search/:tag', async (req, res) => {
+    try {
+        const tagsData = await Tag.findAll({
+            where: {
+              [Op.or]: [
+                {
+                  name: {
+                    [Op.like]: `%${req.params.tag}%`,
+                  }
+                },
+              ]
+            },
+            include: {
+              model: Recipe,
+              through: Tag_Through
+            }
+          });
+      
+          console.trace(tagsData[0].recipes);
+          const tagRecipes = tagsData[0].recipes.map(rec =>
+            rec.get({ plain: true })
+          );
+          console.trace(tagRecipes);
+
+          res.status(200).json(tagRecipes);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
 // Get tag by ID
 router.get('/:id', async (req, res) => {
     try {

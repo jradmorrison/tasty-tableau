@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Tag, Recipe, Tag_Through } = require('../models');
 const withAuth = require('../utils/auth');
+const { Op } = require('sequelize');
 
 // ROUTE: /
 
@@ -10,7 +11,13 @@ router.get('/', async (req, res) => {
   try {
     const tagsData = await Tag.findAll({
       where: {
-        name: "Healthy",
+        [Op.or]: [
+          {
+            name: {
+              [Op.like]: `%He%`,
+            }
+          },
+        ]
       },
       include: {
         model: Recipe,
@@ -19,12 +26,12 @@ router.get('/', async (req, res) => {
     });
 
     console.trace(tagsData[0].recipes);
-    const tagRecipes = tagsData[0].recipes.map(rec => 
+    const tagRecipes = tagsData[0].recipes.map(rec =>
       rec.get({ plain: true })
     );
     console.trace(tagRecipes);
 
-    res.render('homepage', {tagRecipes});
+    res.render('homepage', { tagRecipes });
   } catch (err) {
     res.status(500).json(err);
   }
