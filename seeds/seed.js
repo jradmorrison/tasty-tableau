@@ -12,7 +12,7 @@ const {
   Category,
 } = require('../models');
 
-const recipesData = require('./database/tinyrecipes_1.json');
+const recipesData = require('./database/recipes_1000.json');
 
 const getUsers = () => {
   let users = [];
@@ -73,6 +73,7 @@ const getRecipes = async () => {
   for (let i = 0; i < recipesData.recipes_sanitized.length; i++) {
     const recipe = recipesData.recipes_sanitized[i];
     let servings = recipe.RecipeServings == '' ? 0 : recipe.RecipeServings;
+    let rating = recipe.AggregatedRating == 'No Rating' ? 0 : parseFloat(recipe.AggregatedRating);
     let user_id = await getAuthorId(recipe.AuthorName);
     const newRecipe = {
       name: recipe.Name,
@@ -84,12 +85,14 @@ const getRecipes = async () => {
       description: recipe.Description,
       images: recipe.Images,
       category_id: await getCategoryId(recipe.RecipeCategory),
+      rating: rating,
       servings: servings,
       yield: recipe.RecipeYield,
       instructions: recipe.RecipeInstructions,
       seed: i,
     };
 
+    console.log(newRecipe);
     Recipes.push(newRecipe);
 
     //Through Tags
@@ -307,7 +310,7 @@ const seedDatabase = async () => {
   const [allRecipes] = await Promise.all([getRecipes()]);
   const recipe = await Recipe.bulkCreate(allRecipes, {});
   const [allMacros] = await Promise.all([getMacros()]);
-  const [allRecipesIngredients, allThroughTags] = await Promise.all([getRecipeIngredients(), getRecipeIngredients()]);
+  const [allRecipesIngredients, allThroughTags] = await Promise.all([getRecipeIngredients(), linkThroughTags()]);
   const [macros, ingrediants, throughTags] = await Promise.all([
     Macros.bulkCreate(allMacros, {}),
     Ingredients_Through.bulkCreate(allRecipesIngredients, {}),
