@@ -11,6 +11,10 @@ Macro.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    recipe_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     calaries: {
       type: DataTypes.DOUBLE,
       allowNull: true,
@@ -28,6 +32,10 @@ Macro.init(
       allowNull: true,
     },
     sodium: {
+      type: DataTypes.DOUBLE,
+      allowNull: true,
+    },
+    carbohydrate: {
       type: DataTypes.DOUBLE,
       allowNull: true,
     },

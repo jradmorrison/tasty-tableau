@@ -6,22 +6,22 @@ const { User } = require('../../models');
 // GET all users
 router.get('/', async (req, res) => {
   try {
-      const userData = await User.findAll();
+    const userData = await User.findAll();
 
-      res.status(200).json(userData);
+    res.status(200).json(userData);
   } catch (err) {
-      res.status(500).json(err);
+    res.status(500).json(err);
   }
 });
 
 // GET user by ID
 router.get('/:id', async (req, res) => {
   try {
-      const userData = await User.findbyPk(req.params.id);
+    const userData = await User.findByPk(req.params.id);
 
-      res.status(200).json(userData);
+    res.status(200).json(userData);
   } catch (err) {
-      res.status(500).json(err);
+    res.status(500).json(err);
   }
 });
 
@@ -35,7 +35,7 @@ router.post('/', async (req, res) => {
       req.session.logged_in = true;
 
       res.status(200).json(userData);
-    })
+    });
   } catch (err) {
     res.status(400).json(err);
   }
@@ -44,43 +44,38 @@ router.post('/', async (req, res) => {
 // DELETE user by ID
 router.delete('/:id', async (req, res) => {
   try {
-      const userData = await User.destroy({
-        where: {
-          id: req.params.id,
-        },
-      });
+    const userData = await User.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
 
-      if(!userData) {
-        res.status(404).json({ message: "No user found with that ID!" });
-        return;
-      };
+    if (!userData) {
+      res.status(404).json({ message: 'No user found with that ID!' });
+      return;
+    }
 
-      res.status(200).json(userData);
+    res.status(200).json(userData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-
 // login
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { username: req.body.username } });
-    
+
     if (!userData) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect username or password, please try again' });
+      res.status(400).json({ message: 'Incorrect username or password, please try again' });
       console.log('user not found');
       return;
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
-    
+
     if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect password, please try again' });
+      res.status(400).json({ message: 'Incorrect password, please try again' });
       console.log('incorrect password');
       return;
     }
@@ -91,7 +86,6 @@ router.post('/login', async (req, res) => {
 
       res.json({ user: userData, message: 'You are now logged in!' });
     });
-
   } catch (err) {
     res.status(400).json(err);
   }
