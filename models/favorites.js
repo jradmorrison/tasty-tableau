@@ -14,10 +14,18 @@ Favorites.init(
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      }
     },
     recipe_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'recipe',
+        key: 'id',
+      }
     },
   },
   {
@@ -25,7 +33,7 @@ Favorites.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'favorite',
+    modelName: 'favorites',
   }
 );
 

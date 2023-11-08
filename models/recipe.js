@@ -11,9 +11,17 @@ Recipe.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      }
     },
     time_cook: {
       type: DataTypes.STRING,
@@ -27,13 +35,8 @@ Recipe.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    date_created: {
-      type: DataTypes.DATEONLY,
-      allowNull: false,
-    },
-    date_modified: {
-      type: DataTypes.DATEONLY,
-      defaultValue: '1970-01-01',
+    date_submitted: {
+      type: DataTypes.DATE,
       allowNull: false,
     },
     description: {
@@ -47,14 +50,10 @@ Recipe.init(
     category_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
-    },
-    macros_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
       references: {
-        model: 'macros',
+        model: 'category',
         key: 'id',
-      },
+      }
     },
     servings: {
       type: DataTypes.INTEGER,
@@ -75,7 +74,7 @@ Recipe.init(
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'recipe',
