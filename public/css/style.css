@@ -72,6 +72,10 @@ a:hover {
   text-transform: uppercase;
 }
 
+.brown-bg {
+  background-color: #BEAE83;
+}
+
 #check {
   display: none;
 }
@@ -117,6 +121,15 @@ label #cancel {
   margin-left: 245px;
   opacity: 1;
   visibility: visible;
+}
+
+#maincard {
+  background: linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.4)),
+    url(../../Assets/background.png);
+  background-position: center;
+  background-size: cover;
+  font-family: 'Lato', sans-serif;
 }
 
 @media(max-width : 860px) {
