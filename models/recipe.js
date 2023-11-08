@@ -13,7 +13,7 @@ Recipe.init(
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -21,7 +21,7 @@ Recipe.init(
       references: {
         model: 'user',
         key: 'id',
-      }
+      },
     },
     time_cook: {
       type: DataTypes.STRING,
@@ -53,7 +53,12 @@ Recipe.init(
       references: {
         model: 'category',
         key: 'id',
-      }
+      },
+    },
+    rating: {
+      type: DataTypes.DECIMAL,
+      defaultValue: 0,
+      allowNull: false,
     },
     servings: {
       type: DataTypes.INTEGER,
