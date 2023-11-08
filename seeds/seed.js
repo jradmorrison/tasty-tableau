@@ -79,7 +79,7 @@ const getRecipes = async () => {
       user_id: user_id,
       time_cook: recipe.CookTime,
       time_prep: recipe.PrepTime,
-      time_totel: recipe.TotalTime,
+      time_total: recipe.TotalTime,
       date_created: recipe.DatePublished,
       description: recipe.Description,
       images: recipe.Images,
@@ -168,7 +168,7 @@ const getMacros = async () => {
     const recipe_id = await getRecipeIdBySeed(i);
     const newRecipeMacro = {
       recipe_id: recipe_id,
-      calaries: recipe.Calories,
+      calories: recipe.Calories,
       fat: recipe.FatContent,
       saturated_fat: recipe.SaturatedFatContent,
       cholesterol: recipe.CholesterolContent,

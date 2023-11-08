@@ -35,7 +35,7 @@ Recipe.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    date_submitted: {
+    date_created: {
       type: DataTypes.DATE,
       allowNull: false,
     },
