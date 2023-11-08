@@ -1,0 +1,18 @@
+[
+    {
+        "user_id": 1,
+        "time_cook": "Takes a long time",
+        "time_prep": "Prep is short",
+        "time_total": "Long time",
+        "date_created": "June 22, 2021 09:00:00",
+        "date_modified": "June 22, 2021 09:00:00",
+        "description": "Its a really good dish, yummy!",
+        "images": "link to image url",
+        "category_id": 3,
+        "tag_id": 2,
+        "macros_id": 2,
+        "servings": 10,
+        "yield": 5,
+        "instructions": "Cook it, then eat it."
+    }
+]

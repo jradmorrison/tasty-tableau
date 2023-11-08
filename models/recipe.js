@@ -48,9 +48,19 @@ Recipe.init(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
+<<<<<<< HEAD
     tag_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
+=======
+    macros_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'macros',
+        key: 'id',
+      }
+>>>>>>> b6cc71d6d7e37ab1b2f615a0ebd3a90f7857ee56
     },
     servings: {
       type: DataTypes.INTEGER,

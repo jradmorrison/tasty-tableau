@@ -1,4 +1,5 @@
 const sequelize = require('../config/connection');
+<<<<<<< HEAD
 const {
   User,
   Recipe,
@@ -12,11 +13,19 @@ const {
   CategoryThrough,
   Category,
 } = require('../models');
+=======
+const { User, Recipe, Macros, Review, 
+  Favorite, Ingredient, Tag, Ingredients_Through, 
+  Tag_Through, Category_Through, Category } = require('../models');
+>>>>>>> b6cc71d6d7e37ab1b2f615a0ebd3a90f7857ee56
 
 const userData = require('./data/userData.json');
 const categoryData = require('./data/categoryData.json');
 const macroData = require('./data/macrosData.json');
 const ingredientData = require('./data/ingredientData.json');
+const tagData = require('./data/tagData.json');
+const tag_throughData = require('./data/tagthroughData.json');
+const recipeData = require('./data/recipeData.json');
 
 const {
   User,
@@ -320,6 +329,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
+<<<<<<< HEAD
   let allRecipes = await getRecipes();
 
   const recipe = await Recipe.bulkCreate(allRecipes, {
@@ -347,6 +357,32 @@ const seedDatabase = async () => {
     returning: true,
   });
   console.log(allRecipesIngredients);
+=======
+  const tags = await Tag.bulkCreate(tagData, {
+    individualHooks: true,
+    returning: true,
+  });
+  console.log('====================================================');
+  console.log(' TAGS SEEDED');
+  console.log('====================================================');
+
+  const recipes = await Recipe.bulkCreate(recipeData, {
+    individualHooks: true,
+    returning: true,
+  });
+  console.log('====================================================');
+  console.log(' RECIPES SEEDED');
+  console.log('====================================================');
+
+  const tagThroughs = await Tag_Through.bulkCreate(tag_throughData, {
+    individualHooks: true,
+    returning: true,
+  });
+  console.log('====================================================');
+  console.log(' TAG THROUGH TABLE SEEDED');
+  console.log('====================================================');
+
+>>>>>>> b6cc71d6d7e37ab1b2f615a0ebd3a90f7857ee56
   process.exit(0);
 };
 
