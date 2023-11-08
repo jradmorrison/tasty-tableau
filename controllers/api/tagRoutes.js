@@ -8,6 +8,8 @@ router.get('/', async (req, res) => {
     try {
         const tagData = await Tag.findAll();
 
+        console.trace(tagData);
+
         res.status(200).json(tagData);
     } catch (err) {
         res.status(500).json(err);

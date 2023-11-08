@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Recipe } = require('../models');
+const { Tag, Recipe, Tag_Through } = require('../models');
 const withAuth = require('../utils/auth');
 
 // ROUTE: /
@@ -8,8 +8,23 @@ const withAuth = require('../utils/auth');
 // Home
 router.get('/', async (req, res) => {
   try {
+    const tagsData = await Tag.findAll({
+      where: {
+        name: "Healthy",
+      },
+      include: {
+        model: Recipe,
+        through: Tag_Through
+      }
+    });
 
-    res.render('homepage');
+    console.trace(tagsData[0].recipes);
+    const tagRecipes = tagsData[0].recipes.map(rec => 
+      rec.get({ plain: true })
+    );
+    console.trace(tagRecipes);
+
+    res.render('homepage', {tagRecipes});
   } catch (err) {
     res.status(500).json(err);
   }
