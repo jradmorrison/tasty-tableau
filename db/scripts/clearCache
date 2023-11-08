@@ -1,4 +1,0 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../../config/connection');
-sequelize.close();
-delete require.cache[require.resolve('../../config/connection')];

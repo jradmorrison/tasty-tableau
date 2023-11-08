@@ -5,22 +5,6 @@ const { Recipe, Tag, Macros, User } = require('../../models');
 
 // Get all recipes
 router.get('/', async (req, res) => {
-<<<<<<< HEAD
-  try {
-    const recipeData = await Recipe.findAll();
-
-    res.status(200).json(recipeData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-  res.status(200).json(recipeData);
-});
-
-// Get recipe by ID
-router.get('/:id', async (req, res) => {
-  try {
-    const recipeData = await Recipe.findbyPk(req.params.id);
-=======
     try {
         const recipeData = await Recipe.findAll({
             include: [
@@ -36,7 +20,6 @@ router.get('/:id', async (req, res) => {
                 },
             ],
         });
->>>>>>> b6cc71d6d7e37ab1b2f615a0ebd3a90f7857ee56
 
     res.status(200).json(recipeData);
   } catch (err) {
@@ -45,19 +28,6 @@ router.get('/:id', async (req, res) => {
 });
 
 // Get recipes by user ID
-<<<<<<< HEAD
-router.get('/:id', async (req, res) => {
-  try {
-    const recipeData = await Recipe.findAll({
-      where: {
-        user_id: req.params.id,
-      },
-    });
-
-    if (!recipeData) {
-      res.status(404).json({ message: `No recipes found for user with id: ${id}.` });
-      return;
-=======
 router.get('/user', async (req, res) => {
     try {
         // console.trace(req.body.user_id);
@@ -77,7 +47,6 @@ router.get('/user', async (req, res) => {
         res.status(200).json(recipeData);
     } catch (err) {
         res.status(500).json(err);
->>>>>>> b6cc71d6d7e37ab1b2f615a0ebd3a90f7857ee56
     }
     if (!recipeData) {
       res.status(404).json({ message: `No recipes found for user with id: ${id}.` });
@@ -90,9 +59,6 @@ router.get('/user', async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
-module.exports = router;
-=======
 // Get recipe by ID
 router.get('/:id', async (req, res) => {
     try {
@@ -121,4 +87,3 @@ router.get('/:id', async (req, res) => {
 
 
 module.exports = router;
->>>>>>> b6cc71d6d7e37ab1b2f615a0ebd3a90f7857ee56
