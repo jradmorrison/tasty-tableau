@@ -12,7 +12,7 @@ const {
   Category,
 } = require('../models');
 
-const recipesData = require('./database/recipes_1.json');
+const recipesData = require('./database/tinyrecipes_1.json');
 
 const getUsers = () => {
   let users = [];
