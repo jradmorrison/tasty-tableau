@@ -1,4 +1,4 @@
-<div class="d-flex flex-column align-items-center rounded-5 my-5" id="maincard">
+<div class="d-flex flex-column align-items-center rounded-5 my-5 col-md-8 mx-auto" id="maincard">
     <div class="text-center pt-5">
         <p class="fs-2">Discover delicious recipes for every occasision</p>
     </div>
@@ -7,23 +7,25 @@
             id="search-input">
     </div>
 </div>
-<div class="d-flex flex-column align-items-center rounded-5 my-5 brown-bg">
+<div class="d-flex flex-column align-items-center rounded-5 my-5 brown-bg p-3">
     <div>
         <p class="fs-4 fw-semibold">Thanksgiving Ready!</p>
     </div>
     <div class="d-flex flex-wrap">
-        {{!-- {{#each }} --}}
-        <div class="card" style="width: 16rem;">
-            <img src="" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Recipe Title</h5>
-                <p class="card-text">By: Author</p>
-                <div class="d-flex justify-content-between">
-                    <p>Total time</p>
-                    <p><i class="fa-solid fa-star" style="color: #ffea00;"></i>Rating</p>
+        {{#each cards as |card|}}
+        <div class="card m-3" style="width: 16rem;">
+            <a href="/recipes/{{id}}">
+                <img src="{{image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <p class="card-text">By: {{user.username}}</p>
+                    <div class="d-flex justify-content-between">
+                        <p>{{time_total}}</p>
+                        <p><i class="fa-solid fa-star" style="color: #ffea00;"></i>{{rating}}</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
-        {{!-- {{/each}} --}}
+        {{/each}}
     </div>
 </div>

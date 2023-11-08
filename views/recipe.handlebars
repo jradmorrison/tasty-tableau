@@ -1,0 +1,32 @@
+<div class="card rounded-5 p-5">
+    <div class="d-flex flex-wrap">
+        {{!-- TODO: Import the rating, display after the icon --}}
+        <p class="fs-2">{{recipe.name}}</p>
+        <p class="my-auto mx-3"><i class="fa-solid fa-star" style="color: #ffea00;"></i></p>
+        <p class="m-auto">By: {{user.username}}</p>
+    </div>
+    <div class="d-flex flex-wrap">
+        {{!-- {{#each tags as |tag|}}
+        <p>{{tag.name}}</p>
+        {{/each}} --}}
+    </div>
+    <div class="d-flex flex-wrap">
+        <div class="col-lg-6 me-5">
+            <img src="{{recipe.images}}" class="card-img-top" alt="An picture of the recipe">
+        </div>
+        <div class="col-lg-4">
+            <p class="card-text">{{recipe.description}}</p>
+            <p><span class="fw-semibold">Total Time required:</span> {{recipe.time_total}}</p>
+            {{!-- Todo: import the ingrediants and display here, also the macros if desired --}}
+        </div>
+        <div class="my-3">
+            <p><span class="fw-semibold">Instructions:</span> {{recipe.instructions}}</p>
+        </div>
+        <div>
+            <p class="fw-semibold">Reviews:</p>
+            {{#each review}}
+                <p><span class="fw-semibold">{{user.username}}:</span> {{review.review}}</p>
+            {{/each}}
+        </div>
+    </div>
+</div>
