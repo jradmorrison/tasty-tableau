@@ -29,8 +29,9 @@ router.get('/dashboard', withAuth, async (req, res) => {
     console.trace(userRecipes[0].images);
     console.trace(userRecipes[0].images.split(',')[0].slice(1));
 
+    // Grabs the first image and creates a new attribute for it
     userRecipes.forEach(recipe => {
-      recipe.images = recipe.images.split(', ')[0].slice(1);
+      recipe.image = recipe.images.split(', ')[0].slice(1);
     });
 
     console.trace(userRecipes);
