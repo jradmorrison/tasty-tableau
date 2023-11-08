@@ -19,7 +19,7 @@ Ingredients_Through.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    quantitity: {
+    quantity: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -36,8 +36,8 @@ Ingredients_Through.init(
         // type: DataTypes.INTEGER,
         unique: true,
         fields: ['ingredient_id', 'recipe_id'],
-      }
-    ]
+      },
+    ],
   }
 );
 

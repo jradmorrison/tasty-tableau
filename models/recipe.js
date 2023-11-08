@@ -33,6 +33,7 @@ Recipe.init(
     },
     date_modified: {
       type: DataTypes.DATEONLY,
+      defaultValue: '1970-01-01',
       allowNull: false,
     },
     description: {
@@ -40,7 +41,7 @@ Recipe.init(
       allowNull: false,
     },
     images: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: true,
     },
     category_id: {
@@ -53,7 +54,7 @@ Recipe.init(
       references: {
         model: 'macros',
         key: 'id',
-      }
+      },
     },
     servings: {
       type: DataTypes.INTEGER,
@@ -67,9 +68,9 @@ Recipe.init(
       type: DataTypes.TEXT,
       allowNull: true,
     },
-    reviews_id: {
+    seed: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
     },
   },
   {
