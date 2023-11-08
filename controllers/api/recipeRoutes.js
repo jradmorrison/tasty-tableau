@@ -1,5 +1,5 @@
 router = require('express').Router();
-const { Recipe, CategoryThrough } = require('../../models');
+const { Recipe, Tag, Macros, User } = require('../../models');
 
 // ROUTE: /api/recipes
 
@@ -7,41 +7,19 @@ const { Recipe, CategoryThrough } = require('../../models');
 router.get('/', async (req, res) => {
     try {
         const recipeData = await Recipe.findAll({
-            // include: [
-            //     {
-            //         model: Category,
-            //         through: {
-            //             model: CategoryThrough,
-            //         }
-            //     },
-            //     {
-            //         model: Tag,
-            //         through: {
-            //             model: CategoryThrough,
-            //         },
-            //     },
-            //     {
-            //         model: Macro,
-            //     },
-            //     {
-            //         model: User,
-            //     },
-            //     {
-            //         model: Review,
-            //     },
-            // ],
-    });
-
-res.status(200).json(recipeData);
-    } catch (err) {
-    res.status(500).json(err);
-}
-});
-
-// Get recipe by ID
-router.get('/:id', async (req, res) => {
-    try {
-        const recipeData = await Recipe.findbyPk(req.params.id);
+            include: [
+                {
+                    model: Tag,
+                    through: 'Tag_Through',
+                },
+                {
+                    model: Macros,
+                },
+                {
+                    model: User,
+                },
+            ],
+        });
 
         res.status(200).json(recipeData);
     } catch (err) {
@@ -50,13 +28,16 @@ router.get('/:id', async (req, res) => {
 });
 
 // Get recipes by user ID
-router.get('/:id', async (req, res) => {
+router.get('/user', async (req, res) => {
     try {
+        // console.trace(req.body.user_id);
         const recipeData = await Recipe.findAll({
             where: {
-                user_id: req.params.id,
+                user_id: req.body.user_id,
             },
         });
+
+        console.trace(recipeData);
 
         if (!recipeData) {
             res.status(404).json({ message: `No recipes found for user with id: ${id}.` });
@@ -68,5 +49,32 @@ router.get('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+// Get recipe by ID
+router.get('/:id', async (req, res) => {
+    try {
+        console.trace(req.params.id);
+        const recipeData = await Recipe.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Tag,
+                    through: 'Tag_Through',
+                },
+                {
+                    model: Macros,
+                },
+                {
+                    model: User,
+                },
+            ],
+        });
+
+        res.status(200).json(recipeData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
 
 module.exports = router;
