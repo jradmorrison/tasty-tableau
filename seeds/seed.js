@@ -12,7 +12,7 @@ const {
   Category,
 } = require('../models');
 
-const recipesData = require('./database/tinyrecipes_1.json');
+const recipesData = require('./database/recipes_1.json');
 
 const getUsers = () => {
   let users = [];
@@ -79,7 +79,7 @@ const getRecipes = async () => {
       user_id: user_id,
       time_cook: recipe.CookTime,
       time_prep: recipe.PrepTime,
-      time_totel: recipe.TotalTime,
+      time_total: recipe.TotalTime,
       date_created: recipe.DatePublished,
       description: recipe.Description,
       images: recipe.Images,
@@ -168,7 +168,7 @@ const getMacros = async () => {
     const recipe_id = await getRecipeIdBySeed(i);
     const newRecipeMacro = {
       recipe_id: recipe_id,
-      calaries: recipe.Calories,
+      calories: recipe.Calories,
       fat: recipe.FatContent,
       saturated_fat: recipe.SaturatedFatContent,
       cholesterol: recipe.CholesterolContent,
@@ -285,6 +285,7 @@ const linkThroughTags = async () => {
   }
   return throughTags;
 };
+
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
@@ -292,53 +293,69 @@ const seedDatabase = async () => {
   console.log(' DATABASE SYNCED');
   console.log('====================================================');
 
-  const users = await User.bulkCreate(allUsers, {
-    individualHooks: true,
-    returning: true,
-  });
+  const [users, categories, tag, ing] = await Promise.all([
+    User.bulkCreate(allUsers, {
+      individualHooks: true,
+    }),
 
-  const categories = await Category.bulkCreate(allCategories, {
-    individualHooks: true,
-    returning: true,
-  });
+    Category.bulkCreate(allCategories, {}),
 
-  const tag = await Tag.bulkCreate(allTags, {
-    individualHooks: true,
-    returning: true,
-  });
+    Tag.bulkCreate(allTags, {}),
 
-  const ing = await Ingredient.bulkCreate(allIngredients, {
-    individualHooks: true,
-    returning: true,
-  });
+    Ingredient.bulkCreate(allIngredients, {}),
+  ]);
+  const [allRecipes] = await Promise.all([getRecipes()]);
+  const recipe = await Recipe.bulkCreate(allRecipes, {});
+  const [allMacros] = await Promise.all([getMacros()]);
+  const [allRecipesIngredients, allThroughTags] = await Promise.all([getRecipeIngredients(), getRecipeIngredients()]);
+  const [macros, ingrediants, throughTags] = await Promise.all([
+    Macros.bulkCreate(allMacros, {}),
+    Ingredients_Through.bulkCreate(allRecipesIngredients, {}),
+    Tag_Through.bulkCreate(allThroughTags, {}),
+  ]);
+  // const users = await User.bulkCreate(allUsers, {
+  //   individualHooks: true,
+  //   returning: true,
+  // });
 
-  let allRecipes = await getRecipes();
+  // const categories = await Category.bulkCreate(allCategories, {
+  //   individualHooks: true,
+  //   returning: true,
+  // });
 
-  const recipe = await Recipe.bulkCreate(allRecipes, {
-    individualHooks: true,
-    returning: true,
-  });
+  // const tag = await Tag.bulkCreate(allTags, {
+  //   individualHooks: true,
+  //   returning: true,
+  // });
+
+  // const ing = await Ingredient.bulkCreate(allIngredients, {
+  //   individualHooks: true,
+  //   returning: true,
+  // });
+
+  // let allRecipes = await getRecipes();
 
   // console.log(throughTags);
 
-  let allMacros = await getMacros();
-  const macros = await Macros.bulkCreate(allMacros, {
-    individualHooks: true,
-    returning: true,
-  });
+  // let allMacros = await getMacros();
 
-  let allRecipesIngredients = await getRecipeIngredients();
-  const ingrediants = await Ingredients_Through.bulkCreate(allRecipesIngredients, {
-    individualHooks: true,
-    returning: true,
-  });
+  // const macros = await Macros.bulkCreate(allMacros, {
+  //   individualHooks: true,
+  //   returning: true,
+  // });
 
-  let allThroughTags = await linkThroughTags();
-  const throughTags = await Tag_Through.bulkCreate(allThroughTags, {
-    individualHooks: true,
-    returning: true,
-  });
-  console.log(allRecipesIngredients);
+  // let allRecipesIngredients = await getRecipeIngredients();
+  // const ingrediants = await Ingredients_Through.bulkCreate(allRecipesIngredients, {
+  //   individualHooks: true,
+  //   returning: true,
+  // });
+
+  // // let allThroughTags = await linkThroughTags();
+  // const throughTags = await Tag_Through.bulkCreate(allThroughTags, {
+  //   individualHooks: true,
+  //   returning: true,
+  // });
+  // console.log(allRecipesIngredients);
   process.exit(0);
 };
 
