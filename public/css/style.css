@@ -3,25 +3,27 @@
   padding: 0;
   text-decoration: none;
 }
+
 :root {
   --accent-color: #fff;
   --gradient-color: #FBFBFB;
 }
 
-body{
+body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-   width: 100vw;
+  width: 100vw;
   height: 100vh;
-  background-image: linear-gradient(45deg, #e3eefe 0%, #7CE1FF 100%);
+  background-image: linear-gradient(-45deg, #ffffaf 0%, #FEF7D7 100%);
 }
+
 a {
   text-decoration: none;
 }
 
-.sidebar{
+.sidebar {
   position: fixed;
   width: 240px;
   left: -240px;
@@ -29,7 +31,8 @@ a {
   background-color: #fff;
   transition: all .5s ease;
 }
-.sidebar header{
+
+.sidebar header {
   font-size: 28px;
   color: #353535;
   line-height: 70px;
@@ -38,7 +41,8 @@ a {
   user-select: none;
   font-family: 'Lato', sans-serif;
 }
-.sidebar a{
+
+.sidebar a {
   display: block;
   height: 65px;
   width: 100%;
@@ -50,97 +54,127 @@ a {
   font-family: 'Lato', sans-serif;
   transition: all .5s ease;
 }
-a.active,a:hover{
+
+a.active,
+a:hover {
   border-left: 5px solid var(--accent-color);
   color: #fff;
-   background: linear-gradient(to left, var(--accent-color), var(--gradient-color));
+  background: linear-gradient(to left, var(--accent-color), var(--gradient-color));
 }
-.sidebar a i{
+
+.sidebar a i {
   font-size: 23px;
   margin-right: 16px;
 }
-.sidebar a span{
+
+.sidebar a span {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-#check{
+
+#check {
   display: none;
 }
-label #btn,label #cancel{
+
+label #btn,
+label #cancel {
   position: absolute;
   left: 5px;
   cursor: pointer;
-  color: #37D1FF;
+  color: #8a8a5d;
   border-radius: 5px;
   margin: 15px 30px;
   font-size: 29px;
-  background-color: #63EAFF;
-  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-    inset -7px -7px 10px 0px rgba(0,0,0,.1),
-   3.5px 3.5px 20px 0px rgba(0,0,0,.1),
-   2px 2px 5px 0px rgba(0,0,0,.1);
+  background-color: #ffffaf;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    inset -7px -7px 10px 0px rgba(0, 0, 0, .1),
+    3.5px 3.5px 20px 0px rgba(0, 0, 0, .1),
+    2px 2px 5px 0px rgba(0, 0, 0, .1);
   height: 45px;
   width: 45px;
   text-align: center;
-  text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
   line-height: 45px;
   transition: all .5s ease;
 }
-label #cancel{
+
+label #cancel {
   opacity: 0;
   visibility: hidden;
 }
-#check:checked ~ .sidebar{
+
+#check:checked~.sidebar {
   left: 0;
 }
-#check:checked ~ label #btn{
+
+#check:checked~label #btn {
   margin-left: 245px;
   opacity: 0;
   visibility: hidden;
 }
-#check:checked ~ label #cancel{
+
+#check:checked~label #cancel {
   margin-left: 245px;
   opacity: 1;
   visibility: visible;
 }
-@media(max-width : 860px){
-  .sidebar{
+
+@media(max-width : 860px) {
+  .sidebar {
     height: auto;
     width: 70px;
     left: 0;
     margin: 100px 0;
   }
-  header,#btn,#cancel{
+
+  header,
+  #btn,
+  #cancel {
     display: none;
   }
-  span{
+
+  span {
     position: absolute;
     margin-left: 23px;
     opacity: 0;
     visibility: hidden;
+    width: 100px;
   }
-  .sidebar a{
+
+  .sidebar a {
     height: 60px;
   }
-  .sidebar a i{
+
+  .sidebar a i {
     margin-left: -10px;
   }
+
   a:hover {
-    width: 200px;
+    width: 300px;
     background: inherit;
+    color: black;
   }
-  .sidebar a:hover span{
+
+  .sidebar a:hover span {
     opacity: 1;
     visibility: visible;
   }
 }
 
-.sidebar > a.active,.sidebar > a:hover:nth-child(even) {
-  --accent-color: #52d6f4;
+/* .sidebar>a.active,
+.sidebar>a:hover:nth-child(even) {
+  --accent-color: #7CE1FF 0%;
   --gradient-color: #c1b1f7;
-}
-.sidebar a.active,.sidebar > a:hover:nth-child(odd) {
-  --accent-color: #c1b1f7;
+} */
+
+/* .sidebar a.active,
+.sidebar>a:hover:nth-child(odd) {
+  --accent-color: #c1b1f7 0%;
+  --gradient-color: #A890FE;
+} */
+
+.sidebar a.active,
+.sidebar>a:hover {
+  --accent-color: #c1b1f7 0%;
   --gradient-color: #A890FE;
 }
-

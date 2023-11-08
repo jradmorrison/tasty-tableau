@@ -10,7 +10,8 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  {{!-- <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"> --}}
+  <script src="https://kit.fontawesome.com/206b7f0e4d.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 
@@ -22,28 +23,32 @@
   </label>
   <div class="sidebar">
     <header>Tasty Tableau</header>
-    <a href="/" class="active">
-
-      <i class="fa-light fa-house" style="color: #86e2ff;"></i>
+    <a href="/" class="">
+      <i class="fas fa-home" style="color: #86e2ff;"></i>
       <span>Home</span>
     </a>
     <a href="/dashboard">
+      <i class="fas fa-table" style="color: #86e2ff;"></i>
       <span>Dashboard</span>
     </a>
     {{#if logged_in}}
     <a href="#" id="logout">
+      <i class="fa-solid fa-arrow-right-from-bracket" style="color: #86e2ff;"></i>
       <span>Logout</span>
     </a>
     {{else}}
     <a href="/login">
+      <i class="fa-solid fa-arrow-right-to-bracket" style="color: #86e2ff;"></i>
       <span>Login</span>
     </a>
     {{/if}}
     <a href="/about">
+      <i class="fas fa-question-circle" style="color: #86e2ff;"></i>
       <span>About</span>
     </a>
     <a href="/team">
-      <span>Meet the Team</span>
+      <i class="fa-regular fa-handshake" style="color: #86e2ff;"></i>
+      <span>The Team</span>
     </a>
   </div>
 </body>
