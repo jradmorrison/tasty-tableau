@@ -27,9 +27,13 @@ Review.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
-    date_modified: {
-      type: DataTypes.DATE,
+    recipe_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'recipe',
+        key: 'id',
+      },
     },
   },
   {

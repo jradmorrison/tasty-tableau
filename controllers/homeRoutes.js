@@ -2,8 +2,9 @@ const router = require('express').Router();
 const {  } = require('../models');
 const withAuth = require('../utils/auth');
 
-// GET ROUTES for all views
+// ROUTE: /
 
+// GET ROUTES for all views
 // Home
 router.get('/', async (req, res) => {
   try {
@@ -14,7 +15,31 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
+    
+    res.render('dashboard');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
+router.get('/about', async (req, res) => {
+  try {
+    res.render('about');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/team', async (req, res) => {
+  try {
+    
+    res.render('team');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 
 

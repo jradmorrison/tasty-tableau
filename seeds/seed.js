@@ -9,6 +9,25 @@ const {
   Tag,
   IngredientsThrough,
   TagThrough,
+  CategoryThrough,
+  Category,
+} = require('../models');
+
+const userData = require('./data/userData.json');
+const categoryData = require('./data/categoryData.json');
+const macroData = require('./data/macrosData.json');
+const ingredientData = require('./data/ingredientData.json');
+
+const {
+  User,
+  Recipe,
+  Macros,
+  Review,
+  Favorite,
+  Ingredient,
+  Tag,
+  IngredientsThrough,
+  TagThrough,
   Category,
 } = require('../models');
 

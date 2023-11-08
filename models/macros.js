@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Macro extends Model {}
+class Macros extends Model {}
 
-Macro.init(
+Macros.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -57,8 +57,8 @@ Macro.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'macro',
+    modelName: 'macros',
   }
 );
 
-module.exports = Macro;
+module.exports = Macros;
