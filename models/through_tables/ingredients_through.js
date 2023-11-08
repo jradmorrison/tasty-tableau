@@ -36,8 +36,8 @@ Ingredients_Through.init(
         // type: DataTypes.INTEGER,
         unique: true,
         fields: ['ingredient_id', 'recipe_id'],
-      }
-    ]
+      },
+    ],
   }
 );
 

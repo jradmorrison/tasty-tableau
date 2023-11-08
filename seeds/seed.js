@@ -7,9 +7,8 @@ const {
   Favorite,
   Ingredient,
   Tag,
-  IngredientsThrough,
-  TagThrough,
-  CategoryThrough,
+  Ingredients_Through,
+  Tag_Through,
   Category,
 } = require('../models');
 
@@ -207,6 +206,8 @@ const getIngredients = () => {
 
 const getRecipeIngredients = async () => {
   let IngredientList = [];
+  let IngrediantMap = [];
+
   for (let i = 0; i < recipesData.recipes_sanitized.length; i++) {
     const recipe = recipesData.recipes_sanitized[i];
     let recipeIngredients = recipe.RecipeIngredientParts.slice(1, -1)
@@ -221,13 +222,22 @@ const getRecipeIngredients = async () => {
       // ? Null check Here possibly
       let recipe_id = await getRecipeIdBySeed(i);
       let ingredient_id = await getIngredientByValue(recipeIngredients[j]);
-      let through = {
+
+      const key = `${recipe_id}_${ingredient_id}`;
+
+      let quantity = isNaN(recipeIngredientQuantities[j]) ? 0 : parseFloat(recipeIngredientQuantities[j]);
+      if (IngrediantMap[key]) {
+        IngrediantMap[key].quantity += quantity;
+      } else {
+      }
+
+      IngrediantMap[key] = {
         recipe_id: recipe_id,
         ingredient_id: ingredient_id,
-        quantity: recipeIngredientQuantities[j],
+        quantity: quantity,
       };
 
-      IngredientList.push(through);
+      IngredientList = Object.values(IngrediantMap);
     }
   }
   return IngredientList;
@@ -318,13 +328,13 @@ const seedDatabase = async () => {
   });
 
   let allRecipesIngredients = await getRecipeIngredients();
-  const ingrediants = await IngredientsThrough.bulkCreate(allRecipesIngredients, {
+  const ingrediants = await Ingredients_Through.bulkCreate(allRecipesIngredients, {
     individualHooks: true,
     returning: true,
   });
 
   let allThroughTags = await linkThroughTags();
-  const throughTags = await TagThrough.bulkCreate(allThroughTags, {
+  const throughTags = await Tag_Through.bulkCreate(allThroughTags, {
     individualHooks: true,
     returning: true,
   });

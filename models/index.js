@@ -11,7 +11,6 @@ const Tag = require('./tag');
 // Through tables
 const Ingredients_Through = require('./through_tables/ingredients_through');
 const Tag_Through = require('./through_tables/tag_through');
-const Category_Through = require('./through_tables/category_through');
 
 ///////////////////////////////////////////////////////
 // THROUGH TABLE ASSOCIATIONS                        //
@@ -23,10 +22,6 @@ Ingredient.belongsToMany(Recipe, { through: Ingredients_Through });
 // Tag/Recipe
 Tag.belongsToMany(Recipe, { through: Tag_Through });
 Recipe.belongsToMany(Tag, { through: Tag_Through });
-
-// Category/Recipe
-Category.belongsToMany(Recipe, { through: Category_Through });
-Recipe.belongsToMany(Category, { through: Category_Through });
 
 ///////////////////////////////////////////////////////
 // REGULAR ASSOCIATIONS                              //
@@ -78,6 +73,5 @@ module.exports = {
   Tag,
   Ingredients_Through,
   Tag_Through,
-  Category_Through,
   Category,
 };
