@@ -27,11 +27,13 @@ Recipe.belongsToMany(Tag, { through: Tag_Through });
 // REGULAR ASSOCIATIONS                              //
 ///////////////////////////////////////////////////////
 // User to Recipes -- one to many
-Recipe.belongsTo(User, { foreignKey: 'user_id' });
 User.hasMany(Recipe, { foreignKey: 'user_id' });
+Recipe.belongsTo(User, { foreignKey: 'user_id' });
 
 // Recipe to Macros -- one to one
-Recipe.belongsTo(Macros, { foreignKey: 'macros_id' });
+// REVERSE this
+// Recipe.belongsTo(Macros, { foreignKey: 'macros_id' });
+Macros.belongsTo(Recipe, { foreignKey: 'recipe_id' });
 
 // User to Favorite -- one to many
 User.hasMany(Favorite, { foreignKey: 'user_id' });
@@ -41,7 +43,6 @@ Favorite.belongsTo(User, { foreignKey: 'user_id' });
 Recipe.hasMany(Favorite, { foreignKey: 'recipe_id' });
 Favorite.belongsTo(Recipe, { foreignKey: 'recipe_id' });
 
-// COMMENT BACK IN
 // Recipe to Review -- one to many
 Recipe.hasMany(Review, { foreignKey: 'recipe_id' });
 Review.belongsTo(Recipe, { foreignKey: 'recipe_id' });

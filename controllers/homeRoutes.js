@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {  } = require('../models');
+const { Recipe } = require('../models');
 const withAuth = require('../utils/auth');
 
 // ROUTE: /
@@ -8,7 +8,7 @@ const withAuth = require('../utils/auth');
 // Home
 router.get('/', async (req, res) => {
   try {
-    
+
     res.render('homepage');
   } catch (err) {
     res.status(500).json(err);
@@ -17,8 +17,27 @@ router.get('/', async (req, res) => {
 
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    
-    res.render('dashboard');
+    console.trace(req.session);
+    const userRecipesData = await Recipe.findAll({
+      where: {
+        user_id: req.session.user_id,
+      }
+    })
+    // console.trace(userRecipes);
+
+    const userRecipes = userRecipesData.map(rec => rec.get({ plain: true }));
+    console.trace(userRecipes[0].images);
+    console.trace(userRecipes[0].images.split(',')[0].slice(1));
+
+    userRecipes.forEach(recipe => {
+      recipe.images = recipe.images.split(', ')[0].slice(1);
+    });
+
+    console.trace(userRecipes);
+    res.render('dashboard', {
+      userRecipes,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -34,7 +53,7 @@ router.get('/about', async (req, res) => {
 
 router.get('/team', async (req, res) => {
   try {
-    
+
     res.render('team');
   } catch (err) {
     res.status(500).json(err);

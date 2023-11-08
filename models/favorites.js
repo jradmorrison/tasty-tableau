@@ -25,7 +25,7 @@ Favorites.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'favorite',
+    modelName: 'favorites',
   }
 );
 
