@@ -85,7 +85,7 @@ router.get('/recipes/:id', async (req, res) => {
     }
 
     recipe.instructions = recipe.instructions.slice(1, -1);
-    
+    console.log(recipe);
     res.render('recipe', {
       recipe,
       ingredients,
