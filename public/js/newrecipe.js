@@ -9,6 +9,7 @@ $(function() {
 
         let name = $('#name').val();
         let description = $('#description').val();
+        let time_total = $('time-total').val();
 
         console.log(name);
         console.log(description);
@@ -16,7 +17,7 @@ $(function() {
         if (name && description) {
             const response = await fetch(`../api/recipes`, {
                 method: 'POST',
-                body: JSON.stringify({ name, description }),
+                body: JSON.stringify({ name, description, time_total }),
                 headers: { 'Content-Type': 'application/json' },
             });
 
