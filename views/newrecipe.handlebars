@@ -6,17 +6,26 @@
         <form id="login-form">
             <div class="mb-3">
                 <label class="form-label">Title</label>
-                <input type="text" class="form-control" id="name" placeholder="Chicken Parmesean" required/>
+                <input type="text" class="form-control" id="name" placeholder="Chicken Parmesean" required />
             </div>
             <div class="mb-3">
                 <label class="form-label">Description</label>
                 <input type="text" class="form-control" id="description"
-                    placeholder="What a delicious classic Italian dish! Fried chicken breast served with red sauce and lots of melty cheese." required/>
+                    placeholder="What a delicious classic Italian dish! Fried chicken breast served with red sauce and lots of melty cheese."
+                    required />
             </div>
             <div class="mb-3">
                 <label class="form-label">Time to make</label>
-                <input type="text" class="form-control" id="time-total"
-                    placeholder="PT20M" />
+                <input type="text" class="form-control" id="time-total" placeholder="PT20M" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Category</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Choose a cateogory</option>
+                    {{#each categories as |category| }}
+                    <option value="{{category.id}}">{{category.name}}</option>
+                    {{/each}}
+                </select>
             </div>
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-primary" id="recipe-submit">Submit</button>
