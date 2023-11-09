@@ -1,30 +1,27 @@
-// async function findTagRecipes() {
-//     const tagString = 'He';//get element name
+$(function() {
+    const findTagRecipes = async (event) => {
+        // event.preventDefault();
+    
+        const tagString = event.target.value;
+    
 
-//     if (tagString) {
-//         const response = await fetch(`/api/tags/search/${tagString}`, {
-//         });
+    
+        if (tagString) {
+            const response = await fetch(`/api/tags/search/${tagString}`);
+    
+            const data = await response.json();
+    
+            document.querySelector('#test-text').innerHTML = data[0].name;
+            document.querySelector('#test-img').src = data[0].image;
 
-//         console.log(response);
-//     }
-// }
-
-const findTagRecipes = async (event) => {
-    // event.preventDefault();
-
-    const tagString = event.target.value;
-    // console.log(tagString);
-
-    if (tagString) {
-        const response = await fetch(`/api/tags/search/${tagString}`);
-
-        const data = await response.json();
-
-        document.querySelector('#test-text').innerHTML = data[0].name;
-        console.trace(data[0].name);
+        }
+        else {
+            document.querySelector('#test-text').innerHTML = '';
+            document.querySelector('#test-img').src = '';
+        }
     }
-}
+    
+    
+    document.querySelector('#search-input').addEventListener('keyup', findTagRecipes);
+});
 
-
-document.querySelector('#search-input').addEventListener('keyup', findTagRecipes);
-// findTagRecipes();
