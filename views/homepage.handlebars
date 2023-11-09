@@ -1,19 +1,20 @@
 <div class='d-flex flex-column align-items-center rounded-5 my-5 col-md-8 mx-auto' id='maincard'>
-  <div class='text-center pt-5'>
-    <p class='fs-2'>Discover delicious recipes for every occasision</p>
-  </div>
-
-  <div class='col-md-8 p-5 position-relative'>
-    <input type='text' class='form-control' placeholder='Search by recipe name, category, or keywords' id='search-input' />
-    <div class='dropdownmenu' id='Drop-Down'>
+    <div class='text-center pt-5'>
+        <p class='fs-2'>Discover delicious recipes for every occasision</p>
     </div>
-  </div>
+
+    <div class='col-md-8 p-5 position-relative'>
+        <input type='text' class='form-control' placeholder='Search by recipe name, category, or keywords'
+            id='search-input' />
+        <div class='dropdownmenu' id='Drop-Down'>
+        </div>
+    </div>
 
 </div>
 
 <div>
-  <h1 id='test-text'></h1>
-  <img id='test-img' src='' alt='' />
+    <h1 id='test-text'></h1>
+    <img id='test-img' src='' alt='' />
 </div>
 
 <div class="d-flex flex-column align-items-center rounded-5 my-5 p-3 scrolling-div">
@@ -22,18 +23,7 @@
     </div>
     <div class="d-flex flex-wrap">
         {{#each cards as |card|}}
-        <div class="card m-3 col-sm-2">
-            <a href="/recipes/{{id}}">
-                <img src="{{image}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h6 class="card-title">{{name}}</h6>
-                    <div class="d-flex justify-content-between">
-                        <p>{{time_total}}</p>
-                        <p><i class="fa-solid fa-star" style="color: #ffea00;"></i>{{rating}}</p>
-                    </div>
-                </div>
-            </a>
-        </div>
+        {{> recipe-preview}}
         {{/each}}
     </div>
 </div>

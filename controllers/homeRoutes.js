@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { Category, Recipe, User, Tag, Macros } = require('../models');
+const { Category, Recipe, User, Tag, Macros, Favorite } = require('../models');
 
 const withAuth = require('../utils/auth');
 const { Op } = require('sequelize');
@@ -19,14 +19,14 @@ router.get('/', async (req, res) => {
     const cards = cardData.map((card) => card.get({ plain: true }));
     // cards.forEach(card => card.image = card.images.split(', ')[0].slice(1, -1));
 
-    cards.forEach(card => {
+    cards.forEach((card) => {
       card.image = card.images.split(', ')[0].slice(1);
       if (card.image.charAt(card.image.length - 1) === ']') {
         card.image = card.image.slice(0, card.image.length - 1);
-      };
+      }
     });
 
-    console.trace(cards);
+    // console.trace(cards);
 
     res.render('homepage', {
       cards,
@@ -44,7 +44,7 @@ router.get('/recipes/:id', async (req, res) => {
       include: [
         {
           model: Tag,
-          attributes: ['name']
+          attributes: ['name'],
         },
         // {
         //   model: Macros,
@@ -56,20 +56,28 @@ router.get('/recipes/:id', async (req, res) => {
       ],
     });
 
+    const favoritesData = await Favorite.findAll({
+      where: {
+        recipe_id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+
+    const isFavorite = favoritesData.length > 0;
     const recipe = recipeData.get({ plain: true });
 
     recipe.images = recipe.images.split(', ')[0].slice(1);
     if (recipe.images.charAt(recipe.images.length - 1) === ']') {
       recipe.images = recipe.images.slice(0, recipe.images.length - 1);
-    };
+    }
 
     recipe.instructions = recipe.instructions.slice(1, -1);
     console.log(recipe);
     res.render('recipe', {
       recipe,
       logged_in: req.session.logged_in,
+      is_favorite: isFavorite,
     });
-
   } catch (err) {
     res.status(500).json(err);
   }
@@ -77,34 +85,45 @@ router.get('/recipes/:id', async (req, res) => {
 
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    console.trace(req.session);
     const userRecipesData = await Recipe.findAll({
       where: {
         user_id: req.session.user_id,
-      }
-    })
-    console.trace(userRecipesData);
 
-    // if (!userRecipesData) {
-    //   res.render('dashboard');
-    // }
+      }
+    });
+    const favoritesData = await Favorite.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+      include: [{
+        model: Recipe,
+      }]
+    });
 
     const userRecipes = userRecipesData.map(rec => rec.get({ plain: true }));
-    // console.trace(userRecipes[0].images);
-    // console.trace(userRecipes[0].images.split(',')[0].slice(1));
+    const favorites = favoritesData.map(fav => fav.get({ plain: true }));
+  
 
     // Grabs the first image and creates a new attribute for it
-    userRecipes.forEach(recipe => {
+    userRecipes.forEach((recipe) => {
       recipe.image = recipe.images.split(', ')[0].slice(1);
       if (recipe.image.charAt(recipe.image.length - 1) === ']') {
         recipe.image = recipe.image.slice(0, recipe.image.length - 1);
+      }
+    });
+    favorites.forEach(favorite => {
+      favorite.recipe.image = favorite.recipe.images.split(', ')[0].slice(1);
+      if (favorite.recipe.image.charAt(favorite.recipe.image.length - 1) === ']') {
+        favorite.recipe.image = favorite.recipe.image.slice(0, favorite.recipe.image.length - 1);
       };
     });
 
     userRecipes.reverse();
     res.render('dashboard', {
       userRecipes,
-      logged_in: req.session.logged_in
+      favorites,
+
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
