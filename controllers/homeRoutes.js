@@ -90,6 +90,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
         user_id: req.session.user_id,
 
       }
+
     });
     const favoritesData = await Favorite.findAll({
       where: {
@@ -117,7 +118,9 @@ router.get('/dashboard', withAuth, async (req, res) => {
         favorite.recipe.image = favorite.recipe.image.slice(0, favorite.recipe.image.length - 1);
       };
     });
-    
+
+    userRecipes.reverse();
+
     res.render('dashboard', {
       userRecipes,
       favorites,
@@ -148,6 +151,17 @@ router.get('/team', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/newrecipe', withAuth, async (req, res) => {
+  try {
+    // console.trace(req.session.logged_in);
+    res.render('newrecipe', {
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 // Login form
 router.get('/login', (req, res) => {
