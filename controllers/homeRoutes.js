@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { Category, Recipe, User, Tag, Macros, Favorite } = require('../models');
+const { Category, Recipe, User, Tag, Macros, Favorite, Ingredient, Ingredients_Through } = require('../models');
 
 const withAuth = require('../utils/auth');
 const { Op } = require('sequelize');
@@ -55,22 +55,37 @@ router.get('/recipes/:id', async (req, res) => {
         },
       ],
     });
+    
+    const ingredientData = await Ingredients_Through.findAll({
+      where: {
+        recipe_id: req.params.id,
+      },
+      include: [
+        {
+          model: Ingredient,
+          attributes: ['name'],
+        },
+      ],
+    });
 
     const recipe = recipeData.get({ plain: true });
-
+    const ingredients = ingredientData.map(ing => ing.get({plain: true}));
+    
     recipe.images = recipe.images.split(', ')[0].slice(1);
     if (recipe.images.charAt(recipe.images.length - 1) === ']') {
       recipe.images = recipe.images.slice(0, recipe.images.length - 1);
     };
 
     recipe.instructions = recipe.instructions.slice(1, -1);
-    console.log(recipe);
+    
     res.render('recipe', {
       recipe,
+      ingredients,
       logged_in: req.session.logged_in,
     });
 
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
