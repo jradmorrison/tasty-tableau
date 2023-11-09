@@ -1,6 +1,9 @@
 const router = require('express').Router();
+
 const { Category, Recipe, User, Tag, Macros } = require('../models');
+
 const withAuth = require('../utils/auth');
+const { Op } = require('sequelize');
 
 // ROUTE: /
 
@@ -51,6 +54,7 @@ router.get('/recipes/:id', async (req, res) => {
     res.render('recipe', {
       recipe,
     });
+
   } catch (err) {
     res.status(500).json(err);
   }
@@ -58,8 +62,31 @@ router.get('/recipes/:id', async (req, res) => {
 
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
+    console.trace(req.session);
+    const userRecipesData = await Recipe.findAll({
+      where: {
+        user_id: req.session.user_id,
+      }
+    })
+    // console.trace(userRecipes);
 
-    res.render('dashboard');
+    const userRecipes = userRecipesData.map(rec => rec.get({ plain: true }));
+    console.trace(userRecipes[0].images);
+    console.trace(userRecipes[0].images.split(',')[0].slice(1));
+
+    // Grabs the first image and creates a new attribute for it
+    userRecipes.forEach(recipe => {
+      recipe.image = recipe.images.split(', ')[0].slice(1);
+      if (recipe.image.charAt(recipe.image.length-1) === ']') {
+        recipe.image = recipe.image.slice(0, recipe.image.length-1);
+      };
+    });
+
+    console.trace(userRecipes[3]);
+    res.render('dashboard', {
+      userRecipes,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     res.status(500).json(err);
   }

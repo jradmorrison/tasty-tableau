@@ -1,7 +1,7 @@
 router = require('express').Router();
 const { Favorite } = require('../../models');
 
-// ROUTE: /api/recipes
+// ROUTE: /api/favorites
 
 // Get favorites by user ID
 router.get('/:id', async (req, res) => {
@@ -22,5 +22,19 @@ router.get('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+// POST a new favorite
+router.post('/user/:id', async (req, res) => {
+    try {
+        const favoritesData = await Favorite.create({
+            recipe_id: req.body.recipe_id,
+            user_id: req.body.user_id,
+        });
+
+        res.status(200).json(favoritesData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
 
 module.exports = router;
