@@ -69,7 +69,7 @@ router.get('/search/:text', async (req, res) => {
         });
 
         const recipes = recipeQuery.map(rec => rec.get({ plain: true }))
-        console.trace(recipes);
+        // console.trace(recipes);
 
         res.status(200).json(recipes);
     } catch (err) {
