@@ -1,0 +1,12 @@
+<div class="card m-3 col-sm-2">
+    <a href="/recipes/{{recipe.id}}">
+        <img src="{{recipe.image}}" class="card-img-top" alt="Preview image of the dish">
+        <div class="card-body">
+            <h6 class="card-title">{{recipe.name}}</h6>
+            <div class="d-flex justify-content-between">
+                <p>{{recipe.time_total}}</p>
+                <p><i class="fa-solid fa-star" style="color: #ffea00;"></i>{{recipe.rating}}</p>
+            </div>
+        </div>
+    </a>
+</div>
