@@ -16,11 +16,9 @@ const loginFormHandler = async (event) => {
       document.location.replace('/');
     } else {
       await alert('Incorrect username or password');
-      document.location.reload();
+      // document.location.reload();
     }
   }
 };
 
-document
-  .querySelector('#login-form')
-  .addEventListener('submit', loginFormHandler);
+document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
