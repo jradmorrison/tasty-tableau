@@ -90,7 +90,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
         model: Recipe,
       }]
     });
-    
+
     const userRecipes = userRecipesData.map(rec => rec.get({ plain: true }));
     const favorites = favoritesData.map(fav => fav.get({ plain: true }));
   
@@ -107,7 +107,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
         favorite.recipe.image = favorite.recipe.image.slice(0, favorite.recipe.image.length - 1);
       };
     });
-    console.log(favorites);
+    
     res.render('dashboard', {
       userRecipes,
       favorites,
