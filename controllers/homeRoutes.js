@@ -119,7 +119,6 @@ router.get('/about', async (req, res) => {
 
 router.get('/team', async (req, res) => {
   try {
-
     res.render('team', {
       logged_in: req.session.logged_in,
     });
@@ -128,7 +127,16 @@ router.get('/team', async (req, res) => {
   }
 });
 
-
+router.get('/newrecipe', withAuth, async (req, res) => {
+  try {
+    // console.trace(req.session.logged_in);
+    res.render('newrecipe', {
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 
 

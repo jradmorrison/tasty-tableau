@@ -74,7 +74,7 @@ Recipe.init(
     },
     seed: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
   },
   {
