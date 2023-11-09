@@ -9,29 +9,7 @@ const { Op } = require('sequelize');
 // Home
 router.get('/', async (req, res) => {
   try {
-    const tagsData = await Tag.findAll({
-      where: {
-        [Op.or]: [
-          {
-            name: {
-              [Op.like]: `%He%`,
-            }
-          },
-        ]
-      },
-      include: {
-        model: Recipe,
-        through: Tag_Through
-      }
-    });
-
-    console.trace(tagsData[0].recipes);
-    const tagRecipes = tagsData[0].recipes.map(rec =>
-      rec.get({ plain: true })
-    );
-    console.trace(tagRecipes);
-
-    res.render('homepage', { tagRecipes });
+    res.render('homepage');
   } catch (err) {
     res.status(500).json(err);
   }

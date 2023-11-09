@@ -1,5 +1,7 @@
 router = require('express').Router();
-const { Tag } = require('../../models');
+const { Tag, Recipe, Tag_Through, Category } = require('../../models');
+const { Op } = require('sequelize');
+
 
 // ROUTE: /api/tags
 
@@ -16,31 +18,49 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/search/:tag', async (req, res) => {
+// Returns all recipes that have 'text' in their name,
+// category, or description
+router.get('/search/:text', async (req, res) => {
     try {
-        const tagsData = await Tag.findAll({
-            where: {
-              [Op.or]: [
-                {
-                  name: {
-                    [Op.like]: `%${req.params.tag}%`,
-                  }
-                },
-              ]
+        const categoryQuery = await Category.findAll({
+          attributes: ['id'],
+          where: {
+            name: {
+              [Op.like]: '%cheese%',
             },
-            include: {
-              model: Recipe,
-              through: Tag_Through
-            }
-          });
+          },
+        });
       
-          console.trace(tagsData[0].recipes);
-          const tagRecipes = tagsData[0].recipes.map(rec =>
-            rec.get({ plain: true })
-          );
-          console.trace(tagRecipes);
+        const recipeQuery = await Recipe.findAll({
+          where: {
+            [Op.or]: [
+              {
+                category_id: {
+                  [Op.in]: categoryQuery,
+                },
+              },
+              {
+                [Op.or]: [
+                  {
+                    description: {
+                      [Op.like]: '%cheese%',
+                    },
+                  },
+                  {
+                    name: {
+                      [Op.like]: '%cheese%',
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+        });
 
-          res.status(200).json(tagRecipes);
+        const recipes = recipeQuery.map(rec => rec.get({ plain: true }))
+        console.trace(recipes);
+
+        res.status(200).json(recipes);
     } catch (err) {
         res.status(500).json(err);
     }
