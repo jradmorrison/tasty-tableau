@@ -1,5 +1,7 @@
 const router = require('express').Router();
+
 const { Category, Recipe, User, Tag, Macros } = require('../models');
+
 const withAuth = require('../utils/auth');
 const { Op } = require('sequelize');
 
@@ -52,6 +54,7 @@ router.get('/recipes/:id', async (req, res) => {
     res.render('recipe', {
       recipe,
     });
+
   } catch (err) {
     res.status(500).json(err);
   }
