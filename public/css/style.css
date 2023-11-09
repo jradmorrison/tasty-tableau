@@ -247,3 +247,7 @@ label #cancel {
 .add-to-favorites-btn.loaded {
   opacity: 1;
 }
+
+#main-header {
+  color: white;
+}
