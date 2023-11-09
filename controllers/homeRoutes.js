@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Tag, Recipe, Tag_Through } = require('../models');
+const { Category, Recipe, User, Tag, Macros } = require('../models');
 const withAuth = require('../utils/auth');
 const { Op } = require('sequelize');
 
@@ -9,7 +9,49 @@ const { Op } = require('sequelize');
 // Home
 router.get('/', async (req, res) => {
   try {
-    res.render('homepage');
+    const cardData = await Recipe.findAll({
+      where: { category_id: 6 },
+      include: { model: User, attributes: ['username'] },
+    })
+
+    const cards = cardData.map((card) => card.get({ plain: true }));
+    cards.forEach(card => card.image = card.images.split(', ')[0].slice(1, -1));
+    console.log(cards);
+
+    res.render('homepage', {
+      cards,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Get recipe by ID
+router.get('/recipes/:id', async (req, res) => {
+  try {
+    const recipeData = await Recipe.findByPk(req.params.id, {
+      include: [
+        {
+          model: Tag,
+          attributes: ['name']
+        },
+        // {
+        //   model: Macros,
+        // },
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
+
+    const recipe = recipeData.get({ plain: true });
+    recipe.images = recipe.images.split(', ')[0].slice(1, -1);
+    recipe.instructions = recipe.instructions.slice(1, -1);
+    console.log(recipe);
+    res.render('recipe', {
+      recipe,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
