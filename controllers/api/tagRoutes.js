@@ -68,8 +68,8 @@ router.get('/search/:text', async (req, res) => {
           },
         });
 
-        const recipes = recipeQuery.map(rec => rec.get({ plain: true }))
-        // console.trace(recipes);
+        const recipes = await recipeQuery.map(rec => rec.get({ plain: true }))
+        console.trace(recipes[0]);
 
         res.status(200).json(recipes);
     } catch (err) {

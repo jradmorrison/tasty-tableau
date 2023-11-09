@@ -17,8 +17,16 @@ router.get('/', async (req, res) => {
     })
 
     const cards = cardData.map((card) => card.get({ plain: true }));
-    cards.forEach(card => card.image = card.images.split(', ')[0].slice(1, -1));
-    console.log(cards);
+    // cards.forEach(card => card.image = card.images.split(', ')[0].slice(1, -1));
+
+    cards.forEach(card => {
+      card.image = card.images.split(', ')[0].slice(1);
+      if (card.image.charAt(card.image.length-1) === ']') {
+        card.image = card.image.slice(0, card.image.length-1);
+      };
+    });
+
+    console.trace(cards);
 
     res.render('homepage', {
       cards,
