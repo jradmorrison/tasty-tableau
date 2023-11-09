@@ -17,7 +17,8 @@ body {
   align-items: center;
   /* width: 100vw;
   height: 100vh; */
-  background-image: linear-gradient(-45deg, #ffffaf 0%, #fef7d7 100%);
+
+  background-image: linear-gradient(-45deg, #EEEDE9 0%, #FFFCEC 100%);
 }
 
 a {
@@ -28,6 +29,16 @@ a {
   height: 90%;
   overflow-y: auto;
   overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.scrolling-div::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrolling-div::-webkit-scrollbar-thumb {
+  background-color: transparent;
 }
 
 .card a {

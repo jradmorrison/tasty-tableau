@@ -16,24 +16,24 @@
   <img id='test-img' src='' alt='' />
 </div>
 
-<div class='d-flex flex-column align-items-center rounded-5 my-5 brown-bg p-3 scrolling-div'>
-  <div>
-    <p class='fs-4 fw-semibold'>Thanksgiving Ready!</p>
-  </div>
-  <div class='d-flex flex-wrap'>
-    {{#each cards as |card|}}
-      <div class='card m-3 col-sm-2'>
-        <a href='/recipes/{{id}}'>
-          <img src='{{image}}' class='card-img-top' alt='...' />
-          <div class='card-body'>
-            <h6 class='card-title'>{{name}}</h6>
-            <div class='d-flex justify-content-between'>
-              <p>{{time_total}}</p>
-              <p><i class='fa-solid fa-star' style='color: #ffea00;'></i>{{rating}}</p>
-            </div>
-          </div>
-        </a>
-      </div>
-    {{/each}}
-  </div>
+<div class="d-flex flex-column align-items-center rounded-5 my-5 p-3 scrolling-div">
+    <div>
+        <p class="fs-4 fw-semibold">Thanksgiving Ready!</p>
+    </div>
+    <div class="d-flex flex-wrap">
+        {{#each cards as |card|}}
+        <div class="card m-3 col-sm-2">
+            <a href="/recipes/{{id}}">
+                <img src="{{image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h6 class="card-title">{{name}}</h6>
+                    <div class="d-flex justify-content-between">
+                        <p>{{time_total}}</p>
+                        <p><i class="fa-solid fa-star" style="color: #ffea00;"></i>{{rating}}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {{/each}}
+    </div>
 </div>

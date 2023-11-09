@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
     const cardData = await Recipe.findAll({
       where: { category_id: 6 },
       include: { model: User, attributes: ['username'] },
-    })
+    });
 
     const cards = cardData.map((card) => card.get({ plain: true }));
     // cards.forEach(card => card.image = card.images.split(', ')[0].slice(1, -1));
@@ -30,6 +30,7 @@ router.get('/', async (req, res) => {
 
     res.render('homepage', {
       cards,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -66,6 +67,7 @@ router.get('/recipes/:id', async (req, res) => {
     console.log(recipe);
     res.render('recipe', {
       recipe,
+      logged_in: req.session.logged_in,
     });
 
   } catch (err) {
@@ -107,7 +109,9 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
 router.get('/about', async (req, res) => {
   try {
-    res.render('about');
+    res.render('about', {
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -116,7 +120,9 @@ router.get('/about', async (req, res) => {
 router.get('/team', async (req, res) => {
   try {
 
-    res.render('team');
+    res.render('team', {
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
