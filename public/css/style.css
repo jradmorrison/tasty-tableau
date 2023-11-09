@@ -11,17 +11,23 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
   background-image: linear-gradient(-45deg, #ffffaf 0%, #FEF7D7 100%);
 }
 
 a {
   text-decoration: none;
+}
+
+.scrolling-div {
+  height: 90%;
+  overflow-y: auto;
+  overflow-x: auto;
 }
 
 .card a {
@@ -35,6 +41,7 @@ a {
   height: 100%;
   background-color: #fff;
   transition: all .5s ease;
+  z-index: 100;
 }
 
 .sidebar header {
