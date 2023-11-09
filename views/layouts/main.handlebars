@@ -52,6 +52,22 @@
       <span>The Team</span>
     </a>
   </div>
+  {{#if logged_in}}
+  <a href='http://localhost:3001/dashboard'class='profile'>
+    <div class='bar'>
+     <p>{{user}}</p>
+    </div>
+    <div class='bubble'>
+      <i class="fas fa-user" id="btn"></i>
+    </div>
+  </a>
+  {{else}}
+    <a href='http://localhost:3001/dashboard'class='profile'>
+    <div class='bar'>
+      <p class='login-center'>Login</p>
+    </div>
+  </a>
+  {{/if}}
 </body>
 
 <div class="container m-auto col-8">

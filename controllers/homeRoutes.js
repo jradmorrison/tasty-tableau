@@ -26,11 +26,12 @@ router.get('/', async (req, res) => {
       }
     });
 
-    console.trace(cards);
+    // console.trace(cards);
 
     res.render('homepage', {
       cards,
       logged_in: req.session.logged_in,
+      user: req.session.username,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -76,6 +77,7 @@ router.get('/recipes/:id', async (req, res) => {
     res.render('recipe', {
       recipe,
       logged_in: req.session.logged_in,
+      // user: req.session.username,
       is_favorite: isFavorite,
     });
   } catch (err) {
@@ -109,6 +111,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     res.render('dashboard', {
       userRecipes,
       logged_in: req.session.logged_in,
+      user: req.session.username,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -119,6 +122,7 @@ router.get('/about', async (req, res) => {
   try {
     res.render('about', {
       logged_in: req.session.logged_in,
+      user: req.session.username,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -129,6 +133,7 @@ router.get('/team', async (req, res) => {
   try {
     res.render('team', {
       logged_in: req.session.logged_in,
+      user: req.session.username,
     });
   } catch (err) {
     res.status(500).json(err);

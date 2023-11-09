@@ -11,6 +11,10 @@ $(function () {
         body: '',
         headers: { 'Content-Type': 'application/json' },
       });
+
+      if ((event.target.dataset.action = 'POST')) {
+        // Send Email to recipe.id.author .getuser email
+      }
       // Hide the button
       $(event.target).hide();
 
