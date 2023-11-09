@@ -1,5 +1,6 @@
 router = require('express').Router();
 const { Recipe, Tag, Macros, User } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // ROUTE: /api/recipes
 
@@ -69,6 +70,35 @@ router.get('/:id', async (req, res) => {
       // ],
     });
 
+
+    res.status(200).json(recipeData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.post('/', withAuth, async (req, res) => {
+  try {
+    // console.trace(req.body.name);
+    // console.trace(req.body.description);
+    // console.trace(req.body.date_created);
+    // console.trace(req.body.user_id);
+
+    // console.trace(req.session.user_id);
+    // console.trace(req.body.name);
+
+    let newDate = new Date();
+
+    const recipeData = await Recipe.create({
+      name: req.body.name,
+      user_id: req.session.user_id,
+      date_created: newDate,
+      description: req.body.description,
+    });
+
+    if (!recipeData) {
+      res.status(404).json({ message: 'Unable to add recipe!' });
+    }
 
     res.status(200).json(recipeData);
   } catch (err) {
