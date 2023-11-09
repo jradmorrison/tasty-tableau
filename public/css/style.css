@@ -181,7 +181,7 @@ label #cancel {
     margin-left: -10px;
   }
 
-  a:hover {
+  .sidebar a:hover {
     width: 300px;
     background: inherit;
     color: black;

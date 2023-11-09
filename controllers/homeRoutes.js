@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
       }
     });
 
-    console.trace(cards);
+    // console.trace(cards);
 
     res.render('homepage', {
       cards,
@@ -85,17 +85,24 @@ router.get('/recipes/:id', async (req, res) => {
 
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    console.trace(req.session);
     const userRecipesData = await Recipe.findAll({
       where: {
         user_id: req.session.user_id,
-      },
-    });
-    // console.trace(userRecipes);
 
-    const userRecipes = userRecipesData.map((rec) => rec.get({ plain: true }));
-    console.trace(userRecipes[0].images);
-    console.trace(userRecipes[0].images.split(',')[0].slice(1));
+      }
+    });
+    const favoritesData = await Favorite.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+      include: [{
+        model: Recipe,
+      }]
+    });
+
+    const userRecipes = userRecipesData.map(rec => rec.get({ plain: true }));
+    const favorites = favoritesData.map(fav => fav.get({ plain: true }));
+  
 
     // Grabs the first image and creates a new attribute for it
     userRecipes.forEach((recipe) => {
@@ -104,10 +111,17 @@ router.get('/dashboard', withAuth, async (req, res) => {
         recipe.image = recipe.image.slice(0, recipe.image.length - 1);
       }
     });
-
-    console.trace(userRecipes[3]);
+    favorites.forEach(favorite => {
+      favorite.recipe.image = favorite.recipe.images.split(', ')[0].slice(1);
+      if (favorite.recipe.image.charAt(favorite.recipe.image.length - 1) === ']') {
+        favorite.recipe.image = favorite.recipe.image.slice(0, favorite.recipe.image.length - 1);
+      };
+    });
+    
     res.render('dashboard', {
       userRecipes,
+      favorites,
+
       logged_in: req.session.logged_in,
     });
   } catch (err) {
