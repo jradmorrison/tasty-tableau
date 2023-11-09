@@ -79,20 +79,20 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    console.trace(req.body.name);
-    console.trace(req.body.description);
-    console.trace(req.body.date_created);
-    console.trace(req.body.user_id);
+    // console.trace(req.body.name);
+    // console.trace(req.body.description);
+    // console.trace(req.body.date_created);
+    // console.trace(req.body.user_id);
 
     // console.trace(req.session.user_id);
     // console.trace(req.body.name);
 
-    // let newDate = new Date();
+    let newDate = new Date();
 
     const recipeData = await Recipe.create({
       name: req.body.name,
-      user_id: req.body.user_id,
-      date_created: req.body.date_created,
+      user_id: req.session.user_id,
+      date_created: newDate,
       description: req.body.description,
     });
 
