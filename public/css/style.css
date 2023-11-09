@@ -197,7 +197,7 @@ label #cancel {
 .sidebar a.active,
 .sidebar > a:hover {
   --accent-color: #c1b1f7 0%;
-  --gradient-color: #a890fe;
+  --gradient-color: #A890FE;
 }
 
 .dropdownmenu {
