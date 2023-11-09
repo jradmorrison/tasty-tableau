@@ -1,13 +1,15 @@
-
 <div class="mt-5">
     <p class="fs-2">Your Dashboard</p>
 </div>
+
+<a href="/newrecipe">Click to add a new recipe</a>
 
 <div>
     <p>Your Recipes:</p>
     <div class="d-flex flex-wrap">
         {{#each userRecipes as |recipe|}}
         {{>recipe-preview}}
+        {{!-- <a href="">Edit</a> --}}
         {{/each}}
     </div>
 </div>

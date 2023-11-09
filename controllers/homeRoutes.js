@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
 const { Category, Recipe, User, Tag, Macros, Favorite, Ingredient, Ingredients_Through } = require('../models');
+const { findAll } = require('../models/user');
 
 const withAuth = require('../utils/auth');
 const { Op } = require('sequelize');
@@ -170,9 +171,22 @@ router.get('/team', async (req, res) => {
 router.get('/newrecipe', withAuth, async (req, res) => {
   try {
     // console.trace(req.session.logged_in);
+    const categoryData = await Category.findAll();
+
+    // const cards = cardData.map((card) => card.get({ plain: true }));
+
+    const categories = categoryData.map((recipe) => recipe.get({ plain: true }));
+    console.trace(categories);
+
+    // Sort alphabetically by name
+    categories.sort((a,b) => a.name < b.name ? -1 : 1);
+    console.trace(categories);
+
     res.render('newrecipe', {
+      categories,
       logged_in: req.session.logged_in,
     });
+
   } catch (err) {
     res.status(500).json(err);
   }
