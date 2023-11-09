@@ -18,6 +18,17 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Get tag by ID
+router.get('/:id', async (req, res) => {
+    try {
+        const tagData = await Tag.findbyPk(req.params.id);
+
+        res.status(200).json(tagData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 // Returns all recipes that have 'text' in their name,
 // category, or description
 router.get('/search/:text', async (req, res) => {
@@ -26,7 +37,7 @@ router.get('/search/:text', async (req, res) => {
           attributes: ['id'],
           where: {
             name: {
-              [Op.like]: '%cheese%',
+              [Op.like]: `%${req.params.text}%`,
             },
           },
         });
@@ -43,12 +54,12 @@ router.get('/search/:text', async (req, res) => {
                 [Op.or]: [
                   {
                     description: {
-                      [Op.like]: '%cheese%',
+                      [Op.like]: `%${req.params.text}%`,
                     },
                   },
                   {
                     name: {
-                      [Op.like]: '%cheese%',
+                      [Op.like]: `%${req.params.text}%`,
                     },
                   },
                 ],
@@ -66,16 +77,7 @@ router.get('/search/:text', async (req, res) => {
     }
 })
 
-// Get tag by ID
-router.get('/:id', async (req, res) => {
-    try {
-        const tagData = await Tag.findbyPk(req.params.id);
 
-        res.status(200).json(recipeData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
 
 // Create a new tag
 router.post('/', async (req, res) => {
