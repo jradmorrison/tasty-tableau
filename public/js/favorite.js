@@ -1,25 +1,31 @@
-$(function() {
+$(function () {
+  $('[data-toggle="popover"]').popover();
+  $('.add-to-favorites-btn').addClass('loaded');
 
-    $('[data-toggle="popover"]').popover();
+  const updateFavorites = async (event) => {
+    const id = event.target.dataset.id;
 
-    const addToFavorites = async (event) => {
-        event.preventDefault();
+    if (id) {
+      const response = await fetch(`../api/favorites/user/${id}`, {
+        method: event.target.dataset.action,
+        body: '',
+        headers: { 'Content-Type': 'application/json' },
+      });
+      // Hide the button
+      $(event.target).hide();
 
-        const id = event.target.dataset.id;
-        // console.log(event.target.dataset.id);
+      // Show the tooltip only if the button is visible
+      if ($(event.target).is(':visible')) {
+        $(event.target).tooltip('show');
+      }
+      setTimeout(() => {
+        document.location.reload();
+      }, 1000);
 
-        if (id) {
-            const response = await fetch(`../api/favorites/user/${id}`, {
-                method: 'POST',
-                body: '',
-                headers: { 'Content-Type': 'application/json' },
-            });
-
-            const data = await response.json();
-
-            // console.log(data);
-        }
+      const data = await response.json();
     }
+  };
 
-    $('.add-to-favorites-btn').on('click', addToFavorites);
-})
+  $('.add-to-favorites-btn').on('click', updateFavorites);
+  $('.remove-from-favorites-btn').on('click', updateFavorites);
+});

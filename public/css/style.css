@@ -18,7 +18,7 @@ body {
   /* width: 100vw;
   height: 100vh; */
 
-  background-image: linear-gradient(-45deg, #EEEDE9 0%, #FFFCEC 100%);
+  background-image: linear-gradient(-45deg, #eeede9 0%, #fffcec 100%);
 }
 
 a {
@@ -208,7 +208,7 @@ label #cancel {
 .sidebar a.active,
 .sidebar > a:hover {
   --accent-color: #c1b1f7 0%;
-  --gradient-color: #A890FE;
+  --gradient-color: #a890fe;
 }
 
 .dropdownmenu {
@@ -237,4 +237,13 @@ label #cancel {
 .dropdown p {
   padding: 2.5px 15px;
   margin: 0px;
+}
+
+.add-to-favorites-btn {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.add-to-favorites-btn.loaded {
+  opacity: 1;
 }
