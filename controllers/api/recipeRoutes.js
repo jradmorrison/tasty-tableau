@@ -77,12 +77,22 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
+    console.trace(req.body.name);
+    console.trace(req.body.description);
+    console.trace(req.body.date_created);
+    console.trace(req.body.user_id);
+
+    // console.trace(req.session.user_id);
+    // console.trace(req.body.name);
+
+    // let newDate = new Date();
+
     const recipeData = await Recipe.create({
       name: req.body.name,
-      user_id: req.session.user_id,
-      date_created: new Date(),
+      user_id: req.body.user_id,
+      date_created: req.body.date_created,
       description: req.body.description,
     });
 
@@ -90,7 +100,7 @@ router.post('/', withAuth, async (req, res) => {
       res.status(404).json({ message: 'Unable to add recipe!' });
     }
 
-    res.status(200).json(userData);
+    res.status(200).json(recipeData);
   } catch (err) {
     res.status(500).json(err);
   }
