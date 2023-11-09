@@ -6,7 +6,7 @@ $(function() {
         event.preventDefault();
 
         const id = event.target.dataset.id;
-        console.log(event.target.dataset.id);
+        // console.log(event.target.dataset.id);
 
         if (id) {
             const response = await fetch(`../api/favorites/user/${id}`, {
@@ -17,15 +17,9 @@ $(function() {
 
             const data = await response.json();
 
-            console.log(data);
+            // console.log(data);
         }
-
-
     }
-
-
-
-
 
     $('.add-to-favorites-btn').on('click', addToFavorites);
 })
