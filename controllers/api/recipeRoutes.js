@@ -94,6 +94,7 @@ router.post('/', withAuth, async (req, res) => {
       user_id: req.session.user_id,
       date_created: newDate,
       description: req.body.description,
+      time_total: req.body.time_total,
     });
 
     if (!recipeData) {
