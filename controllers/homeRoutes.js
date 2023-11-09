@@ -21,8 +21,8 @@ router.get('/', async (req, res) => {
 
     cards.forEach(card => {
       card.image = card.images.split(', ')[0].slice(1);
-      if (card.image.charAt(card.image.length-1) === ']') {
-        card.image = card.image.slice(0, card.image.length-1);
+      if (card.image.charAt(card.image.length - 1) === ']') {
+        card.image = card.image.slice(0, card.image.length - 1);
       };
     });
 
@@ -56,7 +56,12 @@ router.get('/recipes/:id', async (req, res) => {
     });
 
     const recipe = recipeData.get({ plain: true });
-    recipe.images = recipe.images.split(', ')[0].slice(1, -1);
+
+    recipe.images = recipe.images.split(', ')[0].slice(1);
+    if (recipe.images.charAt(recipe.images.length - 1) === ']') {
+      recipe.images = recipe.images.slice(0, recipe.images.length - 1);
+    };
+
     recipe.instructions = recipe.instructions.slice(1, -1);
     console.log(recipe);
     res.render('recipe', {
@@ -85,8 +90,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
     // Grabs the first image and creates a new attribute for it
     userRecipes.forEach(recipe => {
       recipe.image = recipe.images.split(', ')[0].slice(1);
-      if (recipe.image.charAt(recipe.image.length-1) === ']') {
-        recipe.image = recipe.image.slice(0, recipe.image.length-1);
+      if (recipe.image.charAt(recipe.image.length - 1) === ']') {
+        recipe.image = recipe.image.slice(0, recipe.image.length - 1);
       };
     });
 
