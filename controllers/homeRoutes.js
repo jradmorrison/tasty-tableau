@@ -83,11 +83,15 @@ router.get('/dashboard', withAuth, async (req, res) => {
         user_id: req.session.user_id,
       }
     })
-    // console.trace(userRecipes);
+    console.trace(userRecipesData);
+
+    // if (!userRecipesData) {
+    //   res.render('dashboard');
+    // }
 
     const userRecipes = userRecipesData.map(rec => rec.get({ plain: true }));
-    console.trace(userRecipes[0].images);
-    console.trace(userRecipes[0].images.split(',')[0].slice(1));
+    // console.trace(userRecipes[0].images);
+    // console.trace(userRecipes[0].images.split(',')[0].slice(1));
 
     // Grabs the first image and creates a new attribute for it
     userRecipes.forEach(recipe => {
@@ -97,7 +101,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
       };
     });
 
-    console.trace(userRecipes[3]);
+    userRecipes.reverse();
     res.render('dashboard', {
       userRecipes,
       logged_in: req.session.logged_in

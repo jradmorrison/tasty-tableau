@@ -77,7 +77,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     // console.trace(req.body.name);
     // console.trace(req.body.description);

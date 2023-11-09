@@ -20,9 +20,16 @@ $(function() {
                 headers: { 'Content-Type': 'application/json' },
             });
 
-            // const data = await response.json();
+            const data = await response.json();
 
-            // console.log(data);
+            console.log(data);
+
+            if (response.ok) {
+                document.location.replace('/dashboard');
+            } else {
+                await alert('Error adding recipe');
+                document.location.reload();
+            }
         }
     }
 

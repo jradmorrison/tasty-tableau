@@ -45,6 +45,7 @@ Recipe.init(
     },
     images: {
       type: DataTypes.TEXT,
+      defaultValue: '[/Assets/Carrot.png]',
       allowNull: true,
     },
     category_id: {
