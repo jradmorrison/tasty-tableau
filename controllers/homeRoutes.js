@@ -90,6 +90,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
         user_id: req.session.user_id,
 
       }
+
     });
     const favoritesData = await Favorite.findAll({
       where: {
@@ -119,6 +120,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     });
 
     userRecipes.reverse();
+
     res.render('dashboard', {
       userRecipes,
       favorites,
@@ -160,9 +162,6 @@ router.get('/newrecipe', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 })
-
-
-
 
 // Login form
 router.get('/login', (req, res) => {
