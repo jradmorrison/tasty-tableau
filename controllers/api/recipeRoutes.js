@@ -57,21 +57,22 @@ router.get('/user', async (req, res) => {
 // Get recipe by ID
 router.get('/:id', async (req, res) => {
   try {
-    console.trace(req.params.id);
+    console.log(req.params.id);
     const recipeData = await Recipe.findByPk(req.params.id, {
-      include: [
-        {
-          model: Tag,
-          through: 'Tag_Through',
-        },
-        {
-          model: Macros,
-        },
-        {
-          model: User,
-        },
-      ],
+      // include: [
+      //   {
+      //     model: Tag,
+      //     through: 'Tag_Through',
+      //   },
+      //   {
+      //     model: Macros,
+      //   },
+      //   {
+      //     model: User,
+      //   },
+      // ],
     });
+
 
     res.status(200).json(recipeData);
   } catch (err) {
