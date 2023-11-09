@@ -95,9 +95,9 @@ a {
   text-transform: uppercase;
 }
 
-.brown-bg {
+/* .brown-bg {
   background-color: #beae83;
-}
+} */
 
 #check {
   display: none;
@@ -307,4 +307,12 @@ label #cancel {
   color: black;
   font-size: 50px;
   margin-bottom: 5px;
+}
+
+#main-header {
+  color: white;
+}
+
+#main-header {
+  color: white;
 }

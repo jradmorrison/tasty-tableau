@@ -25,14 +25,17 @@ Recipe.init(
     },
     time_cook: {
       type: DataTypes.STRING,
+      defaultValue: 'PT',
       allowNull: true,
     },
     time_prep: {
       type: DataTypes.STRING,
+      defaultValue: 'PT',
       allowNull: true,
     },
     time_total: {
       type: DataTypes.STRING,
+      defaultValue: 'PT',
       allowNull: true,
     },
     date_created: {
@@ -63,14 +66,17 @@ Recipe.init(
     },
     servings: {
       type: DataTypes.INTEGER,
+      defaultValue: -1,
       allowNull: true,
     },
     yield: {
       type: DataTypes.STRING,
+      defaultValue: -1,
       allowNull: true,
     },
     instructions: {
       type: DataTypes.TEXT,
+      defaultValue: "-1",
       allowNull: true,
     },
     seed: {

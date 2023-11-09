@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
-const { Category, Recipe, User, Tag, Macros, Favorite } = require('../models');
+const { Category, Recipe, User, Tag, Macros, Favorite, Ingredient, Ingredients_Through } = require('../models');
+const { findAll } = require('../models/user');
 
 const withAuth = require('../utils/auth');
 const { Op } = require('sequelize');
@@ -57,6 +58,18 @@ router.get('/recipes/:id', async (req, res) => {
         },
       ],
     });
+    
+    const ingredientData = await Ingredients_Through.findAll({
+      where: {
+        recipe_id: req.params.id,
+      },
+      include: [
+        {
+          model: Ingredient,
+          attributes: ['name'],
+        },
+      ],
+    });
 
     let favorite = -1;
     if (req.session.user_id) {
@@ -69,7 +82,8 @@ router.get('/recipes/:id', async (req, res) => {
       favorite = favoritesData.length > 0 ? 1 : 0;
     }
     const recipe = recipeData.get({ plain: true });
-
+    const ingredients = ingredientData.map(ing => ing.get({plain: true}));
+    
     recipe.images = recipe.images.split(', ')[0].slice(1);
     if (recipe.images.charAt(recipe.images.length - 1) === ']') {
       recipe.images = recipe.images.slice(0, recipe.images.length - 1);
@@ -79,11 +93,13 @@ router.get('/recipes/:id', async (req, res) => {
     console.log(favorite);
     res.render('recipe', {
       recipe,
+      ingredients,
       logged_in: req.session.logged_in,
       user: req.session.username,
       is_favorite: favorite,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -162,9 +178,22 @@ router.get('/team', async (req, res) => {
 router.get('/newrecipe', withAuth, async (req, res) => {
   try {
     // console.trace(req.session.logged_in);
+    const categoryData = await Category.findAll();
+
+    // const cards = cardData.map((card) => card.get({ plain: true }));
+
+    const categories = categoryData.map((recipe) => recipe.get({ plain: true }));
+    console.trace(categories);
+
+    // Sort alphabetically by name
+    categories.sort((a,b) => a.name < b.name ? -1 : 1);
+    console.trace(categories);
+
     res.render('newrecipe', {
+      categories,
       logged_in: req.session.logged_in,
     });
+
   } catch (err) {
     res.status(500).json(err);
   }

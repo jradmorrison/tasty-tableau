@@ -16,8 +16,14 @@ const Tag_Through = require('./through_tables/tag_through');
 // THROUGH TABLE ASSOCIATIONS                        //
 ///////////////////////////////////////////////////////
 // Recipe/Ingredient
-Recipe.belongsToMany(Ingredient, { through: Ingredients_Through });
-Ingredient.belongsToMany(Recipe, { through: Ingredients_Through });
+// Recipe.belongsToMany(Ingredient, { through: Ingredients_Through });
+// Ingredient.belongsToMany(Recipe, { through: Ingredients_Through });
+
+Recipe.belongsToMany(Ingredient, { through: Ingredients_Through, foreignKey: 'recipe_id' });
+Ingredient.belongsToMany(Recipe, { through: Ingredients_Through, foreignKey: 'ingredient_id' });
+
+Ingredients_Through.belongsTo(Ingredient, { foreignKey: 'ingredient_id' });
+Ingredients_Through.belongsTo(Recipe, { foreignKey: 'recipe_id' });
 
 // Tag/Recipe
 Tag.belongsToMany(Recipe, { through: Tag_Through });

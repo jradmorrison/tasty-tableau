@@ -2,9 +2,9 @@
   <div class='d-flex flex-wrap'>
     {{! TODO: Import the rating, display after the icon }}
     <p class='fs-2'>{{recipe.name}}</p>
-    <p class='my-auto mx-3'><i class='fa-solid fa-star' style='color: #ffea00;'></i></p>
+    <p class='my-auto mx-3'><i class='fa-solid fa-star' style='color: #ffea00;'></i>{{recipe.rating}}</p>
 
-    <p class='m-auto'>By: {{user.username}}</p>
+    <p class='m-auto'>By: {{recipe.user.username}}</p>
     <div class='position-reletive' style='width:20%'>
       {{#if logged_in}}
         {{#if is_favorite}}
@@ -34,9 +34,10 @@
     </div>
   </div>
   <div class='d-flex flex-wrap'>
-    {{!-- {{#each tags as |tag|}}
-        <p>{{tag.name}}</p>
-        {{/each}} --}}
+    <p class='fw-semibold'>Tags:</p>
+    {{#each recipe.tags as |tag|}}
+      <p class='mx-2'>{{name}}</p>
+    {{/each}}
   </div>
   <hr />
   <div class='d-flex flex-wrap'>
@@ -49,13 +50,19 @@
         <p class='fw-semibold me-1'>Total Time required:</p>
         <p>{{recipe.time_total}}</p>
       </div>
-      {{! Todo: import the ingredients and display here, also the macros if desired }}
+      <div>
+        <ul>
+          {{#each ingredients as |ingredient|}}
+            <li>{{quantity}} - {{ingredient.ingredient.name}}</li>
+          {{/each}}
+        </ul>
+      </div>
     </div>
-    <div class='my-3 d-flex'>
+    <div class='my-3 d-flex flex-column'>
       <p class='fw-semibold me-1'>Instructions:</p>
       <p class=''>{{recipe.instructions}}</p>
     </div>
-    <div>
+    <div class='d-flex flex-column'>
       <p class='fw-semibold'>Reviews:</p>
       {{#each review}}
         <div class='d-flex'>
