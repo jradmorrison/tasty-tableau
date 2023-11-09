@@ -6,24 +6,30 @@
 
     <p class='m-auto'>By: {{user.username}}</p>
     <div class='position-reletive' style='width:20%'>
-      {{#if is_favorite}}
-        <button
-          href='#'
-          class='add-to-favorites-btn btn m-auto btn-warning position-absolute left-0'
-          data-id='{{recipe.id}}'
-          data-action='DELETE'
-          data-toggle='popover'
-          title='Removed!'
-        ><i class='fa-solid fa-bookmark mx-1'></i>Remove from favorites</button>
+      {{#if logged_in}}
+        {{#if is_favorite}}
+          <button
+            href='#'
+            class='add-to-favorites-btn btn m-auto btn-warning position-absolute left-0'
+            data-id='{{recipe.id}}'
+            data-action='DELETE'
+            data-toggle='popover'
+            title='Removed!'
+          ><i class='fa-solid fa-bookmark mx-1'></i>Remove from favorites</button>
+        {{else}}
+          <button
+            href='#'
+            class='add-to-favorites-btn btn m-auto btn-warning position-absolute left-0'
+            data-id='{{recipe.id}}'
+            data-action='POST'
+            data-toggle='popover'
+            title='Added!'
+          ><i class='fa-regular fa-bookmark mx-1'></i>Add to favorites</button>
+        {{/if}}
       {{else}}
-        <button
-          href='#'
-          class='add-to-favorites-btn btn m-auto btn-warning position-absolute left-0'
-          data-id='{{recipe.id}}'
-          data-action='POST'
-          data-toggle='popover'
-          title='Added!'
-        ><i class='fa-regular fa-bookmark mx-1'></i>Add to favorites</button>
+        <button id='login-to-save' class='add-to-favorites-btn btn m-auto btn-warning position-absolute left-0'><i
+            class='fa-regular fa-bookmark mx-1'
+          ></i>Login to Save</button>
       {{/if}}
     </div>
   </div>

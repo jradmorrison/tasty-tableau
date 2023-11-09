@@ -30,6 +30,12 @@ $(function () {
     }
   };
 
+  const goToLogin = () => {
+    document.location.replace('/login');
+    console.trace('Click');
+  };
+
   $('.add-to-favorites-btn').on('click', updateFavorites);
   $('.remove-from-favorites-btn').on('click', updateFavorites);
+  $('#login-to-save').on('click', goToLogin);
 });
