@@ -27,6 +27,8 @@ router.get('/', async (req, res) => {
       }
     });
 
+    cards.splice(5); // Change to effect how many cards are shown on the screen
+
     // console.trace(cards);
 
     res.render('homepage', {
@@ -58,7 +60,7 @@ router.get('/recipes/:id', async (req, res) => {
         },
       ],
     });
-    
+
     const ingredientData = await Ingredients_Through.findAll({
       where: {
         recipe_id: req.params.id,
@@ -82,8 +84,8 @@ router.get('/recipes/:id', async (req, res) => {
       favorite = favoritesData.length > 0 ? 1 : 0;
     }
     const recipe = recipeData.get({ plain: true });
-    const ingredients = ingredientData.map(ing => ing.get({plain: true}));
-    
+    const ingredients = ingredientData.map((ing) => ing.get({ plain: true }));
+
     recipe.images = recipe.images.split(', ')[0].slice(1);
     if (recipe.images.charAt(recipe.images.length - 1) === ']') {
       recipe.images = recipe.images.slice(0, recipe.images.length - 1);
@@ -186,14 +188,14 @@ router.get('/newrecipe', withAuth, async (req, res) => {
     console.trace(categories);
 
     // Sort alphabetically by name
-    categories.sort((a,b) => a.name < b.name ? -1 : 1);
+    categories.sort((a, b) => (a.name < b.name ? -1 : 1));
     console.trace(categories);
 
     res.render('newrecipe', {
       categories,
       logged_in: req.session.logged_in,
+      user: req.session.username,
     });
-
   } catch (err) {
     res.status(500).json(err);
   }
