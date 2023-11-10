@@ -45,9 +45,38 @@ $(function () {
     $('#review-form').toggle();
   }
 
+  const addReview = async (event) => {
+    event.preventDefault();
+    // console.log('clickl ckcl');
+
+    const rating = $('#rating').val();
+    const review = $('#review').val();
+    const id = $('#review-form').attr("data-id");
+
+    if (rating && review) {
+      const response = await fetch(`../api/reviews/${id}`, {
+        method: 'POST',
+        body: JSON.stringify({ rating, review }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+
+      const data = await response.json();
+
+      console.log(data);
+
+      if (response.ok) {
+        document.location.reload();
+      } else {
+        await alert('Error adding recipe');
+      }
+    }
+  }
+
   $('.add-to-favorites-btn').on('click', updateFavorites);
   $('.remove-from-favorites-btn').on('click', updateFavorites);
   $('#login-to-save').on('click', goToLogin);
 
   $('#show-review-form').on('click', showReview);
+  $('#review-submit-button').on('click', addReview);
+
 });

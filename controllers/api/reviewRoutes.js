@@ -41,9 +41,14 @@ router.get('/:id', async (req, res) => {
 router.post('/:id', async (req, res) => {
     try {
         let newDate = new Date();
+        console.trace(req.body.rating);
+        console.trace(req.body.review);
+        console.trace(req.session.user_id);
+        console.trace(req.params.id);
+
 
         const reviewData = await Review.create({
-            user_id: req.body.user_id,
+            user_id: req.session.user_id,
             rating: req.body.rating,
             review: req.body.review,
             date_created: newDate,
