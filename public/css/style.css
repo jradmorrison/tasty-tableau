@@ -248,6 +248,71 @@ label #cancel {
   opacity: 1;
 }
 
+.profile {
+  width: 250px;
+  height: 50px;
+
+  display: flex;
+
+  position: absolute;
+  top: 25;
+  right: 25;
+}
+
+.profile:hover {
+  scale: 105%;
+}
+.profile .bar {
+  position: absolute;
+  top: 12.5px;
+  height: 50px;
+  width: 100%;
+  border-radius: 50px;
+  border: 4px solid #000;
+  background: #bdd0ff;
+
+  display: flex;
+  align-items: center;
+}
+
+.profile .bar p {
+  width: 100%;
+  font-size: 18px;
+  padding: 10px;
+  margin: 0;
+  color: #000;
+  font-weight: bolder;
+}
+.profile .bar .login-center {
+  text-align: center;
+  font-size: 32px;
+}
+
+.profile .bubble {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 75px;
+  width: 75px;
+  border-radius: 50px;
+  border: 4px solid #000;
+  background: #bdd0ff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile i {
+  color: black;
+  font-size: 50px;
+  margin-bottom: 5px;
+}
+
+#main-header {
+  color: white;
+}
+
 #main-header {
   color: white;
 }

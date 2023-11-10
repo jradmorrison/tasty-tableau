@@ -32,6 +32,7 @@ router.get('/', async (req, res) => {
     res.render('homepage', {
       cards,
       logged_in: req.session.logged_in,
+      user: req.session.username,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -41,6 +42,7 @@ router.get('/', async (req, res) => {
 // Get recipe by ID
 router.get('/recipes/:id', async (req, res) => {
   try {
+    console.trace('test1');
     const recipeData = await Recipe.findByPk(req.params.id, {
       include: [
         {
@@ -69,14 +71,16 @@ router.get('/recipes/:id', async (req, res) => {
       ],
     });
 
-    const favoritesData = await Favorite.findAll({
-      where: {
-        recipe_id: req.params.id,
-        user_id: req.session.user_id,
-      },
-    });
-
-    const isFavorite = favoritesData.length > 0;
+    let favorite = -1;
+    if (req.session.user_id) {
+      const favoritesData = await Favorite.findAll({
+        where: {
+          recipe_id: req.params.id,
+          user_id: req.session.user_id,
+        },
+      });
+      favorite = favoritesData.length > 0 ? 1 : 0;
+    }
     const recipe = recipeData.get({ plain: true });
     const ingredients = ingredientData.map(ing => ing.get({plain: true}));
     
@@ -86,12 +90,13 @@ router.get('/recipes/:id', async (req, res) => {
     }
 
     recipe.instructions = recipe.instructions.slice(1, -1);
-    console.log(recipe);
+    console.log(favorite);
     res.render('recipe', {
       recipe,
       ingredients,
       logged_in: req.session.logged_in,
-      is_favorite: isFavorite,
+      user: req.session.username,
+      is_favorite: favorite,
     });
   } catch (err) {
     console.log(err);
@@ -104,22 +109,21 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const userRecipesData = await Recipe.findAll({
       where: {
         user_id: req.session.user_id,
-
-      }
-
+      },
     });
     const favoritesData = await Favorite.findAll({
       where: {
         user_id: req.session.user_id,
       },
-      include: [{
-        model: Recipe,
-      }]
+      include: [
+        {
+          model: Recipe,
+        },
+      ],
     });
 
-    const userRecipes = userRecipesData.map(rec => rec.get({ plain: true }));
-    const favorites = favoritesData.map(fav => fav.get({ plain: true }));
-  
+    const userRecipes = userRecipesData.map((rec) => rec.get({ plain: true }));
+    const favorites = favoritesData.map((fav) => fav.get({ plain: true }));
 
     // Grabs the first image and creates a new attribute for it
     userRecipes.forEach((recipe) => {
@@ -128,11 +132,11 @@ router.get('/dashboard', withAuth, async (req, res) => {
         recipe.image = recipe.image.slice(0, recipe.image.length - 1);
       }
     });
-    favorites.forEach(favorite => {
+    favorites.forEach((favorite) => {
       favorite.recipe.image = favorite.recipe.images.split(', ')[0].slice(1);
       if (favorite.recipe.image.charAt(favorite.recipe.image.length - 1) === ']') {
         favorite.recipe.image = favorite.recipe.image.slice(0, favorite.recipe.image.length - 1);
-      };
+      }
     });
 
     userRecipes.reverse();
@@ -142,6 +146,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
       favorites,
 
       logged_in: req.session.logged_in,
+      user: req.session.username,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -152,6 +157,7 @@ router.get('/about', async (req, res) => {
   try {
     res.render('about', {
       logged_in: req.session.logged_in,
+      user: req.session.username,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -162,6 +168,7 @@ router.get('/team', async (req, res) => {
   try {
     res.render('team', {
       logged_in: req.session.logged_in,
+      user: req.session.username,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -190,7 +197,7 @@ router.get('/newrecipe', withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-})
+});
 
 // Login form
 router.get('/login', (req, res) => {
