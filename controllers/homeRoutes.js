@@ -1,10 +1,13 @@
 const router = require('express').Router();
 
-const { Category, Recipe, User, Tag, Macros, Favorite, Ingredient, Ingredients_Through } = require('../models');
+const { Category, Recipe, User, Tag, Macros, Favorite, Ingredient, Ingredients_Through, Review } = require('../models');
 const { findAll } = require('../models/user');
 
 const withAuth = require('../utils/auth');
 const { Op } = require('sequelize');
+
+const formatTime = require('../utils/formatTime');
+const formatRecipe = require('../utils/formatRecipe');
 
 // ROUTE: /
 
@@ -20,16 +23,24 @@ router.get('/', async (req, res) => {
     const cards = cardData.map((card) => card.get({ plain: true }));
     // cards.forEach(card => card.image = card.images.split(', ')[0].slice(1, -1));
 
+    cards.splice(5); // Change to effect how many cards are shown on the screen
+
+    // Reformat cards for display to page
+    // Grab first image and use for display
+    // Change total time to readable string
     cards.forEach((card) => {
       card.image = card.images.split(', ')[0].slice(1);
       if (card.image.charAt(card.image.length - 1) === ']') {
         card.image = card.image.slice(0, card.image.length - 1);
       }
+
+      if (!card.time_total.startsWith('PT')) {
+        card.time_total = 'Cook time not available';
+      } else {
+        card.time_total = card.time_total.slice(2);
+        card.time_total = formatTime(card.time_total);
+      }
     });
-
-    cards.splice(5); // Change to effect how many cards are shown on the screen
-
-    // console.trace(cards);
 
     res.render('homepage', {
       cards,
@@ -44,7 +55,6 @@ router.get('/', async (req, res) => {
 // Get recipe by ID
 router.get('/recipes/:id', async (req, res) => {
   try {
-    console.trace('test1');
     const recipeData = await Recipe.findByPk(req.params.id, {
       include: [
         {
@@ -57,6 +67,14 @@ router.get('/recipes/:id', async (req, res) => {
         {
           model: User,
           attributes: ['username'],
+        },
+        {
+          model: Review,
+          include: [
+            {
+              model: User,
+            },
+          ],
         },
       ],
     });
@@ -90,9 +108,15 @@ router.get('/recipes/:id', async (req, res) => {
     if (recipe.images.charAt(recipe.images.length - 1) === ']') {
       recipe.images = recipe.images.slice(0, recipe.images.length - 1);
     }
+    if (!recipe.time_total.startsWith('PT')) {
+      recipe.time_total = 'Cook time not available';
+    } else {
+      recipe.time_total = recipe.time_total.slice(2);
+      recipe.time_total = formatTime(recipe.time_total);
+    }
 
     recipe.instructions = recipe.instructions.slice(1, -1);
-    console.log(favorite);
+
     res.render('recipe', {
       recipe,
       ingredients,
@@ -101,7 +125,6 @@ router.get('/recipes/:id', async (req, res) => {
       is_favorite: favorite,
     });
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -133,11 +156,24 @@ router.get('/dashboard', withAuth, async (req, res) => {
       if (recipe.image.charAt(recipe.image.length - 1) === ']') {
         recipe.image = recipe.image.slice(0, recipe.image.length - 1);
       }
+      if (!recipe.time_total.startsWith('PT') || recipe.time_total == 'PT0S') {
+        recipe.time_total = 'Cook time not available';
+      } else {
+        recipe.time_total = recipe.time_total.slice(2);
+        recipe.time_total = formatTime(recipe.time_total);
+      }
     });
+
     favorites.forEach((favorite) => {
       favorite.recipe.image = favorite.recipe.images.split(', ')[0].slice(1);
       if (favorite.recipe.image.charAt(favorite.recipe.image.length - 1) === ']') {
         favorite.recipe.image = favorite.recipe.image.slice(0, favorite.recipe.image.length - 1);
+      }
+      if (!favorite.recipe.time_total.startsWith('PT')) {
+        favorite.recipe.time_total = 'Cook time not available';
+      } else {
+        favorite.recipe.time_total = favorite.recipe.time_total.slice(2);
+        favorite.recipe.time_total = formatTime(favorite.recipe.time_total);
       }
     });
 
@@ -211,6 +247,7 @@ router.get('/login', (req, res) => {
     res.redirect('/dashboard');
     return;
   }
+
   res.render('login');
 });
 

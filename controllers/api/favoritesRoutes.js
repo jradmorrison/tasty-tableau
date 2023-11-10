@@ -26,8 +26,6 @@ router.get('/:id', async (req, res) => {
 // POST a new favorite
 router.post('/user/:id', async (req, res) => {
   try {
-    console.trace(req.params.id);
-    console.trace(req.session.user_id);
     const favoritesData = await Favorite.create({
       recipe_id: req.params.id,
       user_id: req.session.user_id,

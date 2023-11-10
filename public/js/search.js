@@ -1,5 +1,4 @@
 const findTagRecipes = async (search) => {
-  console.log(search);
   if (search) {
     const response = await fetch(`/api/tags/search/${search}`);
 
@@ -32,7 +31,6 @@ function UpdateDropdown(Results, ResultsToDisplay) {
   $('#Drop-Down').empty();
 
   for (let i = 0; i < ResultsToDisplay; i++) {
-    // console.log(Results[i]);
     if (i >= Results.length) {
       return; // Return if Results exceed out Results to Display
     }

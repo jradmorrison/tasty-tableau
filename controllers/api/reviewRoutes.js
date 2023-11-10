@@ -37,4 +37,32 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+// Add a review
+router.post('/:id', async (req, res) => {
+    try {
+        let newDate = new Date();
+
+        console.log(req.params.id);
+        
+        const reviewData = await Review.create({
+            user_id: req.session.user_id,
+            rating: req.body.rating,
+            review: req.body.review,
+            date_created: newDate,
+            recipe_id: req.params.id,
+        });
+
+        console.log(reviewData);
+
+        if (!reviewData) {
+            res.status(404).json({ message: 'Unable to add review!' });
+        }
+
+        res.status(200).json(reviewData);
+    } catch (err) {
+        // console.log(err);
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;

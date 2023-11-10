@@ -1,6 +1,8 @@
 $(function () {
   $('[data-toggle="popover"]').popover();
   $('.add-to-favorites-btn').addClass('loaded');
+  $('#review-form').toggle();
+
 
   const updateFavorites = async (event) => {
     const id = event.target.dataset.id;
@@ -32,10 +34,44 @@ $(function () {
 
   const goToLogin = () => {
     document.location.replace('/login');
-    console.trace('Click');
   };
+
+  const showReview = async (event) => {
+    event.preventDefault();
+
+    $('#show-review-form').hide();
+    $('#review-form').show();
+  }
+
+  const addReview = async (event) => {
+    event.preventDefault();
+
+    const rating = $('#rating').val();
+    const review = $('#review').val();
+    const id = $('#review-form').attr("data-id");
+
+
+    if (rating && review) {
+      const response = await fetch(`/api/reviews/${id}`, {
+        method: 'POST',
+        body: JSON.stringify({ rating, review }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+
+
+      if (response.ok) {
+        document.location.reload();
+      } else {
+        await alert('Error adding review');
+      }
+    }
+  }
 
   $('.add-to-favorites-btn').on('click', updateFavorites);
   $('.remove-from-favorites-btn').on('click', updateFavorites);
   $('#login-to-save').on('click', goToLogin);
+
+  $('#show-review-form').on('click', showReview);
+  $('#review-submit-button').on('click', addReview);
+
 });

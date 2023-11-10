@@ -1,53 +1,61 @@
-<div class='card rounded-5 my-4 p-5'>
-  <div class='d-flex flex-wrap'>
-    {{! TODO: Import the rating, display after the icon }}
-    <p class='fs-2'>{{recipe.name}}</p>
-    <p class='my-auto mx-3'><i class='fa-solid fa-star' style='color: #ffea00;'></i>{{recipe.rating}}</p>
-
-    <p class='m-auto'>By: {{recipe.user.username}}</p>
-    <div class='position-reletive' style='width:20%'>
+<div class="card rounded-5 my-4 p-3">
+  <div class="d-flex flex-wrap">
+    <p class="fs-2">{{recipe.name}}</p>
+    <p class="my-auto ms-3"><i
+        class="fa-solid fa-star"
+        style="color: #ffea00;"
+      ></i>{{recipe.rating}}</p>
+  </div>
+  <div class="d-flex flex-wrap justify-content-between">
+    <p class="my-auto">By: {{recipe.user.username}}</p>
+    <div class="">
       {{#if logged_in}}
         {{#if is_favorite}}
           <button
-            href='#'
-            class='add-to-favorites-btn btn m-auto btn-warning position-absolute left-0'
-            data-id='{{recipe.id}}'
-            data-action='DELETE'
-            data-toggle='popover'
-            title='Removed!'
-          ><i class='fa-solid fa-bookmark mx-1'></i>Remove from favorites</button>
+            href="#"
+            class="add-to-favorites-btn btn m-auto btn-warning"
+            data-id="{{recipe.id}}"
+            data-action="DELETE"
+            data-toggle="popover"
+            title="Removed!"
+          ><i class="fa-solid fa-bookmark mx-1"></i>Remove from favorites</button>
         {{else}}
           <button
-            href='#'
-            class='add-to-favorites-btn btn m-auto btn-warning position-absolute left-0'
-            data-id='{{recipe.id}}'
-            data-action='POST'
-            data-toggle='popover'
-            title='Added!'
-          ><i class='fa-regular fa-bookmark mx-1'></i>Add to favorites</button>
+            href="#"
+            class="add-to-favorites-btn btn m-auto btn-warning"
+            data-id="{{recipe.id}}"
+            data-action="POST"
+            data-toggle="popover"
+            title="Added!"
+          ><i class="fa-regular fa-bookmark mx-1"></i>Add to favorites</button>
         {{/if}}
       {{else}}
-        <button id='login-to-save' class='add-to-favorites-btn btn m-auto btn-warning position-absolute left-0'><i
-            class='fa-regular fa-bookmark mx-1'
-          ></i>Login to Save</button>
+        <button
+          id="login-to-save"
+          class="add-to-favorites-btn btn m-auto btn-warning"
+        ><i class="fa-regular fa-bookmark mx-1"></i>Login to Save</button>
       {{/if}}
     </div>
   </div>
-  <div class='d-flex flex-wrap'>
-    <p class='fw-semibold'>Tags:</p>
+  <div class="d-flex flex-wrap">
+    <p class="fw-semibold my-auto">Tags:</p>
     {{#each recipe.tags as |tag|}}
-      <p class='mx-2'>{{name}}</p>
+      <p class="mx-2 my-auto">{{name}}</p>
     {{/each}}
   </div>
   <hr />
-  <div class='d-flex flex-wrap'>
-    <div class='col-xl-6 mx-auto'>
-      <img src='{{recipe.images}}' class='card-img-top' alt='An picture of the recipe' />
+  <div class="d-flex flex-wrap">
+    <div class="col-xl-6 mx-auto">
+      <img
+        src="{{recipe.images}}"
+        class="card-img-top"
+        alt="An picture of the recipe"
+      />
     </div>
-    <div class='col-xl-5 p-3 mx-auto'>
-      <p class='card-text'>{{recipe.description}}</p>
-      <div class='d-flex'>
-        <p class='fw-semibold me-1'>Total Time required:</p>
+    <div class="col-xl-5 p-3 mx-auto">
+      <p class="card-text">{{recipe.description}}</p>
+      <div class="d-flex">
+        <p class="fw-semibold me-1">Total Time required:</p>
         <p>{{recipe.time_total}}</p>
       </div>
       <div>
@@ -58,18 +66,55 @@
         </ul>
       </div>
     </div>
-    <div class='my-3 d-flex flex-column'>
-      <p class='fw-semibold me-1'>Instructions:</p>
-      <p class=''>{{recipe.instructions}}</p>
+    <div class="my-3 d-flex flex-column">
+      <p class="fw-semibold">Instructions:</p>
+      <p class="">{{recipe.instructions}}</p>
     </div>
-    <div class='d-flex flex-column'>
-      <p class='fw-semibold'>Reviews:</p>
-      {{#each review}}
-        <div class='d-flex'>
-          <span class='fw-semibold me-1'>{{user.username}}:</span>
-          <p>{{review.review}}</p>
-        </div>
-      {{/each}}
+
+    {{! ADD review populate here }}
+    {{! Review can be added if logged in }}
+    {{! Once you click submit, the page is refreshed and the review is added to the top of the list }}
+
+    <div class="d-flex flex-wrap justify-content-between w-100">
+      <p class="fw-semibold my-auto">Reviews:</p>
+      {{#if logged_in}}
+        <button id="show-review-form" class="btn btn-primary">Write a Review</button>
+      {{else}}
+        <a href="/login"><button class="btn btn-primary">Login to leave a review</button></a>
+      {{/if}}
     </div>
+    <div id="review-form" data-id="{{recipe.id}}" class="w-100">
+      <form class="d-flex flex-column mx-auto">
+        <label for="rating">Rating:</label>
+        <select id="rating" name="rating" class="form-select">
+          <option value="1">1 star</option>
+          <option value="2">2 stars</option>
+          <option value="3" selected>3 stars</option>
+          <option value="4">4 stars</option>
+          <option value="5">5 stars</option>
+        </select>
+
+        <label for="review">Review:</label>
+        <textarea
+          id="review"
+          name="review"
+          rows="4"
+          cols="50"
+          class="form-label"
+        ></textarea>
+
+        <button
+          type="button"
+          id="review-submit-button"
+          class="btn btn-primary"
+        >Submit Review</button>
+      </form>
+    </div>
+    {{#each recipe.reviews as |review|}}
+      <div class="d-flex border-top w-100 my-2">
+        <span class="fw-semibold me-1">{{review.user.username}}:</span>
+        <p class="m-0">{{review.review}}</p>
+      </div>
+    {{/each}}
   </div>
 </div>

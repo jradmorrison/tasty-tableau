@@ -2,38 +2,21 @@ $(function () {
   const addNewRecipe = async (event) => {
     event.preventDefault();
 
+    // console.log('clicky clik');
+    // console.log(event.target.dataset.id);
+    // console.log($('#name').val());
+
     let name = $('#name').val();
-    let category_id = $('#Input-Category').val();
     let description = $('#description').val();
-    let time_total = `PT${$('time-prep-hours').val()}H${$('time-prep-minute').val()}M`;
-    let instructions = $('#instructions').val();
+    let time_total = $('time-total').val();
 
-    //Ingredients
-    let formIng = $('#Ingredient-Container').children();
-    let ingrediants = [];
-    for (const inputIng of formIng) {
-      let name = $(inputIng).children().eq(0).text().split('-');
-      let newing = {
-        ing: $(inputIng).attr('id'),
-        quantity: name[0].trim(),
-      };
-      ingrediants.push(newing);
-    }
+    console.log(name);
+    console.log(description);
 
-    //Tags
-    let tags = [];
-    for (const inputTag of alltags) {
-      tags.push(inputTag);
-    }
-
-    console.log(ingrediants, tags);
-
-    console.log(name, description, category_id);
-    if (name && description && category_id) {
-      console.log('Posting');
+    if (name && description) {
       const response = await fetch(`../api/recipes`, {
         method: 'POST',
-        body: JSON.stringify({ name, description, time_total, category_id, instructions, ingrediants, tags }),
+        body: JSON.stringify({ name, description, time_total }),
         headers: { 'Content-Type': 'application/json' },
       });
 

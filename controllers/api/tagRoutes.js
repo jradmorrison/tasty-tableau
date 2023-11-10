@@ -1,16 +1,13 @@
-router = require('express').Router();
-const { Tag, Recipe, Tag_Through, Category } = require('../../models');
-const { Op } = require('sequelize');
-
+router = require("express").Router();
+const { Tag, Recipe, Tag_Through, Category } = require("../../models");
+const { Op } = require("sequelize");
 
 // ROUTE: /api/tags
 
 // Get all tags
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const tagData = await Tag.findAll();
-
-    console.trace(tagData);
 
     res.status(200).json(tagData);
   } catch (err) {
@@ -19,7 +16,7 @@ router.get('/', async (req, res) => {
 });
 
 // Get tag by ID
-router.get('/:id', async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
     const tagData = await Tag.findbyPk(req.params.id);
 
@@ -31,10 +28,10 @@ router.get('/:id', async (req, res) => {
 
 // Returns all recipes that have 'text' in their name,
 // category, or description
-router.get('/search/:text', async (req, res) => {
+router.get("/search/:text", async (req, res) => {
   try {
     const categoryQuery = await Category.findAll({
-      attributes: ['id'],
+      attributes: ["id"],
       where: {
         name: {
           [Op.like]: `%${req.params.text}%`,
@@ -68,26 +65,24 @@ router.get('/search/:text', async (req, res) => {
       },
     });
 
-    const recipes = await recipeQuery.map(rec => rec.get({ plain: true }))
-    // console.trace(recipes[0]);
+    const recipes = await recipeQuery.map((rec) => rec.get({ plain: true }));
+
     // Grabs the first image and creates a new attribute for it
-    recipes.forEach(recipe => {
-      recipe.image = recipe.images.split(', ')[0].slice(1);
-      if (recipe.image.charAt(recipe.image.length - 1) === ']') {
+    recipes.forEach((recipe) => {
+      recipe.image = recipe.images.split(", ")[0].slice(1);
+      if (recipe.image.charAt(recipe.image.length - 1) === "]") {
         recipe.image = recipe.image.slice(0, recipe.image.length - 1);
-      };
+      }
     });
 
     res.status(200).json(recipes);
   } catch (err) {
     res.status(500).json(err);
   }
-})
-
-
+});
 
 // Create a new tag
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const tagData = await Tag.create({
       name: req.body.name,
