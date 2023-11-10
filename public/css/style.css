@@ -345,3 +345,7 @@ label #cancel {
   }
 }
 
+.checked {
+  color: orange;
+}
+
