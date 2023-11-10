@@ -17,7 +17,7 @@
 </head>
 
 <body>
-  <input type="checkbox" id="check">
+  <input type="checkbox" id="check" onchange="doTheThing(this)">
   <label for="check">
     <i class="fas fa-bars" id="btn"></i>
     <i class="fas fa-times" id="cancel"></i>
@@ -53,16 +53,16 @@
     </a>
   </div>
   {{#if logged_in}}
-  <a href='http://localhost:3001/dashboard'class='profile'>
+  <a id="profile-button-in" href='http://localhost:3001/dashboard' class='profile'>
     <div class='bar'>
-     <p>{{user}}</p>
+      <p>{{user}}</p>
     </div>
     <div class='bubble'>
       <i class="fas fa-user" id="btn"></i>
     </div>
   </a>
   {{else}}
-    <a href='http://localhost:3001/dashboard'class='profile'>
+  <a id="profile-button-out" href='http://localhost:3001/dashboard' class='profile'>
     <div class='bar'>
       <p class='login-center'>Login</p>
     </div>
@@ -70,9 +70,13 @@
   {{/if}}
 </body>
 
-<div class="container mx-auto col-8 scrolling-div">
-  {{{body}}}
+<div id="main-body"  class="overlay" style="visibility: hidden;">
+
 </div>
+  <div class="container mx-auto col-8 scrolling-div">
+    {{{body}}}
+  </div>
+
 
 
 
@@ -91,6 +95,18 @@
 <script src="/js/favorite.js"></script>
 <script src="/js/newrecipe.js"></script>
 
+<script>
+  function doTheThing(checkboxElem) {
+    if (checkboxElem.checked) {
+      document.getElementById('main-body').style.visibility = 'visible';
+
+
+    }
+    else {
+      document.getElementById('main-body').style.visibility = 'hidden';
+    }
+  };
+</script>
 
 </body>
 
