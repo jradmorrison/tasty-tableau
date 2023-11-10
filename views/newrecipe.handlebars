@@ -9,14 +9,6 @@
                 <input type="text" class="form-control" id="name" placeholder="Chicken Parmesean" required />
             </div>
             <div class="mb-3">
-                <label class="form-label">Description</label>
-                <textarea class="form-control" id="description" cols="30" rows="2" placeholder="Fried chicken breast served with red sauce and lots of melty cheese."></textarea>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Time to make</label>
-                <input type="text" class="form-control" id="time-total" placeholder="1H 30M" />
-            </div>
-            <div class="mb-3">
                 <label class="form-label">Category</label>
                 <select class="form-select" aria-label="Default select example">
                     <option selected>Choose a cateogory</option>
@@ -26,8 +18,36 @@
                 </select>
             </div>
             <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea class="form-control" id="description" cols="30" rows="2"
+                    placeholder="Fried chicken breast served with red sauce and lots of melty cheese."></textarea>
+            </div>
+
+            <div style="display: flex">
+                <div class="sm-6">
+                    <label class="form-label">Prep time</label><br>
+                    <input maxlength="4" size="4" type="text" id="time-prep-hours" placeholder="1" />
+                    <label for="time-prep-hours">H</label>
+
+                    <input maxlength="2" size="4" type="text" id="time-prep-minutes" placeholder="30" />
+                    <label for="time-prep-minutes">M</label><br>
+                </div>
+
+                <div class="sm-6">
+                    <label class="form-label">Cook time</label><br>
+                    <input maxlength="4" size="4" type="text" id="time-cook-hours" placeholder="1" />
+                    <label for="time-cook-hours">H</label>
+
+                    <input maxlength="4" size="4" type="text" id="time-cook-minutes" placeholder="30" />
+                    <label for="time-cook-minutes">M</label>
+                </div>
+            </div>
+
+
+            <div class="mb-3">
                 <label class="form-label">Instructions</label>
-                <textarea class="form-control" id="instructions" cols="30" rows="5" placeholder="Please be as detailed as possible"></textarea>
+                <textarea class="form-control" id="instructions" cols="30" rows="5"
+                    placeholder="Please be as detailed as possible"></textarea>
             </div>
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-primary" id="recipe-submit">Submit</button>
