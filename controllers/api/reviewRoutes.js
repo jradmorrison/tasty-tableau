@@ -41,12 +41,9 @@ router.get('/:id', async (req, res) => {
 router.post('/:id', async (req, res) => {
     try {
         let newDate = new Date();
-        console.trace(req.body.rating);
-        console.trace(req.body.review);
-        console.trace(req.session.user_id);
-        console.trace(req.params.id);
 
-
+        console.log(req.params.id);
+        
         const reviewData = await Review.create({
             user_id: req.session.user_id,
             rating: req.body.rating,
@@ -55,12 +52,15 @@ router.post('/:id', async (req, res) => {
             recipe_id: req.params.id,
         });
 
+        console.log(reviewData);
+
         if (!reviewData) {
             res.status(404).json({ message: 'Unable to add review!' });
         }
 
         res.status(200).json(reviewData);
     } catch (err) {
+        // console.log(err);
         res.status(500).json(err);
     }
 });

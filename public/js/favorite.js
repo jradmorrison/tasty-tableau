@@ -38,35 +38,31 @@ $(function () {
 
   const showReview = async (event) => {
     event.preventDefault();
-    console.log('clickl ckcl');
 
-    $('#show-review-form').toggle();
-    $('#review-form').toggle();
+    $('#show-review-form').hide();
+    $('#review-form').show();
   }
 
   const addReview = async (event) => {
     event.preventDefault();
-    // console.log('clickl ckcl');
 
     const rating = $('#rating').val();
     const review = $('#review').val();
     const id = $('#review-form').attr("data-id");
 
+
     if (rating && review) {
-      const response = await fetch(`../api/reviews/${id}`, {
+      const response = await fetch(`/api/reviews/${id}`, {
         method: 'POST',
         body: JSON.stringify({ rating, review }),
         headers: { 'Content-Type': 'application/json' },
       });
 
-      const data = await response.json();
-
-      console.log(data);
 
       if (response.ok) {
         document.location.reload();
       } else {
-        await alert('Error adding recipe');
+        await alert('Error adding review');
       }
     }
   }

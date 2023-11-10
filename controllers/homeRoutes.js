@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { Category, Recipe, User, Tag, Macros, Favorite, Ingredient, Ingredients_Through } = require('../models');
+const { Category, Recipe, User, Tag, Macros, Favorite, Ingredient, Ingredients_Through, Review } = require('../models');
 const { findAll } = require('../models/user');
 
 const withAuth = require('../utils/auth');
@@ -72,6 +72,12 @@ router.get('/recipes/:id', async (req, res) => {
           model: User,
           attributes: ['username'],
         },
+        {
+          model: Review,
+          include: [{
+            model: User,
+          }]
+        }
       ],
     });
 
@@ -114,7 +120,7 @@ router.get('/recipes/:id', async (req, res) => {
 
 
     recipe.instructions = recipe.instructions.slice(1, -1);
-
+  
     res.render('recipe', {
       recipe,
       ingredients,
