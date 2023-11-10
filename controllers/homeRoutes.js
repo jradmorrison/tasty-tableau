@@ -46,9 +46,6 @@ router.get('/', async (req, res) => {
 
     });
 
-
-    // console.trace(cards);
-
     res.render('homepage', {
       cards,
       logged_in: req.session.logged_in,
@@ -62,7 +59,6 @@ router.get('/', async (req, res) => {
 // Get recipe by ID
 router.get('/recipes/:id', async (req, res) => {
   try {
-    console.trace('test1');
     const recipeData = await Recipe.findByPk(req.params.id, {
       include: [
         {
@@ -118,8 +114,6 @@ router.get('/recipes/:id', async (req, res) => {
 
 
     recipe.instructions = recipe.instructions.slice(1, -1);
-    // console.log(favorite);
-    console.trace(recipe.reviews);
 
     res.render('recipe', {
       recipe,
@@ -129,7 +123,6 @@ router.get('/recipes/:id', async (req, res) => {
       is_favorite: favorite,
     });
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -222,17 +215,14 @@ router.get('/team', async (req, res) => {
 
 router.get('/newrecipe', withAuth, async (req, res) => {
   try {
-    // console.trace(req.session.logged_in);
     const categoryData = await Category.findAll();
 
     // const cards = cardData.map((card) => card.get({ plain: true }));
 
     const categories = categoryData.map((recipe) => recipe.get({ plain: true }));
-    console.trace(categories);
 
     // Sort alphabetically by name
     categories.sort((a, b) => (a.name < b.name ? -1 : 1));
-    console.trace(categories);
 
     res.render('newrecipe', {
       categories,

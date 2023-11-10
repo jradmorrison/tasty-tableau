@@ -34,7 +34,6 @@ $(function () {
 
   const goToLogin = () => {
     document.location.replace('/login');
-    console.trace('Click');
   };
 
   const showReview = async (event) => {
