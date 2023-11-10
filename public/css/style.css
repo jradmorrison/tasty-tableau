@@ -138,6 +138,10 @@ label #cancel {
   left: 0;
 }
 
+#check:checked ~ body {
+  opacity: 0.5;
+}
+
 #check:checked ~ label #btn {
   margin-left: 245px;
   opacity: 0;
@@ -148,6 +152,18 @@ label #cancel {
   margin-left: 245px;
   opacity: 1;
   visibility: visible;
+}
+
+.overlay {
+  background-color: black;
+  opacity: 0.5;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
 }
 
 #maincard {
@@ -286,6 +302,7 @@ label #cancel {
   color: white;
 }
 
+
 @media (max-width: 860px) {
   .sidebar {
     height: auto;
@@ -327,3 +344,4 @@ label #cancel {
     visibility: visible;
   }
 }
+
