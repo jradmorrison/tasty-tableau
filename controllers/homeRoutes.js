@@ -11,8 +11,6 @@ const formatRecipe = require('../utils/formatRecipe');
 
 // ROUTE: /
 
-
-
 // GET ROUTES for all views
 // Home
 router.get('/', async (req, res) => {
@@ -37,13 +35,11 @@ router.get('/', async (req, res) => {
       }
 
       if (!card.time_total.startsWith('PT')) {
-        card.time_total = 'Cook time not available'
-      }
-      else {
+        card.time_total = 'Cook time not available';
+      } else {
         card.time_total = card.time_total.slice(2);
         card.time_total = formatTime(card.time_total);
       }
-
     });
 
     res.render('homepage', {
@@ -74,10 +70,12 @@ router.get('/recipes/:id', async (req, res) => {
         },
         {
           model: Review,
-          include: [{
-            model: User,
-          }]
-        }
+          include: [
+            {
+              model: User,
+            },
+          ],
+        },
       ],
     });
 
@@ -111,16 +109,14 @@ router.get('/recipes/:id', async (req, res) => {
       recipe.images = recipe.images.slice(0, recipe.images.length - 1);
     }
     if (!recipe.time_total.startsWith('PT')) {
-      recipe.time_total = 'Cook time not available'
-    }
-    else {
+      recipe.time_total = 'Cook time not available';
+    } else {
       recipe.time_total = recipe.time_total.slice(2);
       recipe.time_total = formatTime(recipe.time_total);
     }
 
-
     recipe.instructions = recipe.instructions.slice(1, -1);
-  
+
     res.render('recipe', {
       recipe,
       ingredients,
@@ -161,9 +157,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
         recipe.image = recipe.image.slice(0, recipe.image.length - 1);
       }
       if (!recipe.time_total.startsWith('PT') || recipe.time_total == 'PT0S') {
-        recipe.time_total = 'Cook time not available'
-      }
-      else {
+        recipe.time_total = 'Cook time not available';
+      } else {
         recipe.time_total = recipe.time_total.slice(2);
         recipe.time_total = formatTime(recipe.time_total);
       }
@@ -175,12 +170,11 @@ router.get('/dashboard', withAuth, async (req, res) => {
         favorite.recipe.image = favorite.recipe.image.slice(0, favorite.recipe.image.length - 1);
       }
       if (!favorite.recipe.time_total.startsWith('PT')) {
-        favorite.recipe.time_total = 'Cook time not available'
+        favorite.recipe.time_total = 'Cook time not available';
       } else {
         favorite.recipe.time_total = favorite.recipe.time_total.slice(2);
         favorite.recipe.time_total = formatTime(favorite.recipe.time_total);
       }
-
     });
 
     userRecipes.reverse();
@@ -222,16 +216,23 @@ router.get('/team', async (req, res) => {
 router.get('/newrecipe', withAuth, async (req, res) => {
   try {
     const categoryData = await Category.findAll();
-
-    // const cards = cardData.map((card) => card.get({ plain: true }));
-
-    const categories = categoryData.map((recipe) => recipe.get({ plain: true }));
-
-    // Sort alphabetically by name
+    let categories = categoryData.map((recipe) => recipe.get({ plain: true }));
     categories.sort((a, b) => (a.name < b.name ? -1 : 1));
+    categories = categories.slice(4);
+
+    const ingredientData = await Ingredient.findAll();
+    let ingredients = ingredientData.map((ing) => ing.get({ plain: true }));
+    ingredients.sort((a, b) => (a.name < b.name ? -1 : 1));
+    ingredients = ingredients.slice(1);
+
+    const tagData = await Tag.findAll();
+    const tags = tagData.map((tag) => tag.get({ plain: true }));
+    tags.sort((a, b) => (a.name < b.name ? -1 : 1));
 
     res.render('newrecipe', {
       categories,
+      ingredients,
+      tags,
       logged_in: req.session.logged_in,
       user: req.session.username,
     });
