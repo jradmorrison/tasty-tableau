@@ -179,20 +179,24 @@ router.get('/team', async (req, res) => {
 
 router.get('/newrecipe', withAuth, async (req, res) => {
   try {
-    // console.trace(req.session.logged_in);
     const categoryData = await Category.findAll();
-
-    // const cards = cardData.map((card) => card.get({ plain: true }));
-
-    const categories = categoryData.map((recipe) => recipe.get({ plain: true }));
-    console.trace(categories);
-
-    // Sort alphabetically by name
+    let categories = categoryData.map((recipe) => recipe.get({ plain: true }));
     categories.sort((a, b) => (a.name < b.name ? -1 : 1));
-    console.trace(categories);
+    categories = categories.slice(4);
+
+    const ingredientData = await Ingredient.findAll();
+    let ingredients = ingredientData.map((ing) => ing.get({ plain: true }));
+    ingredients.sort((a, b) => (a.name < b.name ? -1 : 1));
+    ingredients = ingredients.slice(1);
+
+    const tagData = await Tag.findAll();
+    const tags = tagData.map((tag) => tag.get({ plain: true }));
+    tags.sort((a, b) => (a.name < b.name ? -1 : 1));
 
     res.render('newrecipe', {
       categories,
+      ingredients,
+      tags,
       logged_in: req.session.logged_in,
       user: req.session.username,
     });

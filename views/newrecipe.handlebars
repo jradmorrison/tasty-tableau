@@ -1,57 +1,153 @@
-<div class="d-flex flex-column col-md-8 col-xxl-6 mx-auto my-5 rounded-4 border border-dark">
-    <div class="p-1">
-        <h2 class="text-center">Submit a new recipe</h2>
-    </div>
-    <div class="p-4">
-        <form id="new-recipe">
-            <div class="mb-3">
-                <label class="form-label">Title</label>
-                <input type="text" class="form-control" id="name" placeholder="Chicken Parmesean" required />
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Category</label>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Choose a cateogory</option>
-                    {{#each categories as |category| }}
-                    <option value="{{category.id}}">{{category.name}}</option>
-                    {{/each}}
-                </select>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Description</label>
-                <textarea class="form-control" id="description" cols="30" rows="2"
-                    placeholder="Fried chicken breast served with red sauce and lots of melty cheese."></textarea>
-            </div>
+<div class='d-flex flex-column col-md-8 col-xxl-6 mx-auto my-5 rounded-4 border border-dark'>
+  <div class='p-1'>
+    <h2 class='text-center'>Submit a new recipe</h2>
+  </div>
+  <div class='p-4'>
+    <form id='new-recipe'>
+      <div class='mb-3'>
+        <label class='form-label'>Title</label>
+        <input type='text' class='form-control' id='name' placeholder='Chicken Parmesean' required />
+      </div>
+      <div class='mb-3'>
+        <label class='form-label'>Category</label>
+        <select id='Input-Category' class='form-select' aria-label='Default select example'>
+          <option selected>Choose a cateogory</option>
+          {{#each categories as |category|}}
+            <option value='{{category.id}}'>{{category.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class='mb-3'>
+        <label class='form-label'>Description</label>
+        <textarea
+          class='form-control'
+          id='description'
+          cols='30'
+          rows='2'
+          placeholder='Fried chicken breast served with red sauce and lots of melty cheese.'
+        ></textarea>
+      </div>
 
-            <div style="display: flex">
-                <div class="sm-6">
-                    <label class="form-label">Prep time</label><br>
-                    <input maxlength="4" size="4" type="text" id="time-prep-hours" placeholder="1" />
-                    <label for="time-prep-hours">H</label>
+      <div class='mb-3'>
+        <div class='sm-6 d-flex justify-content-between'>
+          <label class='form-label'>Total time</label><br />
+          <div>
+            <input maxlength='4' size='4' type='text' id='time-prep-hours' placeholder='1' />
+            <label for='time-prep-hours'>H</label>
+          </div>
 
-                    <input maxlength="2" size="4" type="text" id="time-prep-minutes" placeholder="30" />
-                    <label for="time-prep-minutes">M</label><br>
-                </div>
+          <div>
+            <input maxlength='2' size='4' type='text' id='time-prep-minutes' placeholder='30' />
+            <label for='time-prep-minutes'>M</label><br />
+          </div>
+        </div>
+      </div>
 
-                <div class="sm-6">
-                    <label class="form-label">Cook time</label><br>
-                    <input maxlength="4" size="4" type="text" id="time-cook-hours" placeholder="1" />
-                    <label for="time-cook-hours">H</label>
+      <div class='mb-3'>
+        <label class='form-label'>Instructions</label>
+        <textarea
+          class='form-control'
+          id='instructions'
+          cols='30'
+          rows='5'
+          placeholder='Please be as detailed as possible'
+        ></textarea>
+      </div>
 
-                    <input maxlength="4" size="4" type="text" id="time-cook-minutes" placeholder="30" />
-                    <label for="time-cook-minutes">M</label>
-                </div>
-            </div>
+      {{! Ingredients }}
+      <div class='mb-3 d-flex gap-3'>
+        <div class='col-6'>
+          <label class='form-label'>Ingredient</label>
+          <select id='Input-Ingredient' class='form-select' aria-label='Default select example'>
+            <option selected disabled>Ingredient</option>
+            {{#each ingredients as |ing|}}
+              <option value='{{ing.id}}'>{{ing.name}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class='col-4'>
+          <label class='form-label col-12'>Amount</label>
+          <div class='d-flex gap-1 col-12'>
+            <input id='Input-Quantity' class='col-4' maxlength='4' size='4' type='text' id='time-prep-hours' placeholder='1' />
+            <select id='Input-Unit' class='form-select col-8' aria-label='Default select example'>
+              <option selected disabled>Measurement</option>
 
+              <!-- Volume Options -->
+              <optgroup label='Default'>
+                <option value='none'>No Measurement</option>
+              </optgroup>
 
-            <div class="mb-3">
-                <label class="form-label">Instructions</label>
-                <textarea class="form-control" id="instructions" cols="30" rows="5"
-                    placeholder="Please be as detailed as possible"></textarea>
-            </div>
-            <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary" id="recipe-submit">Submit</button>
-            </div>
-        </form>
-    </div>
+              <optgroup label='Volume'>
+                <option value='tsp'>Teaspoon</option>
+                <option value='tbsp'>Tablespoon</option>
+                <option value='fl-oz'>Fluid Ounce</option>
+                <option value='c'>Cup</option>
+                <option value='pt'>Pint</option>
+                <option value='qt'>Quart</option>
+                <option value='gal'>Gallon</option>
+                <option value='ml'>Milliliter</option>
+                <option value='l'>Liter</option>
+              </optgroup>
+
+              <!-- Weight Options -->
+              <optgroup label='Weight'>
+                <option value='oz'>Ounce</option>
+                <option value='lb'>Pound</option>
+              </optgroup>
+
+              <!-- Dry Options -->
+              <optgroup label='Dry'>
+                <option value='pinch'>Pinch</option>
+                <option value='dash'>Dash</option>
+                <option value='drop'>Drop</option>
+                <option value='c'>Cup</option>
+                <option value='pt'>Pint</option>
+                <option value='qt'>Quart</option>
+              </optgroup>
+
+              <!-- Count Options -->
+              <optgroup label='Count'>
+                <option value='ea'>Each</option>
+                <option value='doz'>Dozen</option>
+              </optgroup>
+
+              <!-- Miscellaneous Options -->
+              <optgroup label='Miscellaneous'>
+                <option value='package'>Package</option>
+                <option value='can'>Can</option>
+                <option value='jar'>Jar</option>
+                <option value='slice'>Slice</option>
+                <option value='wedge'>Wedge</option>
+                <option value='clove'>Clove</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <button id='Ingredient-Button' class='col-12 btn btn-info' type='button' style='border-radius: 5px;'>Add</button>
+      <div id='Ingredient-Container' class='m-3 p-3' style='border-top: 3px solid #D9D9D9;'>
+      </div>
+      {{! Tags }}
+      <div class='mb-3 d-flex gap-3'>
+        <div class='col-12'>
+          <label class='form-label'>Tag</label>
+          <select id='Input-Tag' class='form-select' aria-label='Default select example'>
+            <option selected disabled>Select Tag</option>
+            {{#each tags as |tag|}}
+              <option value='{{tag.id}}'>{{tag.name}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+      <button id='Tag-Button' class='col-12 btn btn-info' type='button' style='border-radius: 5px;'>Add</button>
+      <div id='Tag-Container' class='m-3 p-3' style='border-top: 3px solid #D9D9D9;'>
+      </div>
+
+      <div class='d-flex justify-content-center'>
+        <button type='submit' class='btn btn-primary' id='recipe-submit'>Submit</button>
+      </div>
+
+    </form>
+  </div>
 </div>
