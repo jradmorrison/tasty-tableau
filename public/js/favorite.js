@@ -11,6 +11,10 @@ $(function () {
         body: '',
         headers: { 'Content-Type': 'application/json' },
       });
+
+      if ((event.target.dataset.action = 'POST')) {
+        // Send Email to recipe.id.author .getuser email
+      }
       // Hide the button
       $(event.target).hide();
 
@@ -26,6 +30,12 @@ $(function () {
     }
   };
 
+  const goToLogin = () => {
+    document.location.replace('/login');
+    console.trace('Click');
+  };
+
   $('.add-to-favorites-btn').on('click', updateFavorites);
   $('.remove-from-favorites-btn').on('click', updateFavorites);
+  $('#login-to-save').on('click', goToLogin);
 });
