@@ -13,7 +13,7 @@ const { Op } = require('sequelize');
 router.get('/', async (req, res) => {
   try {
     const cardData = await Recipe.findAll({
-      where: { category_id: 6 },
+      where: { category_id: 7 },
       include: { model: User, attributes: ['username'] },
     });
 
