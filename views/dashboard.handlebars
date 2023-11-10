@@ -4,6 +4,15 @@
 </div>
 
 
+<div>
+    <p class="fs-4">Your Favorites:</p>
+    <div class="d-flex flex-wrap">
+        {{#each favorites as |favorite|}}
+        {{>favorite-preview}}
+        {{/each}}
+    </div>
+</div>
+
 
 <div>
     <p class="fs-4">Your Recipes:</p>
@@ -15,11 +24,3 @@
     </div>
 </div>
 
-<div>
-    <p class="fs-4">Your Favorites:</p>
-    <div class="d-flex flex-wrap">
-        {{#each favorites as |favorite|}}
-        {{>favorite-preview}}
-        {{/each}}
-    </div>
-</div>

@@ -1,6 +1,8 @@
 $(function () {
   $('[data-toggle="popover"]').popover();
   $('.add-to-favorites-btn').addClass('loaded');
+  $('#review-form').toggle();
+
 
   const updateFavorites = async (event) => {
     const id = event.target.dataset.id;
@@ -35,7 +37,17 @@ $(function () {
     console.trace('Click');
   };
 
+  const showReview = async (event) => {
+    event.preventDefault();
+    console.log('clickl ckcl');
+
+    $('#show-review-form').toggle();
+    $('#review-form').toggle();
+  }
+
   $('.add-to-favorites-btn').on('click', updateFavorites);
   $('.remove-from-favorites-btn').on('click', updateFavorites);
   $('#login-to-save').on('click', goToLogin);
+
+  $('#show-review-form').on('click', showReview);
 });

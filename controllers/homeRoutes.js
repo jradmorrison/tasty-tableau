@@ -7,6 +7,7 @@ const withAuth = require('../utils/auth');
 const { Op } = require('sequelize');
 
 const formatTime = require('../utils/formatTime');
+const formatRecipe = require('../utils/formatRecipe');
 
 // ROUTE: /
 
@@ -117,7 +118,9 @@ router.get('/recipes/:id', async (req, res) => {
 
 
     recipe.instructions = recipe.instructions.slice(1, -1);
-    console.log(favorite);
+    // console.log(favorite);
+    console.trace(recipe.reviews);
+
     res.render('recipe', {
       recipe,
       ingredients,
@@ -165,8 +168,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
         recipe.time_total = recipe.time_total.slice(2);
         recipe.time_total = formatTime(recipe.time_total);
       }
-
     });
+
     favorites.forEach((favorite) => {
       favorite.recipe.image = favorite.recipe.images.split(', ')[0].slice(1);
       if (favorite.recipe.image.charAt(favorite.recipe.image.length - 1) === ']') {
@@ -247,6 +250,7 @@ router.get('/login', (req, res) => {
     res.redirect('/dashboard');
     return;
   }
+
   res.render('login');
 });
 
