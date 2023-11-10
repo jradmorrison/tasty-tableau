@@ -31,14 +31,11 @@ router.get('/', async (req, res) => {
 // Get recipes by user ID
 router.get('/user/:id', async (req, res) => {
   try {
-    // console.trace(req.body.user_id);
     const recipeData = await Recipe.findAll({
       where: {
         user_id: req.params.id,
       },
     });
-
-    console.trace(recipeData);
 
     if (!recipeData) {
       res.status(404).json({ message: `No recipes found for user with id: ${id}.` });
@@ -54,7 +51,6 @@ router.get('/user/:id', async (req, res) => {
 // Get recipe by ID
 router.get('/:id', async (req, res) => {
   try {
-    console.log(req.params.id);
     const recipeData = await Recipe.findByPk(req.params.id, {
       // include: [
       //   {
@@ -79,14 +75,6 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', withAuth, async (req, res) => {
   try {
-    // console.trace(req.body.name);
-    // console.trace(req.body.description);
-    // console.trace(req.body.date_created);
-    // console.trace(req.body.user_id);
-
-    // console.trace(req.session.user_id);
-    // console.trace(req.body.name);
-
     let newDate = new Date();
 
     const recipeData = await Recipe.create({

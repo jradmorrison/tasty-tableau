@@ -3,7 +3,7 @@ const { Macros } = require('../../models');
 
 // ROUTE: /api/macros
 
-// // Get all macros
+// Get all macros
 router.get('/', async (req, res) => {
     try {
         const macroData = await Macros.findAll();
@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// // Get macro by ID
+// Get macro by ID
 router.get('/:id', async (req, res) => {
     try {
         const macroData = await Macros.findbyPk(req.params.id);

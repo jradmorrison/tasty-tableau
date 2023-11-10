@@ -32,7 +32,6 @@ $(function () {
 
   const goToLogin = () => {
     document.location.replace('/login');
-    console.trace('Click');
   };
 
   $('.add-to-favorites-btn').on('click', updateFavorites);
