@@ -1,11 +1,12 @@
-<div class="mt-5">
+<div class="d-flex justify-content-between mt-5">
     <p class="fs-2">Your Dashboard</p>
+    <a href="/newrecipe" class="btn btn-success my-auto">Add a new recipe</a>
 </div>
 
-<a href="/newrecipe">Click to add a new recipe</a>
+
 
 <div>
-    <p>Your Recipes:</p>
+    <p class="fs-4">Your Recipes:</p>
     <div class="d-flex flex-wrap">
         {{#each userRecipes as |recipe|}}
         {{>recipe-preview}}
@@ -15,7 +16,7 @@
 </div>
 
 <div>
-    <p>Your Favorites:</p>
+    <p class="fs-4">Your Favorites:</p>
     <div class="d-flex flex-wrap">
         {{#each favorites as |favorite|}}
         {{>favorite-preview}}
