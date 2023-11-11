@@ -13,6 +13,7 @@ const {
 } = require('../models');
 
 const recipesData = require('./database/recipes_1000.json');
+const reviewData = require('./database/reviews_1000.json');
 
 const getUsers = () => {
   let users = [];
@@ -246,6 +247,41 @@ const getRecipeIngredients = async () => {
   return IngredientList;
 };
 
+const getReviews = async (recipes, users) => {
+  try {
+    let allReviews = [];
+
+    let ourUsers = await Promise.all(users.map((instance) => instance.get()));
+    let ourRecipes = await Promise.all(recipes.map((instance) => instance.get()));
+
+    for (const review of reviewData.reviews_sanitized) {
+      const username = ourUsers.find((user) => user.username === review.AuthorName.toLowerCase());
+      const recipeSeed = recipesData.recipes_sanitized.findIndex((rec) => rec.RecipeId === review.RecipeId);
+      const recipeID = ourRecipes.find((rec) => rec.seed === recipeSeed);
+      if (username) {
+        const newReview = {
+          user_id: username.id,
+          rating: review.Rating,
+          review: review.Review,
+          date_created: review.DateSubmitted,
+          recipe_id: recipeID.id,
+          // Add other properties based on reviewData or anything else
+        };
+
+        allReviews.push(newReview);
+      } else {
+        console.warn(`User not found for review with AuthorName: ${review.AuthorName}`);
+      }
+    }
+
+    console.log(allReviews);
+    return allReviews;
+  } catch (error) {
+    console.error('Error in getReviews:', error);
+    throw error;
+  }
+};
+
 const getIngredientByValue = async (value) => {
   try {
     const ing_id = await Ingredient.findOne({
@@ -307,6 +343,7 @@ const seedDatabase = async () => {
 
     Ingredient.bulkCreate(allIngredients, {}),
   ]);
+
   const [allRecipes] = await Promise.all([getRecipes()]);
   const recipe = await Recipe.bulkCreate(allRecipes, {});
   const [allMacros] = await Promise.all([getMacros()]);
@@ -316,49 +353,9 @@ const seedDatabase = async () => {
     Ingredients_Through.bulkCreate(allRecipesIngredients, {}),
     Tag_Through.bulkCreate(allThroughTags, {}),
   ]);
-  // const users = await User.bulkCreate(allUsers, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
 
-  // const categories = await Category.bulkCreate(allCategories, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
-
-  // const tag = await Tag.bulkCreate(allTags, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
-
-  // const ing = await Ingredient.bulkCreate(allIngredients, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
-
-  // let allRecipes = await getRecipes();
-
-  // console.log(throughTags);
-
-  // let allMacros = await getMacros();
-
-  // const macros = await Macros.bulkCreate(allMacros, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
-
-  // let allRecipesIngredients = await getRecipeIngredients();
-  // const ingrediants = await Ingredients_Through.bulkCreate(allRecipesIngredients, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
-
-  // // let allThroughTags = await linkThroughTags();
-  // const throughTags = await Tag_Through.bulkCreate(allThroughTags, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
-  // console.log(allRecipesIngredients);
+  const allReviews = await getReviews(recipe, users);
+  const review = await Review.bulkCreate(allReviews, {});
   process.exit(0);
 };
 
@@ -370,6 +367,3 @@ let allUsers = getUsers(); //Done
 let throughTags = [];
 
 seedDatabase();
-
-//TODO Connect ThroughTags using i
-//TODO Connect Macros using i
