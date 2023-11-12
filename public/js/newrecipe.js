@@ -2,10 +2,6 @@ $(function () {
   const addNewRecipe = async (event) => {
     event.preventDefault();
 
-    // console.log('clicky clik');
-    // console.log(event.target.dataset.id);
-    // console.log($('#name').val());
-
     let name = $('#name').val();
     let description = $('#description').val();
     let time_total = $('time-total').val();

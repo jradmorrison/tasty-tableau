@@ -1,7 +1,6 @@
 const findTagRecipes = async (search) => {
   if (search) {
     const response = await fetch(`/api/tags/search/${search}`);
-
     const data = await response.json();
 
     UpdateDropdown(data, 10);

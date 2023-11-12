@@ -14,6 +14,9 @@ const {
 
 const recipesData = require('./database/recipes_1000.json');
 
+//=============================================================
+//                      Core Database
+//=============================================================
 const getUsers = () => {
   let users = [];
   for (const recipe of recipesData.recipes_sanitized) {
@@ -68,48 +71,29 @@ const getTags = () => {
   return tags;
 };
 
-const getRecipes = async () => {
-  let Recipes = [];
-  for (let i = 0; i < recipesData.recipes_sanitized.length; i++) {
-    const recipe = recipesData.recipes_sanitized[i];
-    let servings = recipe.RecipeServings == '' ? 0 : recipe.RecipeServings;
-    let rating = recipe.AggregatedRating == 'No Rating' ? 0 : parseFloat(recipe.AggregatedRating);
-    let user_id = await getAuthorId(recipe.AuthorName);
-    const newRecipe = {
-      name: recipe.Name,
-      user_id: user_id,
-      time_cook: recipe.CookTime,
-      time_prep: recipe.PrepTime,
-      time_total: recipe.TotalTime,
-      date_created: recipe.DatePublished,
-      description: recipe.Description,
-      images: recipe.Images,
-      category_id: await getCategoryId(recipe.RecipeCategory),
-      rating: rating,
-      servings: servings,
-      yield: recipe.RecipeYield,
-      instructions: recipe.RecipeInstructions,
-      seed: i,
-    };
-
-    console.log(newRecipe);
-    Recipes.push(newRecipe);
-
-    //Through Tags
-    let recipeTags = recipe.Keywords.slice(1, -1)
+const getIngredients = () => {
+  let Ingredients = [];
+  for (const recipe of recipesData.recipes_sanitized) {
+    let recipeIngredients = recipe.RecipeIngredientParts.slice(1, -1)
       .split(',')
       .map((keyword) => keyword.trim());
-    for (const t of recipeTags) {
-      const newTag = {
-        recipe_id: i,
-        tag_id: await getTagId(t),
-      };
-      throughTags.push(newTag);
+    for (const i of recipeIngredients) {
+      const ingrediantExists = Ingredients.some((ing) => ing.name === i);
+
+      if (!ingrediantExists) {
+        const newIng = {
+          name: i,
+        };
+        Ingredients.push(newIng);
+      }
     }
   }
-  return Recipes;
+  return Ingredients;
 };
 
+//=============================================================
+//                      Helper
+//=============================================================
 const getAuthorId = async (author) => {
   try {
     const user_id = await User.findOne({
@@ -164,6 +148,9 @@ const getTagId = async (tag) => {
   }
 };
 
+//=============================================================
+//                      Core Async
+//=============================================================
 const getMacros = async () => {
   let Macros = [];
   for (let i = 0; i < recipesData.recipes_sanitized.length; i++) {
@@ -187,24 +174,46 @@ const getMacros = async () => {
   return Macros;
 };
 
-const getIngredients = () => {
-  let Ingredients = [];
-  for (const recipe of recipesData.recipes_sanitized) {
-    let recipeIngredients = recipe.RecipeIngredientParts.slice(1, -1)
+const getRecipes = async (users) => {
+  let Recipes = [];
+  for (let i = 0; i < recipesData.recipes_sanitized.length; i++) {
+    const recipe = recipesData.recipes_sanitized[i];
+    let servings = recipe.RecipeServings == '' ? 0 : recipe.RecipeServings;
+    let rating = recipe.AggregatedRating == 'No Rating' ? 0 : parseFloat(recipe.AggregatedRating);
+    let user_id = await getAuthorId(recipe.AuthorName, users);
+    const newRecipe = {
+      name: recipe.Name,
+      user_id: user_id,
+      time_cook: recipe.CookTime,
+      time_prep: recipe.PrepTime,
+      time_total: recipe.TotalTime,
+      date_created: recipe.DatePublished,
+      description: recipe.Description,
+      images: recipe.Images,
+      category_id: await getCategoryId(recipe.RecipeCategory),
+      rating: rating,
+      servings: servings,
+      yield: recipe.RecipeYield,
+      instructions: recipe.RecipeInstructions,
+      seed: i,
+    };
+
+    console.log(newRecipe);
+    Recipes.push(newRecipe);
+
+    //Through Tags
+    let recipeTags = recipe.Keywords.slice(1, -1)
       .split(',')
       .map((keyword) => keyword.trim());
-    for (const i of recipeIngredients) {
-      const ingrediantExists = Ingredients.some((ing) => ing.name === i);
-
-      if (!ingrediantExists) {
-        const newIng = {
-          name: i,
-        };
-        Ingredients.push(newIng);
-      }
+    for (const t of recipeTags) {
+      const newTag = {
+        recipe_id: i,
+        tag_id: await getTagId(t),
+      };
+      throughTags.push(newTag);
     }
   }
-  return Ingredients;
+  return Recipes;
 };
 
 const getRecipeIngredients = async () => {
@@ -290,12 +299,10 @@ const linkThroughTags = async () => {
 };
 
 const seedDatabase = async () => {
+  // INITILIZE
   await sequelize.sync({ force: true });
 
-  console.log('====================================================');
-  console.log(' DATABASE SYNCED');
-  console.log('====================================================');
-
+  //SEED STATIC CORE
   const [users, categories, tag, ing] = await Promise.all([
     User.bulkCreate(allUsers, {
       individualHooks: true,
@@ -307,8 +314,12 @@ const seedDatabase = async () => {
 
     Ingredient.bulkCreate(allIngredients, {}),
   ]);
-  const [allRecipes] = await Promise.all([getRecipes()]);
+
+  //SEED RECIPES
+  const [allRecipes] = await Promise.all([getRecipes(users)]);
   const recipe = await Recipe.bulkCreate(allRecipes, {});
+
+  //SEED ALT TABLES
   const [allMacros] = await Promise.all([getMacros()]);
   const [allRecipesIngredients, allThroughTags] = await Promise.all([getRecipeIngredients(), linkThroughTags()]);
   const [macros, ingrediants, throughTags] = await Promise.all([
@@ -316,53 +327,12 @@ const seedDatabase = async () => {
     Ingredients_Through.bulkCreate(allRecipesIngredients, {}),
     Tag_Through.bulkCreate(allThroughTags, {}),
   ]);
-  // const users = await User.bulkCreate(allUsers, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
-
-  // const categories = await Category.bulkCreate(allCategories, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
-
-  // const tag = await Tag.bulkCreate(allTags, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
-
-  // const ing = await Ingredient.bulkCreate(allIngredients, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
-
-  // let allRecipes = await getRecipes();
-
-  // console.log(throughTags);
-
-  // let allMacros = await getMacros();
-
-  // const macros = await Macros.bulkCreate(allMacros, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
-
-  // let allRecipesIngredients = await getRecipeIngredients();
-  // const ingrediants = await Ingredients_Through.bulkCreate(allRecipesIngredients, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
-
-  // // let allThroughTags = await linkThroughTags();
-  // const throughTags = await Tag_Through.bulkCreate(allThroughTags, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
-  // console.log(allRecipesIngredients);
   process.exit(0);
 };
 
-//=============== LOGIC ==============
+//=============================================================
+//                     Running Logic
+//=============================================================
 let allCategories = getCategories(); //Done
 let allTags = getTags(); //Done
 let allIngredients = getIngredients(); //Done
@@ -370,6 +340,3 @@ let allUsers = getUsers(); //Done
 let throughTags = [];
 
 seedDatabase();
-
-//TODO Connect ThroughTags using i
-//TODO Connect Macros using i

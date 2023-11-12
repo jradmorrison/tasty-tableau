@@ -180,7 +180,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
       }
     });
 
-
     favorites.forEach((favorite) => {
       favorite.recipe.image = favorite.recipe.images.split(', ')[0].slice(1);
       if (favorite.recipe.image.charAt(favorite.recipe.image.length - 1) === ']') {
@@ -199,7 +198,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     userRecipes.reverse();
     console.trace(userRecipes);
-
 
     res.render('dashboard', {
       userRecipes,
@@ -296,7 +294,7 @@ router.get('/brandonbarnes', (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-})
+});
 
 router.get('/jaredmorrison', (req, res) => {
   try {
@@ -304,7 +302,7 @@ router.get('/jaredmorrison', (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-})
+});
 
 router.get('*', (req, res) => {
   try {
