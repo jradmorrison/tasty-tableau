@@ -17,7 +17,7 @@
 </head>
 
 <body>
-  <input type="checkbox" id="check" onchange="doTheThing(this)">
+  <input type="checkbox" id="check" onchange="dimMainScreen(this)">
   <label for="check">
     <i class="fas fa-bars" id="btn"></i>
     <i class="fas fa-times" id="cancel"></i>
@@ -100,7 +100,7 @@
 </style>
 
 <script>
-  function doTheThing(checkboxElem) {
+  function dimMainScreen(checkboxElem) {
     if (checkboxElem.checked) {
       document.getElementById('main-body').style.visibility = 'visible';
 
