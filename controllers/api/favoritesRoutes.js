@@ -1,5 +1,16 @@
 router = require('express').Router();
-const { Favorite } = require('../../models');
+require('dotenv').config();
+const nodemailer = require('nodemailer');
+const { Favorite, Recipe, User } = require('../../models');
+const session = require('express-session');
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.MAILER_EMAIL,
+    pass: process.env.MAILER_PASSWORD,
+  },
+});
 
 // ROUTE: /api/favorites
 
@@ -26,9 +37,50 @@ router.get('/:id', async (req, res) => {
 // POST a new favorite
 router.post('/user/:id', async (req, res) => {
   try {
+    console.trace('TEST ============================');
     const favoritesData = await Favorite.create({
       recipe_id: req.params.id,
       user_id: req.session.user_id,
+    });
+    console.trace('TEST ============================');
+    const recipeData = await Recipe.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+        },
+      ],
+    });
+
+    let recipe = recipeData.get({ plain: true });
+
+    console.trace('TEST ============================');
+    console.trace(recipe);
+    const recipeName = recipe.name;
+    const authorEmail = recipeData.user.email;
+
+    let mailOptions = {
+      from: process.env.MAILER_EMAIL,
+      to: process.env.MAILER_EMAIL,
+      subject: 'Recipe Favorited',
+      text: `${req.session.username} has favorited ${recipeData.user.username}'s recipe: ${recipeName}`,
+    };
+
+    if (authorEmail != 'NULL') {
+      //NODE MAILER
+      mailOptions = {
+        from: process.env.MAILER_EMAIL,
+        to: authorEmail,
+        subject: 'Recipe Favorited',
+        text: `Someone has favorited your recipe: ${recipeName}`,
+      };
+    }
+
+    console.trace(mailOptions);
+    transporter.sendMail(mailOptions, (err, info) => {
+      if (err) {
+        return console.error('Error', err);
+      }
+      console.log('Email send:', info.response);
     });
 
     res.status(200).json(favoritesData);
