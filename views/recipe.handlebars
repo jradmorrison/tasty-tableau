@@ -1,7 +1,7 @@
 <div class="card rounded-5 my-4 p-3">
   <div class="d-flex flex-wrap">
     <p class="fs-2">{{recipe.name}}</p>
-    <p class="my-auto ms-3"><i class="fa-solid fa-star" style="color: #ffea00;"></i>{{recipe.rating}}</p>
+    <p class="my-auto ms-3"><i class="fa-solid fa-star checked"></i>{{recipe.rating}}</p>
   </div>
   <div class="d-flex flex-wrap justify-content-between">
     <p class="my-auto">By: {{recipe.user.username}}</p>
@@ -9,10 +9,10 @@
       {{#if logged_in}}
       {{#if is_favorite}}
       <button href="#" class="add-to-favorites-btn btn m-auto btn-warning" data-id="{{recipe.id}}" data-action="DELETE"
-        data-toggle="popover" title="Removed!"><i class="fa-solid fa-bookmark mx-1"></i>Remove from favorites</button>
+        data-toggle="popover" title="Removed!"><i class="fa-solid fa-bookmark mx-1"></i>Un-save</button>
       {{else}}
       <button href="#" class="add-to-favorites-btn btn m-auto btn-warning" data-id="{{recipe.id}}" data-action="POST"
-        data-toggle="popover" title="Added!"><i class="fa-regular fa-bookmark mx-1"></i>Add to favorites</button>
+        data-toggle="popover" title="Saved!"><i class="fa-regular fa-bookmark mx-1"></i>Save</button>
       {{/if}}
       {{else}}
       <button id="login-to-save" class="add-to-favorites-btn btn m-auto btn-warning"><i
@@ -38,16 +38,24 @@
         <p>{{recipe.time_total}}</p>
       </div>
       <div>
+        <p>Ingredients:</p>
         <ul>
           {{#each ingredients as |ingredient|}}
-          <li>{{quantity}} - {{ingredient.ingredient.name}}</li>
+          <li class="list-group-item"><i class="fa-regular fa-square"></i>&nbsp;{{ingredient.ingredient.name}}</li>
           {{/each}}
         </ul>
       </div>
     </div>
     <div class="my-3 d-flex flex-column">
       <p class="fw-semibold">Instructions:</p>
-      <p class="">{{recipe.instructions}}</p>
+
+      {{!-- <p class="">{{recipe.instructions}}</p> --}}
+      <ol>
+        {{#each recipe.instructions as |step| }}
+          <li>{{step}}</li>
+        {{/each}}
+      </ol>
+
     </div>
 
     {{! ADD review populate here }}

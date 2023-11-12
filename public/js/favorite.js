@@ -10,9 +10,9 @@ $(function () {
 
     for (let j=5; j >= 1; j--) {
       if (j <= reviews[i].dataset.rating) {
-        $(reviews[i]).prepend($('<span class = "fa fa-star checked">'));
+        $(reviews[i]).prepend($('<span class = "my-auto fa fa-star checked">'));
       } else {
-        $(reviews[i]).prepend($('<span class = "fa fa-star">'));
+        $(reviews[i]).prepend($('<span class = "my-auto fa fa-star">'));
       }
     }
 

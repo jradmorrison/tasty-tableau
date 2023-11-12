@@ -17,8 +17,9 @@ const formatRecipe = require('../utils/formatRecipe');
 // Home
 router.get('/', async (req, res) => {
   try {
+    let catNum = Math.floor(Math.random() * 113);
     const cardData = await Recipe.findAll({
-      where: { category_id: 7 },
+      where: { category_id: catNum },
       include: { model: User, attributes: ['username'] },
     });
 
@@ -42,6 +43,9 @@ router.get('/', async (req, res) => {
       else {
         card.time_total = card.time_total.slice(2);
         card.time_total = formatTime(card.time_total);
+        if (card.time_total == '0 seconds') {
+          card.time_total = 'Cook time not available';
+        }
       }
 
     });
@@ -116,11 +120,16 @@ router.get('/recipes/:id', async (req, res) => {
     else {
       recipe.time_total = recipe.time_total.slice(2);
       recipe.time_total = formatTime(recipe.time_total);
+      if (recipe.time_total == '0 seconds') {
+        recipe.time_total = 'Cook time not available';
+      }
     }
 
 
-    recipe.instructions = recipe.instructions.slice(1, -1);
-  
+    recipe.instructions = recipe.instructions.slice(1, -1).split('., ');
+
+    console.trace(recipe.instructions);
+
     res.render('recipe', {
       recipe,
       ingredients,
@@ -156,9 +165,13 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     // Grabs the first image and creates a new attribute for it
     userRecipes.forEach((recipe) => {
-      recipe.image = recipe.images.split(', ')[0].slice(1);
-      if (recipe.image.charAt(recipe.image.length - 1) === ']') {
-        recipe.image = recipe.image.slice(0, recipe.image.length - 1);
+      if (recipe.images == '') {
+        recipe.image = './Assets/Carrot.png';
+      } else {
+        recipe.image = recipe.images.split(', ')[0].slice(1);
+        if (recipe.image.charAt(recipe.image.length - 1) === ']') {
+          recipe.image = recipe.image.slice(0, recipe.image.length - 1);
+        }
       }
       if (!recipe.time_total.startsWith('PT') || recipe.time_total == 'PT0S') {
         recipe.time_total = 'Cook time not available'
@@ -166,8 +179,12 @@ router.get('/dashboard', withAuth, async (req, res) => {
       else {
         recipe.time_total = recipe.time_total.slice(2);
         recipe.time_total = formatTime(recipe.time_total);
+        if (recipe.time_total == '0 seconds') {
+          recipe.time_total = 'Cook time not available';
+        }
       }
     });
+
 
     favorites.forEach((favorite) => {
       favorite.recipe.image = favorite.recipe.images.split(', ')[0].slice(1);
@@ -179,11 +196,16 @@ router.get('/dashboard', withAuth, async (req, res) => {
       } else {
         favorite.recipe.time_total = favorite.recipe.time_total.slice(2);
         favorite.recipe.time_total = formatTime(favorite.recipe.time_total);
+        if (favorite.time_total == '0 seconds') {
+          favorite.time_total = 'Cook time not available';
+        }
       }
 
     });
 
     userRecipes.reverse();
+    console.trace(userRecipes);
+
 
     res.render('dashboard', {
       userRecipes,
@@ -258,5 +280,13 @@ router.get('/signup', (req, res) => {
   }
   res.render('signup');
 });
+
+router.get('*', (req, res) => {
+  try {
+    res.render('404');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 module.exports = router;
