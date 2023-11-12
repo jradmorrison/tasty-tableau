@@ -2,7 +2,9 @@ const findTagRecipes = async (search) => {
   if (search) {
     const response = await fetch(`/api/tags/search/${search}`);
 
+    // console.trace(response);
     const data = await response.json();
+    // console.trace(data);
 
     UpdateDropdown(data, 10);
   } else {
