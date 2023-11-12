@@ -1,56 +1,35 @@
 <div class="card rounded-5 my-4 p-3">
   <div class="d-flex flex-wrap">
     <p class="fs-2">{{recipe.name}}</p>
-    <p class="my-auto ms-3"><i
-        class="fa-solid fa-star"
-        style="color: #ffea00;"
-      ></i>{{recipe.rating}}</p>
+    <p class="my-auto ms-3"><i class="fa-solid fa-star checked"></i>{{recipe.rating}}</p>
   </div>
   <div class="d-flex flex-wrap justify-content-between">
     <p class="my-auto">By: {{recipe.user.username}}</p>
     <div class="">
       {{#if logged_in}}
-        {{#if is_favorite}}
-          <button
-            href="#"
-            class="add-to-favorites-btn btn m-auto btn-warning"
-            data-id="{{recipe.id}}"
-            data-action="DELETE"
-            data-toggle="popover"
-            title="Removed!"
-          ><i class="fa-solid fa-bookmark mx-1"></i>Remove from favorites</button>
-        {{else}}
-          <button
-            href="#"
-            class="add-to-favorites-btn btn m-auto btn-warning"
-            data-id="{{recipe.id}}"
-            data-action="POST"
-            data-toggle="popover"
-            title="Added!"
-          ><i class="fa-regular fa-bookmark mx-1"></i>Add to favorites</button>
-        {{/if}}
+      {{#if is_favorite}}
+      <button href="#" class="add-to-favorites-btn btn m-auto btn-warning" data-id="{{recipe.id}}" data-action="DELETE"
+        data-toggle="popover" title="Removed!"><i class="fa-solid fa-bookmark mx-1"></i>Un-save</button>
       {{else}}
-        <button
-          id="login-to-save"
-          class="add-to-favorites-btn btn m-auto btn-warning"
-        ><i class="fa-regular fa-bookmark mx-1"></i>Login to Save</button>
+      <button href="#" class="add-to-favorites-btn btn m-auto btn-warning" data-id="{{recipe.id}}" data-action="POST"
+        data-toggle="popover" title="Saved!"><i class="fa-regular fa-bookmark mx-1"></i>Save</button>
+      {{/if}}
+      {{else}}
+      <button id="login-to-save" class="add-to-favorites-btn btn m-auto btn-warning"><i
+          class="fa-regular fa-bookmark mx-1"></i>Login to Save</button>
       {{/if}}
     </div>
   </div>
   <div class="d-flex flex-wrap">
     <p class="fw-semibold my-auto">Tags:</p>
     {{#each recipe.tags as |tag|}}
-      <p class="mx-2 my-auto">{{name}}</p>
+    <p class="mx-2 my-auto">{{name}}</p>
     {{/each}}
   </div>
   <hr />
   <div class="d-flex flex-wrap">
     <div class="col-xl-6 mx-auto">
-      <img
-        src="{{recipe.images}}"
-        class="card-img-top"
-        alt="An picture of the recipe"
-      />
+      <img src="{{recipe.images}}" class="card-img-top" alt="An picture of the recipe" />
     </div>
     <div class="col-xl-5 p-3 mx-auto">
       <p class="card-text">{{recipe.description}}</p>
@@ -59,16 +38,24 @@
         <p>{{recipe.time_total}}</p>
       </div>
       <div>
+        <p>Ingredients:</p>
         <ul>
           {{#each ingredients as |ingredient|}}
-            <li>{{quantity}} - {{ingredient.ingredient.name}}</li>
+          <li class="list-group-item"><i class="fa-regular fa-square"></i>&nbsp;{{ingredient.ingredient.name}}</li>
           {{/each}}
         </ul>
       </div>
     </div>
     <div class="my-3 d-flex flex-column">
       <p class="fw-semibold">Instructions:</p>
-      <p class="">{{recipe.instructions}}</p>
+
+      {{!-- <p class="">{{recipe.instructions}}</p> --}}
+      <ol>
+        {{#each recipe.instructions as |step| }}
+          <li>{{step}}</li>
+        {{/each}}
+      </ol>
+
     </div>
 
     {{! ADD review populate here }}
@@ -78,9 +65,9 @@
     <div class="d-flex flex-wrap justify-content-between w-100">
       <p class="fw-semibold my-auto">Reviews:</p>
       {{#if logged_in}}
-        <button id="show-review-form" class="btn btn-primary">Write a Review</button>
+      <button id="show-review-form" class="btn btn-primary">Write a Review</button>
       {{else}}
-        <a href="/login"><button class="btn btn-primary">Login to leave a review</button></a>
+      <a href="/login"><button class="btn btn-primary">Login to leave a review</button></a>
       {{/if}}
     </div>
     <div id="review-form" data-id="{{recipe.id}}" class="w-100">
@@ -95,26 +82,16 @@
         </select>
 
         <label for="review">Review:</label>
-        <textarea
-          id="review"
-          name="review"
-          rows="4"
-          cols="50"
-          class="form-label"
-        ></textarea>
+        <textarea id="review" name="review" rows="4" cols="50" class="form-label"></textarea>
 
-        <button
-          type="button"
-          id="review-submit-button"
-          class="btn btn-primary"
-        >Submit Review</button>
+        <button type="button" id="review-submit-button" class="btn btn-primary">Submit Review</button>
       </form>
     </div>
     {{#each recipe.reviews as |review|}}
-      <div class="d-flex border-top w-100 my-2">
-        <span class="fw-semibold me-1">{{review.user.username}}:</span>
-        <p class="m-0">{{review.review}}</p>
-      </div>
+    <div class="review-block d-flex border-top w-100 my-2" data-rating="{{review.rating}}">
+      <span class="fw-semibold me-1">{{review.user.username}}:</span>
+      <p class="m-0">{{review.review}}</p>
+    </div>
     {{/each}}
   </div>
 </div>

@@ -3,6 +3,21 @@ $(function () {
   $('.add-to-favorites-btn').addClass('loaded');
   $('#review-form').toggle();
 
+  let reviews = $('.review-block');
+
+  for (let i = 0; i < reviews.length; i++) {
+    console.log(`rating is: ${reviews[i].dataset.rating}`);
+
+    for (let j=5; j >= 1; j--) {
+      if (j <= reviews[i].dataset.rating) {
+        $(reviews[i]).prepend($('<span class = "my-auto fa fa-star checked">'));
+      } else {
+        $(reviews[i]).prepend($('<span class = "my-auto fa fa-star">'));
+      }
+    }
+
+  }
+
 
   const updateFavorites = async (event) => {
     const id = event.target.dataset.id;
