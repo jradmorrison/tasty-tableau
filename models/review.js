@@ -17,14 +17,14 @@ Review.init(
       references: {
         model: 'user',
         key: 'id',
-      }
+      },
     },
     rating: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
     review: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: true,
     },
     date_created: {
