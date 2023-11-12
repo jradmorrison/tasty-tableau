@@ -26,7 +26,7 @@ $(function () {
         document.location.replace('/dashboard');
       } else {
         await alert('Error adding recipe');
-        document.location.reload();
+        // document.location.reload();
       }
     }
   };
