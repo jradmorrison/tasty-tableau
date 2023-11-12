@@ -282,12 +282,36 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+router.get('/kurtriecken', (req, res) => {
+  try {
+    res.render('kurt');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/brandonbarnes', (req, res) => {
+  try {
+    res.render('brandon');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
+router.get('/jaredmorrison', (req, res) => {
+  try {
+    res.render('jared');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
 router.get('*', (req, res) => {
   try {
     res.render('404');
   } catch (err) {
     res.status(500).json(err);
   }
-})
+});
 
 module.exports = router;
