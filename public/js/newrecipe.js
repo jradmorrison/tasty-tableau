@@ -2,21 +2,39 @@ $(function () {
   const addNewRecipe = async (event) => {
     event.preventDefault();
 
-    // console.log('clicky clik');
-    // console.log(event.target.dataset.id);
-    // console.log($('#name').val());
-
     let name = $('#name').val();
+    let category_id = $('#Input-Category').val();
     let description = $('#description').val();
-    let time_total = $('time-total').val();
+    let time_total = `PT${$('time-prep-hours').val()}H${$('time-prep-minute').val()}M`;
+    let instructions = $('#instructions').val();
+
+    //Ingredients
+    let formIng = $('#Ingredient-Container').children();
+    let ingredients = [];
+    for (const inputIng of formIng) {
+      let name = $(inputIng).children().eq(0).text().split('-');
+      let newing = {
+        ing: $(inputIng).attr('id'),
+        quantity: name[0].trim(),
+      };
+      ingredients.push(newing);
+    }
+    console.log(ingredients);
+
+    //Tags
+    let tags = [];
+    for (const inputTag of alltags) {
+      tags.push(inputTag);
+    }
 
     console.log(name);
     console.log(description);
 
-    if (name && description) {
+    if (name && description && category_id) {
+      console.log('Posting');
       const response = await fetch(`../api/recipes`, {
         method: 'POST',
-        body: JSON.stringify({ name, description, time_total }),
+        body: JSON.stringify({ name, description, time_total, category_id, instructions, ingredients, tags }),
         headers: { 'Content-Type': 'application/json' },
       });
 
@@ -26,7 +44,7 @@ $(function () {
         document.location.replace('/dashboard');
       } else {
         await alert('Error adding recipe');
-        // document.location.reload();
+        document.location.reload();
       }
     }
   };

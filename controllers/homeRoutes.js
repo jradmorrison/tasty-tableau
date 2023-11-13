@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
 
     // Reformat cards for display to page
     // Grab first image and use for display
-    for (let i=0; i<cards.length; i++) {
+    for (let i = 0; i < cards.length; i++) {
       cards[i] = formatRecipe(cards[i]);
     }
 
@@ -133,11 +133,11 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const userRecipes = userRecipesData.map((rec) => rec.get({ plain: true }));
     const favorites = favoritesData.map((fav) => fav.get({ plain: true }));
 
-    for (let i=0; i<userRecipes.length; i++) {
+    for (let i = 0; i < userRecipes.length; i++) {
       userRecipes[i] = formatRecipe(userRecipes[i]);
     }
 
-    for (let i=0; i<favorites.length; i++) {
+    for (let i = 0; i < favorites.length; i++) {
       favorites[i].recipe = formatRecipe(favorites[i].recipe);
     }
 
@@ -239,7 +239,7 @@ router.get('/brandonbarnes', (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-})
+});
 
 router.get('/jaredmorrison', (req, res) => {
   try {
@@ -247,7 +247,7 @@ router.get('/jaredmorrison', (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-})
+});
 
 router.get('*', (req, res) => {
   try {

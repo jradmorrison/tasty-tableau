@@ -11,9 +11,7 @@ if (process.env.JAWSDB_URL) {
     dialect: 'mysql',
     port: 3306,
     dialectOptions: {
-      options: {
-        requestTimeout: 3600000,
-      },
+      requestTimeout: 3600000,
     },
   });
 }
