@@ -87,17 +87,6 @@ router.get('/search/:term', async (req, res) => {
       recipes[i] = formatRecipe(recipes[i]);
     }
 
-    // Grabs the first image and creates a new attribute for it
-    // recipes.forEach((recipe) => {
-    //   recipe.image = recipe.images.split(', ')[0].slice(1);
-    //   if (recipe.image.charAt(recipe.image.length - 1) === ']') {
-    //     recipe.image = recipe.image.slice(0, recipe.image.length - 1);
-    //   }
-    // });
-
-    console.trace(recipes);
-
-
     res.render('searchResults', {
       recipes,
       term: req.params.term,
@@ -122,15 +111,9 @@ router.get('/searchAuthor/:id', async (req, res) => {
 
     const recipes = await recipeQuery.map((rec) => rec.get({ plain: true }));
 
-    // Grabs the first image and creates a new attribute for it
-    recipes.forEach((recipe) => {
-      recipe.image = recipe.images.split(', ')[0].slice(1);
-      if (recipe.image.charAt(recipe.image.length - 1) === ']') {
-        recipe.image = recipe.image.slice(0, recipe.image.length - 1);
-      }
-    });
-
-    // console.trace(recipes[0]);
+    for (let i = 0; i < recipes.length; i++) {
+      recipes[i] = formatRecipe(recipes[i]);
+    }
 
     const userNameQuery = await User.findByPk(req.params.id);
     let username = userNameQuery.dataValues.username;
