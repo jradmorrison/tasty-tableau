@@ -1,7 +1,13 @@
 const findTagRecipes = async (search) => {
   if (search) {
     const response = await fetch(`/api/tags/search/${search}`);
+<<<<<<< HEAD
+=======
+
+    // console.trace(response);
+>>>>>>> 002147befd88817cc23aa67bbb1e635374662267
     const data = await response.json();
+    // console.trace(data);
 
     UpdateDropdown(data, 10);
   } else {

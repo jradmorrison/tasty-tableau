@@ -13,6 +13,7 @@ const {
 } = require('../models');
 
 const recipesData = require('./database/recipes_1000.json');
+const reviewData = require('./database/reviews_1000.json');
 
 //=============================================================
 //                      Core Database
@@ -255,6 +256,41 @@ const getRecipeIngredients = async () => {
   return IngredientList;
 };
 
+const getReviews = async (recipes, users) => {
+  try {
+    let allReviews = [];
+
+    let ourUsers = await Promise.all(users.map((instance) => instance.get()));
+    let ourRecipes = await Promise.all(recipes.map((instance) => instance.get()));
+
+    for (const review of reviewData.reviews_sanitized) {
+      const username = ourUsers.find((user) => user.username === review.AuthorName.toLowerCase());
+      const recipeSeed = recipesData.recipes_sanitized.findIndex((rec) => rec.RecipeId === review.RecipeId);
+      const recipeID = ourRecipes.find((rec) => rec.seed === recipeSeed);
+      if (username) {
+        const newReview = {
+          user_id: username.id,
+          rating: review.Rating,
+          review: review.Review,
+          date_created: review.DateSubmitted,
+          recipe_id: recipeID.id,
+          // Add other properties based on reviewData or anything else
+        };
+
+        allReviews.push(newReview);
+      } else {
+        console.warn(`User not found for review with AuthorName: ${review.AuthorName}`);
+      }
+    }
+
+    console.log(allReviews);
+    return allReviews;
+  } catch (error) {
+    console.error('Error in getReviews:', error);
+    throw error;
+  }
+};
+
 const getIngredientByValue = async (value) => {
   try {
     const ing_id = await Ingredient.findOne({
@@ -315,8 +351,12 @@ const seedDatabase = async () => {
     Ingredient.bulkCreate(allIngredients, {}),
   ]);
 
+<<<<<<< HEAD
   //SEED RECIPES
   const [allRecipes] = await Promise.all([getRecipes(users)]);
+=======
+  const [allRecipes] = await Promise.all([getRecipes()]);
+>>>>>>> 002147befd88817cc23aa67bbb1e635374662267
   const recipe = await Recipe.bulkCreate(allRecipes, {});
 
   //SEED ALT TABLES
@@ -327,6 +367,12 @@ const seedDatabase = async () => {
     Ingredients_Through.bulkCreate(allRecipesIngredients, {}),
     Tag_Through.bulkCreate(allThroughTags, {}),
   ]);
+<<<<<<< HEAD
+=======
+
+  const allReviews = await getReviews(recipe, users);
+  const review = await Review.bulkCreate(allReviews, {});
+>>>>>>> 002147befd88817cc23aa67bbb1e635374662267
   process.exit(0);
 };
 

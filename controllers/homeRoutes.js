@@ -28,23 +28,9 @@ router.get('/', async (req, res) => {
 
     // Reformat cards for display to page
     // Grab first image and use for display
-    // Change total time to readable string
-    cards.forEach((card) => {
-      card.image = card.images.split(', ')[0].slice(1);
-      if (card.image.charAt(card.image.length - 1) === ']') {
-        card.image = card.image.slice(0, card.image.length - 1);
-      }
-
-      if (!card.time_total.startsWith('PT')) {
-        card.time_total = 'Cook time not available';
-      } else {
-        card.time_total = card.time_total.slice(2);
-        card.time_total = formatTime(card.time_total);
-        if (card.time_total == '0 seconds') {
-          card.time_total = 'Cook time not available';
-        }
-      }
-    });
+    for (let i=0; i<cards.length; i++) {
+      cards[i] = formatRecipe(cards[i]);
+    }
 
     res.render('homepage', {
       cards,
@@ -108,23 +94,11 @@ router.get('/recipes/:id', async (req, res) => {
     const recipe = recipeData.get({ plain: true });
     const ingredients = ingredientData.map((ing) => ing.get({ plain: true }));
 
-    recipe.images = recipe.images.split(', ')[0].slice(1);
-    if (recipe.images.charAt(recipe.images.length - 1) === ']') {
-      recipe.images = recipe.images.slice(0, recipe.images.length - 1);
-    }
-    if (!recipe.time_total.startsWith('PT')) {
-      recipe.time_total = 'Cook time not available';
-    } else {
-      recipe.time_total = recipe.time_total.slice(2);
-      recipe.time_total = formatTime(recipe.time_total);
-      if (recipe.time_total == '0 seconds') {
-        recipe.time_total = 'Cook time not available';
-      }
-    }
+    // console.trace(recipe);
+    newRecipe = formatRecipe(recipe);
+    // console.trace(newRecipe);
 
     recipe.instructions = recipe.instructions.slice(1, -1).split('., ');
-
-    console.trace(recipe.instructions);
 
     res.render('recipe', {
       recipe,
@@ -159,27 +133,11 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const userRecipes = userRecipesData.map((rec) => rec.get({ plain: true }));
     const favorites = favoritesData.map((fav) => fav.get({ plain: true }));
 
-    // Grabs the first image and creates a new attribute for it
-    userRecipes.forEach((recipe) => {
-      if (recipe.images == '') {
-        recipe.image = './Assets/Carrot.png';
-      } else {
-        recipe.image = recipe.images.split(', ')[0].slice(1);
-        if (recipe.image.charAt(recipe.image.length - 1) === ']') {
-          recipe.image = recipe.image.slice(0, recipe.image.length - 1);
-        }
-      }
-      if (!recipe.time_total.startsWith('PT') || recipe.time_total == 'PT0S') {
-        recipe.time_total = 'Cook time not available';
-      } else {
-        recipe.time_total = recipe.time_total.slice(2);
-        recipe.time_total = formatTime(recipe.time_total);
-        if (recipe.time_total == '0 seconds') {
-          recipe.time_total = 'Cook time not available';
-        }
-      }
-    });
+    for (let i=0; i<userRecipes.length; i++) {
+      userRecipes[i] = formatRecipe(userRecipes[i]);
+    }
 
+<<<<<<< HEAD
     favorites.forEach((favorite) => {
       favorite.recipe.image = favorite.recipe.images.split(', ')[0].slice(1);
       if (favorite.recipe.image.charAt(favorite.recipe.image.length - 1) === ']') {
@@ -198,6 +156,14 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     userRecipes.reverse();
     console.trace(userRecipes);
+=======
+    for (let i=0; i<favorites.length; i++) {
+      favorites[i].recipe = formatRecipe(favorites[i].recipe);
+    }
+
+    userRecipes.reverse();
+    favorites.reverse();
+>>>>>>> 002147befd88817cc23aa67bbb1e635374662267
 
     res.render('dashboard', {
       userRecipes,

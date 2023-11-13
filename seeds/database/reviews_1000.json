@@ -1,0 +1,2037 @@
+{
+"reviews_sanitized": [
+	{
+		"ReviewId" : 24,
+		"RecipeId" : 278,
+		"AuthorId" : 1773,
+		"AuthorName" : "Malarkey Test",
+		"Rating" : 4,
+		"Review" : "a little greasy, but a huge hit with the guests.",
+		"DateSubmitted" : "2000-03-13"
+	},
+	{
+		"ReviewId" : 83,
+		"RecipeId" : 3704,
+		"AuthorId" : 2178,
+		"AuthorName" : "troyh",
+		"Rating" : 3,
+		"Review" : "Careful not to cook it too long... you want the tuna to be closer to raw on the inside and crusty on the outside. Maybe use canola oil instead of butter to help sear the outside.",
+		"DateSubmitted" : "2000-10-30"
+	},
+	{
+		"ReviewId" : 89,
+		"RecipeId" : 4366,
+		"AuthorId" : 2178,
+		"AuthorName" : "troyh",
+		"Rating" : 5,
+		"Review" : "if you like oysters, this is a great alternative to regular, boring stuffing.",
+		"DateSubmitted" : "2000-11-04"
+	},
+	{
+		"ReviewId" : 251,
+		"RecipeId" : 397,
+		"AuthorId" : 1566,
+		"AuthorName" : "Stephen Little",
+		"Rating" : 0,
+		"Review" : "Try dipping or coating one side with some good chocolate... even better!!!",
+		"DateSubmitted" : "2001-01-02"
+	},
+	{
+		"ReviewId" : 889,
+		"RecipeId" : 3748,
+		"AuthorId" : 10033,
+		"AuthorName" : "spatchcock",
+		"Rating" : 5,
+		"Review" : "This was wonderful--finally got around to using the A to Z ingredients--and I used 2 cups of strawberries! this bread was great--it will be in my cookbook for good because of its totally unmatched level of versatility.",
+		"DateSubmitted" : "2002-07-18"
+	},
+	{
+		"ReviewId" : 890,
+		"RecipeId" : 5478,
+		"AuthorId" : 2178,
+		"AuthorName" : "troyh",
+		"Rating" : 3,
+		"Review" : "pretty good, especially for how quick and easy it is.",
+		"DateSubmitted" : "2001-05-24"
+	},
+	{
+		"ReviewId" : 1784,
+		"RecipeId" : 5174,
+		"AuthorId" : 1634,
+		"AuthorName" : "Bill Hilbrich",
+		"Rating" : 0,
+		"Review" : "This recipe comes from Marsha Adams, who hosted a program on American Public Broadcasting stations called Quilt Country. The first time I tried it, I knew it was worthy of lots of stars. I use those Spanish green olives that are stuffed with pimentos, because it adds some nice color.Since the recipe calls for diced, I save a little money by using the ones that come sliced in the jar because they are made from olives that are not perfect enough to be sold whole.",
+		"DateSubmitted" : "2001-07-25"
+	},
+	{
+		"ReviewId" : 3696,
+		"RecipeId" : 3624,
+		"AuthorId" : 1634,
+		"AuthorName" : "Bill Hilbrich",
+		"Rating" : 4,
+		"Review" : "This is a nice meal for three or, with a salad on the side, four people for lunch. Instead of spaghetti sauce from a jar, a cup of diced tomatoes ... out of the can is fine .. and a couple cloves of crushed garlic  will add a fresh taste to the dish and save some money. You might want to add a little salt.",
+		"DateSubmitted" : "2001-09-20"
+	},
+	{
+		"ReviewId" : 9212,
+		"RecipeId" : 3103,
+		"AuthorId" : 29196,
+		"AuthorName" : "JustJanS",
+		"Rating" : 4,
+		"Review" : "We had this tonight, and I used bone-in thigh pieces (then skinned them), and I used an inch piece of ginger, and I thought it was a very large amount of chill knowing my current batch so I cut it back to a level teaspoon. I garnished the dish with fresh coriander too. Wonderful dish if you enjoy curry like we do.",
+		"DateSubmitted" : "2002-02-28"
+	},
+	{
+		"ReviewId" : 9990,
+		"RecipeId" : 4663,
+		"AuthorId" : 10033,
+		"AuthorName" : "spatchcock",
+		"Rating" : 5,
+		"Review" : "GREAT recipe! I made this just for fun, and I must say that I was skeptical about the icing. It was WONDERFUL, however, and added just the right amount of tang to the bread. This baked up nice and fluffy--light, not heavy, but also not dry. THANKS!",
+		"DateSubmitted" : "2002-03-13"
+	},
+	{
+		"ReviewId" : 9991,
+		"RecipeId" : 4981,
+		"AuthorId" : 10033,
+		"AuthorName" : "spatchcock",
+		"Rating" : 5,
+		"Review" : "I made this for dinner when we had 13 people over a few weeks ago. They LOVED this recipe--asking with wonder, \"What is IN this!?!? This is excellent!\" I added fresh cracked pepper and some red pepper flakes. I omitted tomato soup or bisque--I didn't have any on hand, and no time to run to the store--but it still tasted amazing. The chicken was SO TENDER! \nTHANKS!",
+		"DateSubmitted" : "2002-03-13"
+	},
+	{
+		"ReviewId" : 10588,
+		"RecipeId" : 834,
+		"AuthorId" : 29196,
+		"AuthorName" : "JustJanS",
+		"Rating" : 5,
+		"Review" : "Thanks to all who suggested doubling the sauce. We put a couple of tablespoons of minced onion in the meat mix, and cooked the patties in a pan sprayed with oil. Then we made a sauce using low fat cream instead of the butter. So tasty! I think the sauce would be great with steak or chicken or pork or......",
+		"DateSubmitted" : "2002-03-24"
+	},
+	{
+		"ReviewId" : 11360,
+		"RecipeId" : 4178,
+		"AuthorId" : 35526,
+		"AuthorName" : "riffraff",
+		"Rating" : 5,
+		"Review" : "Great recipe!  I added some chopped onion and jalapino the second time I made with great results.  Thanks, this is a keeper.",
+		"DateSubmitted" : "2002-04-03"
+	},
+	{
+		"ReviewId" : 11608,
+		"RecipeId" : 5108,
+		"AuthorId" : 29196,
+		"AuthorName" : "JustJanS",
+		"Rating" : 5,
+		"Review" : "I knew this would be good, and I wasn't disappointed! It was easy and the smell as it cooked was mouth watering. The only change made was to use fresh ginger as I always think dried ginger is for baking and fresh (if you have it on hand) for savoury.",
+		"DateSubmitted" : "2002-04-07"
+	},
+	{
+		"ReviewId" : 12134,
+		"RecipeId" : 44,
+		"AuthorId" : 35526,
+		"AuthorName" : "riffraff",
+		"Rating" : 5,
+		"Review" : "I made this and shared with my mother.  We both loved it.  She even had seconds.  She is the type that likes the same things cooked the same way all the time and I have been trying to expand our menu.  Very tastey.  Thanks for a new recipe.",
+		"DateSubmitted" : "2002-04-16"
+	},
+	{
+		"ReviewId" : 12484,
+		"RecipeId" : 6454,
+		"AuthorId" : 29196,
+		"AuthorName" : "JustJanS",
+		"Rating" : 0,
+		"Review" : "Another nice mashed potato dish. I liked the conbination of horseradish and sour cream, it really was good.",
+		"DateSubmitted" : "2002-04-20"
+	},
+	{
+		"ReviewId" : 13065,
+		"RecipeId" : 1293,
+		"AuthorId" : 1891,
+		"AuthorName" : "Kim19068",
+		"Rating" : 4,
+		"Review" : "Kids loved these next time I will have to make 2 pans at one time.",
+		"DateSubmitted" : "2002-04-29"
+	},
+	{
+		"ReviewId" : 14666,
+		"RecipeId" : 2137,
+		"AuthorId" : 10033,
+		"AuthorName" : "spatchcock",
+		"Rating" : 5,
+		"Review" : "!!!!!!This was fantastic!!!!!!!! The whole pie was gone in about a day and a half. I love the orange flavor with the rhubarb--I have never had rhubarb before and when I tried it uncooked I was (of course) worried. But this is just amazing. The filling is really to-die-for.",
+		"DateSubmitted" : "2002-05-19"
+	},
+	{
+		"ReviewId" : 15039,
+		"RecipeId" : 4378,
+		"AuthorId" : 10033,
+		"AuthorName" : "spatchcock",
+		"Rating" : 5,
+		"Review" : "These are great! Like Anu, I used nonstick cooking spray on them. I also used some jalapeno-flavored seasoning I had on hand and dusted it over the top of the chips before I put them in the oven. They came out tasting like tequila-lime tortilla chips!! (I used flour tortillas, and cooked them till the browned.) We ate them with homemade salsa.",
+		"DateSubmitted" : "2002-05-25"
+	},
+	{
+		"ReviewId" : 17189,
+		"RecipeId" : 2072,
+		"AuthorId" : 1891,
+		"AuthorName" : "Kim19068",
+		"Rating" : 5,
+		"Review" : "Everyone in the family loved this... I guess it is a keeper. I doubled the recipe and put it in a 12 by 7 in pan.. Well I think it that size can not see a size on the baking dish.\n\nThanks for the recipe.",
+		"DateSubmitted" : "2002-06-21"
+	},
+	{
+		"ReviewId" : 17279,
+		"RecipeId" : 4434,
+		"AuthorId" : 35635,
+		"AuthorName" : "_Pixie_",
+		"Rating" : 5,
+		"Review" : "I just finished making these and they are still warm. \n\nMy daughter and her boyfriend just finished sampling them and say that they are better than the butter tarts I get from the bakery.\n\nBig plus, it's a nice easy recipe.",
+		"DateSubmitted" : "2002-06-23"
+	},
+	{
+		"ReviewId" : 17438,
+		"RecipeId" : 5287,
+		"AuthorId" : 10033,
+		"AuthorName" : "spatchcock",
+		"Rating" : 4,
+		"Review" : "These were really good, but for some reason (maybe the way I mixed it?) the dough became VERY gluey and I had to add milk! (My mixer almost died trying to make these cookies!) I used Devil's Food cake mix and white chocolate chips. They were VERY good, very soft, and easy...I just don't know why the dough wouldn't  cooperate. Thanks for the recipe though!",
+		"DateSubmitted" : "2002-06-25"
+	},
+	{
+		"ReviewId" : 17577,
+		"RecipeId" : 588,
+		"AuthorId" : 29196,
+		"AuthorName" : "JustJanS",
+		"Rating" : 5,
+		"Review" : "Bergy originally suggested this recipe as one we would like. Thanks Bergy! I'm normally put off by so many ingredients, but it was really easy to assemble (and that didn't take nearly as long as bijoudog suggested). Our cilantro was a bit sad, so I used a combo of mint and parsley instead, and didn't put the carrots in it. I made this with prunes, apricots, and a few pieces of crystalised ginger for the fruit.\nWe had this over couscous with currants onions, and preserved lemon.",
+		"DateSubmitted" : "2002-06-27"
+	},
+	{
+		"ReviewId" : 19779,
+		"RecipeId" : 810,
+		"AuthorId" : 10033,
+		"AuthorName" : "spatchcock",
+		"Rating" : 5,
+		"Review" : "It's about time I rated these ,I suppose. I've had this recipe for over a year and I've probably made them six or seven times--they are really wonderful. I just happened to make them a couple of days ago, only to have BF's friends come over to watch the tour de france and eat them all!!! These are great--smaller cookies and really good flavor. The best ones I've made! (Note: I used margarine instead of shortening).",
+		"DateSubmitted" : "2002-07-25"
+	},
+	{
+		"ReviewId" : 20751,
+		"RecipeId" : 3471,
+		"AuthorId" : 10033,
+		"AuthorName" : "spatchcock",
+		"Rating" : 4,
+		"Review" : "Made this a couple of weeks ago (just now catching up with reviews here!) Very good! I did think it seemed a little redundant or self-defeating to have to cook the chicken before I used the crockpot....I think next time I'll try to throw it all in together and see what happens! Great recipe, though--all I did differently was to add some oregano and other spices to my pizza sauce (just personal taste!) Thanks for the great recipe Anne!",
+		"DateSubmitted" : "2002-08-06"
+	},
+	{
+		"ReviewId" : 21086,
+		"RecipeId" : 450,
+		"AuthorId" : 29196,
+		"AuthorName" : "JustJanS",
+		"Rating" : 4,
+		"Review" : "I brought a big pot of water to the boil, and dealt with all the veggies seperately, dropping them in, bringing them back to the boil and then cooking for a minute or two before removing them with a slotted spoon. I also cut a carrot into \"flowers\". I served the sauce seperately, so a very health concious friend could use it or not!\nWe had pork satay, and I used the sauce from that for both dishes.",
+		"DateSubmitted" : "2002-08-12"
+	},
+	{
+		"ReviewId" : 25371,
+		"RecipeId" : 686,
+		"AuthorId" : 10033,
+		"AuthorName" : "spatchcock",
+		"Rating" : 3,
+		"Review" : "I think this recipe is very easy to make, but I just don't like the flavors at ALL. I am sure that it will be great for someone else, but I thought that it was far too sweet and not sour enough. Sorry!!",
+		"DateSubmitted" : "2002-09-23"
+	},
+	{
+		"ReviewId" : 27757,
+		"RecipeId" : 5015,
+		"AuthorId" : 39547,
+		"AuthorName" : "Julesong",
+		"Rating" : 5,
+		"Review" : "This looked very much like a recipe I'd had when I was little, so I tried it out - and yep, it tasted like the \"different\" green bean casserole I remembered and liked!  :)  I added a couple cloves of minced garlic and a bit of rosemary, and I julienned the water chestnuts (which worked very well).  I prefer this one over the \"classic\" recipe.",
+		"DateSubmitted" : "2002-10-14"
+	},
+	{
+		"ReviewId" : 27813,
+		"RecipeId" : 1293,
+		"AuthorId" : 35635,
+		"AuthorName" : "_Pixie_",
+		"Rating" : 4,
+		"Review" : "These are very tasty, but the nuts don't stick to them. I think maybe placing the coconut next to the nuts doesn't work well (nothing to make them stick together). If I try them again, I think, I'll put the chocolate chips between the coconut and the nuts...",
+		"DateSubmitted" : "2002-10-14"
+	},
+	{
+		"ReviewId" : 29713,
+		"RecipeId" : 3520,
+		"AuthorId" : 47510,
+		"AuthorName" : "Dreamgoddess",
+		"Rating" : 5,
+		"Review" : "Wow, I just made this bread and can't wait to make it again!  It smelled so good as it baked and the taste was simply out of this world.  I just had to try it as soon as I took it out of the pan.  I added walnuts this time and may try pecans the next time I make it (which won't be long!).    ",
+		"DateSubmitted" : "2002-10-29"
+	},
+	{
+		"ReviewId" : 30948,
+		"RecipeId" : 4873,
+		"AuthorId" : 29196,
+		"AuthorName" : "JustJanS",
+		"Rating" : 5,
+		"Review" : "What a fantastic leg of lamb this was! I squeezed the lemon over it, then, instead of putting the lamb on a rack, I lay it on the lemon shells, and sprigs of rosemary. Oh, I used fresh rosemary rather than dried.  ",
+		"DateSubmitted" : "2002-11-09"
+	},
+	{
+		"ReviewId" : 31348,
+		"RecipeId" : 4627,
+		"AuthorId" : 1891,
+		"AuthorName" : "Kim19068",
+		"Rating" : 5,
+		"Review" : "Made this for the family. It was great. I use 2 49.5 oz cans of chicken brooth 3 cans of driced tomatos. Also when frying up the carrots and celery and onions I added 2 hot peppers. Could not find the rotel with chilies so I added a small can hot mild chilies.\nThis ended up makin a large pot of soup Also used about 15 to 17 corn chips. The package was about 5oz each and had 10 in them. This was not a hot spicy soup just plain good. Will make it again and again.\nthank for the recipe.",
+		"DateSubmitted" : "2002-11-13"
+	},
+	{
+		"ReviewId" : 32187,
+		"RecipeId" : 5335,
+		"AuthorId" : 34879,
+		"AuthorName" : "Barefoot Beachcomber",
+		"Rating" : 5,
+		"Review" : "Fabulous!  I made it exactly as the recipe and it was wonderful.  A good, dense,  flavourful bread. Thank-you.",
+		"DateSubmitted" : "2002-11-22"
+	},
+	{
+		"ReviewId" : 33564,
+		"RecipeId" : 468,
+		"AuthorId" : 35526,
+		"AuthorName" : "riffraff",
+		"Rating" : 5,
+		"Review" : "This is very simple and extremely good.  Had every thing on hand.  I used the left over, reduced marinade on green beans, delish!",
+		"DateSubmitted" : "2002-12-06"
+	},
+	{
+		"ReviewId" : 33942,
+		"RecipeId" : 4627,
+		"AuthorId" : 1938,
+		"AuthorName" : "Eddie Shipman",
+		"Rating" : 0,
+		"Review" : "FYI...\nAt our local grocery, they have ready-made bbq chickens. When we buy one, we take the leftovers and debone and shred them and keep them in a zip-lock in the freezer for later use in the soup. \n\nThey also have chicken fajita meat \nalready cooked. These make wonderful additions as well as add to the flavor.\n~~Eddie Shipman~~",
+		"DateSubmitted" : "2003-07-30"
+	},
+	{
+		"ReviewId" : 37693,
+		"RecipeId" : 1035,
+		"AuthorId" : 22015,
+		"AuthorName" : "Mysterygirl",
+		"Rating" : 5,
+		"Review" : "These are so cool and taste great.  Very easy recipe and the directions are very clear.  Haven't tried freezing this - it never lasts that long.",
+		"DateSubmitted" : "2003-01-13"
+	},
+	{
+		"ReviewId" : 43381,
+		"RecipeId" : 4981,
+		"AuthorId" : 64642,
+		"AuthorName" : "Molly53",
+		"Rating" : 0,
+		"Review" : "Kudos!  Very tasty.  Mi esposo (the picky one in the family) claims it's better than Coq au Vin.  ",
+		"DateSubmitted" : "2003-03-02"
+	},
+	{
+		"ReviewId" : 46313,
+		"RecipeId" : 593,
+		"AuthorId" : 35526,
+		"AuthorName" : "riffraff",
+		"Rating" : 5,
+		"Review" : "This is exactly how I make them.  I have taken to not using the bacon fat and using canola sometimes.  My local vegetable market guy keeps green tomatoes most of the year so we can enjoy these just about anytime.",
+		"DateSubmitted" : "2003-03-25"
+	},
+	{
+		"ReviewId" : 55444,
+		"RecipeId" : 6493,
+		"AuthorId" : 55166,
+		"AuthorName" : "peppermintkitty",
+		"Rating" : 5,
+		"Review" : "I followed your instructions perfectly and they are sooooo good.  I did use quick cook oats as that was all I had.  I think the texture would have been better and wouldn't fall apart as easy if I'd used regular oats, which I will do next time!  They were still so yummy and I ate tooooo many!",
+		"DateSubmitted" : "2003-06-12"
+	},
+	{
+		"ReviewId" : 63104,
+		"RecipeId" : 519,
+		"AuthorId" : 56112,
+		"AuthorName" : "Jellyqueen",
+		"Rating" : 5,
+		"Review" : "I made these this weekend to go with grilled amberjack.  They were great.  I will be making these potatoes on a regular basis.",
+		"DateSubmitted" : "2003-08-11"
+	},
+	{
+		"ReviewId" : 64584,
+		"RecipeId" : 246,
+		"AuthorId" : 47510,
+		"AuthorName" : "Dreamgoddess",
+		"Rating" : 2,
+		"Review" : "After all the great reviews this has received, I was expecting an out of this world dip.  However, I was very disappointed with the final result when I prepared this.  It came out really soupy and was very greasy...I'm not sure why as I only lightly greased the casserole.  I might try this again to see if I get different results...if so, I'll revise my review.  ",
+		"DateSubmitted" : "2003-08-23"
+	},
+	{
+		"ReviewId" : 71776,
+		"RecipeId" : 2615,
+		"AuthorId" : 64625,
+		"AuthorName" : "woodland hues",
+		"Rating" : 5,
+		"Review" : "This is a modest yet elegant little cake, moist, almost spicy, not quite chocolaty.  I used Splenda in place of sugar, worked fine.  I baked at 350F for 25 minutes, using an 8\" round pan. ",
+		"DateSubmitted" : "2003-10-17"
+	},
+	{
+		"ReviewId" : 77141,
+		"RecipeId" : 4178,
+		"AuthorId" : 104600,
+		"AuthorName" : "CoolMonday",
+		"Rating" : 5,
+		"Review" : "this was excellent..  I too didnt' think it would all fit in an 8 x 8 but it did lol..  I fixed it for thanksgiving but think I would rather use it at a different kind of meal...  it just didn't seem thanksgivingy.... but it was great and i'll make it again... especially when I make the next pork roast.",
+		"DateSubmitted" : "2003-11-27"
+	},
+	{
+		"ReviewId" : 77828,
+		"RecipeId" : 749,
+		"AuthorId" : 51011,
+		"AuthorName" : "Loves2Teach",
+		"Rating" : 5,
+		"Review" : "Wow this was good! I have been on the south beach diet & was looking for something like my lasagna recipe.  i used ricotta & a can of tomato sauce, and also threw in some mushrooms.  I will have to make this again soon! Thanks for sharing.",
+		"DateSubmitted" : "2003-12-02"
+	},
+	{
+		"ReviewId" : 78107,
+		"RecipeId" : 1746,
+		"AuthorId" : 107651,
+		"AuthorName" : "Elly in Canada",
+		"Rating" : 4,
+		"Review" : "I followed the recipe but, used cranberry juice instead of water. Sauce was delicious and a nice 'pinky' colour. I used my potato masher as Ellen did, works fine, applesauce is a bit chunky, just the way we like it..",
+		"DateSubmitted" : "2003-12-04"
+	},
+	{
+		"ReviewId" : 86970,
+		"RecipeId" : 4084,
+		"AuthorId" : 34879,
+		"AuthorName" : "Barefoot Beachcomber",
+		"Rating" : 5,
+		"Review" : "wonderful cake!  I've made it 3 times now and it's now our official family birthday cake; it's that good.  It is sweet and rich and chocolate and yummy!! Everything a cake should be.  Thanks for a great recipe.",
+		"DateSubmitted" : "2004-02-02"
+	},
+	{
+		"ReviewId" : 89893,
+		"RecipeId" : 3989,
+		"AuthorId" : 35526,
+		"AuthorName" : "riffraff",
+		"Rating" : 5,
+		"Review" : "Here's one that deserves more than 5 stars.  On about 10-12 oz of salmon I used 2 tablespoons of mayo, 1\/4 cup parmesan, about 1\/2 teaspoon of seasoned salt and about 3-4 tablespoons of breadcrumbs.  Very fine meal.  Crunchy delicious topping.    ",
+		"DateSubmitted" : "2004-02-21"
+	},
+	{
+		"ReviewId" : 90147,
+		"RecipeId" : 3834,
+		"AuthorId" : 39194,
+		"AuthorName" : "OzMan",
+		"Rating" : 5,
+		"Review" : "I made this rice just as written, and was a great side dish with the orange roughy I made! Light and flavorfull in addition to being simple to make.  Great rice, and thank you!",
+		"DateSubmitted" : "2004-02-23"
+	},
+	{
+		"ReviewId" : 92727,
+		"RecipeId" : 2056,
+		"AuthorId" : 35526,
+		"AuthorName" : "riffraff",
+		"Rating" : 5,
+		"Review" : "I halved this recipe and it worded very well.  I poked holes in the cavity so the maple\/butter flavor could sink in.  Very tasty and simple.  I liked that I did not have to fuss over it.",
+		"DateSubmitted" : "2004-03-11"
+	},
+	{
+		"ReviewId" : 94083,
+		"RecipeId" : 4332,
+		"AuthorId" : 37036,
+		"AuthorName" : "Kim D.",
+		"Rating" : 5,
+		"Review" : "A chocolate lover's dream!!!  This was delicious!  I followed your directions exactly and wouldn't change a thing.  I severed it over vanilla ice cream!  What a treat!  Thanks for sharing! ",
+		"DateSubmitted" : "2004-03-19"
+	},
+	{
+		"ReviewId" : 99601,
+		"RecipeId" : 4271,
+		"AuthorId" : 10033,
+		"AuthorName" : "spatchcock",
+		"Rating" : 5,
+		"Review" : "I made this several weeks ago but forgot to review it! This is a great vanilla pudding. I added real vanilla bean to it and served it with fresh fruit and angel food cake as a kind of trifle. Excellent--I tasted it hot and cold. ",
+		"DateSubmitted" : "2004-04-21"
+	},
+	{
+		"ReviewId" : 108291,
+		"RecipeId" : 1460,
+		"AuthorId" : 22015,
+		"AuthorName" : "Mysterygirl",
+		"Rating" : 5,
+		"Review" : "This was very good.  I used Splenda in place of sugar and it tasted wonderful.  It's a nice refreshing treat to indulge in when the weather is hot.  I wanted a special recipe to be my 500th review and this was definitely special.  Thank you. ",
+		"DateSubmitted" : "2004-06-15"
+	},
+	{
+		"ReviewId" : 111118,
+		"RecipeId" : 4496,
+		"AuthorId" : 10033,
+		"AuthorName" : "spatchcock",
+		"Rating" : 5,
+		"Review" : "This was terrific! I had the most excruciating craving for cornbread last week and whipped this up. Easy and simple good cornbread taste. I didn't find it to be dry in the least, as some other reviewers did. I thought it had a nice fine crumb if not overmixed....Will make this again to eat with my vegetarian chili. Thanks for posting! ",
+		"DateSubmitted" : "2004-07-03"
+	},
+	{
+		"ReviewId" : 113310,
+		"RecipeId" : 5428,
+		"AuthorId" : 64625,
+		"AuthorName" : "woodland hues",
+		"Rating" : 5,
+		"Review" : "Enjoyed immensely!!  Delicious tang provided by the red wine vinegar, used an equal amount of oil, 3 eggs, 5 slices bacon, and added garlic to the dressing before heating, instead of marinating it in the oil. This salad fed 3 of us as a main course with garlic buns. Don't overlook this salad, it's good!",
+		"DateSubmitted" : "2004-07-15"
+	},
+	{
+		"ReviewId" : 116393,
+		"RecipeId" : 4371,
+		"AuthorId" : 22015,
+		"AuthorName" : "Mysterygirl",
+		"Rating" : 5,
+		"Review" : "This is excellent!  Just like what a local restaurant uses as a garnish on one of my favorite appetizers.  The dipping sauce is good, but I liked the sage plain.   I should also mention that I don't care for sage much in dishes but the flavor it so light and delicate when fried - it's just wonderful!",
+		"DateSubmitted" : "2004-08-04"
+	},
+	{
+		"ReviewId" : 116394,
+		"RecipeId" : 593,
+		"AuthorId" : 22015,
+		"AuthorName" : "Mysterygirl",
+		"Rating" : 5,
+		"Review" : "Okay, I have always made them this way EXCEPT I never thought to use bacon grease before when frying.  I have to admit that it takes this to the next level, hence the 5 stars.  Can't think why I never thought of it but I'm sure glad that you did - thanks for a new twist on an old favorite. ",
+		"DateSubmitted" : "2004-08-04"
+	},
+	{
+		"ReviewId" : 116878,
+		"RecipeId" : 2886,
+		"AuthorId" : 10033,
+		"AuthorName" : "spatchcock",
+		"Rating" : 5,
+		"Review" : "Terrific bread! Made this this morning to use up LOTS of old bananas I bought on sale. I made three mini-loaves, so I only baked them for about 35-40 minutes. They were so gorgeous and brown! Thanks for posting! ",
+		"DateSubmitted" : "2004-08-07"
+	},
+	{
+		"ReviewId" : 117170,
+		"RecipeId" : 3064,
+		"AuthorId" : 71324,
+		"AuthorName" : "-Sylvie-",
+		"Rating" : 5,
+		"Review" : "I used 50\/50 sugar\/syrup. Because I like my flapjaks to be quite moist I also used a can of cherries in syrup, let a lot of the syrup drain of, spread a thin layer of flapjack mix into the baking tin, then a layer of cherries in syrup and covered it with the rest of the mix. They were absolutely delicious and non survived the day! I might use a little less sugar next time as it was quite sweet!",
+		"DateSubmitted" : "2004-08-09"
+	},
+	{
+		"ReviewId" : 118657,
+		"RecipeId" : 619,
+		"AuthorId" : 43083,
+		"AuthorName" : "Ang11002",
+		"Rating" : 5,
+		"Review" : "Very good. I could of used less egg though. Maybe 1 next time. Also used less salt. Thanks for an easy, low carb lunch! ",
+		"DateSubmitted" : "2004-08-18"
+	},
+	{
+		"ReviewId" : 119081,
+		"RecipeId" : 2768,
+		"AuthorId" : 64203,
+		"AuthorName" : "Dine  Dish",
+		"Rating" : 5,
+		"Review" : "This is a great cookie recipe! My friend Annalise brought these over and I just had to know where she got the recipe. They are delicious. I'm probably going to be feeding the entire neighborhood with the amount of cookies I now have, but I know they'll love them too! I also baked mine for 10 minutes and they turned out perfect. Thanks!",
+		"DateSubmitted" : "2004-08-21"
+	},
+	{
+		"ReviewId" : 119451,
+		"RecipeId" : 4897,
+		"AuthorId" : 10033,
+		"AuthorName" : "spatchcock",
+		"Rating" : 5,
+		"Review" : "I just made a batch of this soup to freeze for later. I couldn't help tasting a good amount, though, and it is AMAZING! Like s'kat, I left out the cream but added some white wine. I thought the taste of the roasted vegetables in combination was perfect. I will serve this for company in the future--really good! thank you!! ",
+		"DateSubmitted" : "2004-08-23"
+	},
+	{
+		"ReviewId" : 120274,
+		"RecipeId" : 487,
+		"AuthorId" : 71324,
+		"AuthorName" : "-Sylvie-",
+		"Rating" : 5,
+		"Review" : "This was so easy to make and I could hardly wait for it to be cool enough to slice! I had it with butter and home-made strawberry & rhubarb jam. Lovely! I used 50\/50 plain and stoneground wholemeal flour as I prefer brown soda bread. I guess the wholemeal flour was the reason that I had to use additional buttermilk to bind it all together (about 1\/4 cup). I'll defenitely be making this again! *UPDATE* I have finaly tried the recipe as it is written because I was out of wholemeal flour and just wanted to add, that it's still a great tasting soda bread, that I just can't stop eating!",
+		"DateSubmitted" : "2006-01-23"
+	},
+	{
+		"ReviewId" : 122754,
+		"RecipeId" : 4870,
+		"AuthorId" : 52448,
+		"AuthorName" : "PetsRus",
+		"Rating" : 5,
+		"Review" : "This was soo simple and quick to make! I made the Butterscotch variation, my husband loved it! I do not care for sweets that much myself but I chopped up the fudge in small rough pieces and mixed it with vanilla ice cream...that was great!!\nThanks for this recipe..it is added to my list of Christmas gifts!",
+		"DateSubmitted" : "2004-09-12"
+	},
+	{
+		"ReviewId" : 124776,
+		"RecipeId" : 1035,
+		"AuthorId" : 64203,
+		"AuthorName" : "Dine  Dish",
+		"Rating" : 5,
+		"Review" : "This is one of my favorite snacks of all time. In fact, I love it so much that I don't make it very often because I can't keep my hands out of the bowl. We used this also for my son's dog theme birthday party. We had it in dog dishes... huge hit!\n",
+		"DateSubmitted" : "2004-09-24"
+	},
+	{
+		"ReviewId" : 126095,
+		"RecipeId" : 5366,
+		"AuthorId" : 104600,
+		"AuthorName" : "CoolMonday",
+		"Rating" : 5,
+		"Review" : "I couldn't wait till Thanksgiving to make this... I'm so bad.  It was wonderful.  Good thing I have grandkids around to give things to or I'd eat it all.  Mine was done in about 13 minutes.  I beat the eggs for about 3-4 minutes before adding the sugar.  Then I blended well with the electric mixer.  After I spread the cream cheese mixture on, I sprinkled some chopped pecans on top.  I hope everyone knows that once you put on the filling not to reroll in the towel lol. I greased the pan then put on the waxed paper and greased that also. Thanks for this delight Troy.\nLee",
+		"DateSubmitted" : "2004-10-02"
+	},
+	{
+		"ReviewId" : 126308,
+		"RecipeId" : 1005,
+		"AuthorId" : 60989,
+		"AuthorName" : "Bekah",
+		"Rating" : 5,
+		"Review" : "This review is for the sauce only: TERRIFIC! It was a snap to mix it together and tasted much much better than store bought. I did put a couple shakes of onion powder in too. I was a bit surprised at the addition of the olive oil, but it works nicely. I will not go back to store bought sauce again. Thanks!",
+		"DateSubmitted" : "2004-10-03"
+	},
+	{
+		"ReviewId" : 126366,
+		"RecipeId" : 809,
+		"AuthorId" : 125325,
+		"AuthorName" : "Liara",
+		"Rating" : 5,
+		"Review" : "Excellent! Cooked it over the stove top, I used two onions, doubled the Guinness and potatoes. Thanks so much! and thanks Kevin for promoting it too! :)",
+		"DateSubmitted" : "2004-10-04"
+	},
+	{
+		"ReviewId" : 129122,
+		"RecipeId" : 592,
+		"AuthorId" : 71324,
+		"AuthorName" : "-Sylvie-",
+		"Rating" : 5,
+		"Review" : "I only blended the cilantro, some of the tomato and some of the jalapeno peppers and added the rest just chopped roughly as I wanted the salsa to keep some chunkiness. great salsa.",
+		"DateSubmitted" : "2004-10-20"
+	},
+	{
+		"ReviewId" : 129496,
+		"RecipeId" : 3787,
+		"AuthorId" : 29196,
+		"AuthorName" : "JustJanS",
+		"Rating" : 5,
+		"Review" : "Just the right amount of heat and plenty of flavour in this chili. I went looking for something to use our turkey chops and was so pleased I found this. It's a meal in one pot with the potatoes in it. I don't know what black beans are, so I used red kidney beans, and I added 1 teaspoon of salt. This looks like a lot of ingredients and steps, but it only took 20 minutes of slicing, dicing and sauteeing before I was ready to leave it cook for the hour.",
+		"DateSubmitted" : "2004-10-23"
+	},
+	{
+		"ReviewId" : 130574,
+		"RecipeId" : 76,
+		"AuthorId" : 87236,
+		"AuthorName" : "truebrit",
+		"Rating" : 5,
+		"Review" : "I doubled the recipe, and tossed with a 16 oz. box of low carb noodles.  It was absolutely delicious!!!  I let the sauce simmer for a few minutes before pouring onto the noodles. There are so many things you can add to this sauce to ring the changes.  (Marg mentioned chicken, and reviewers gave other suggestions.)  Thanks for posting this, Marg!  (BTW, after looking at your fantastic photo, I decided not to add mine!!!)",
+		"DateSubmitted" : "2004-10-28"
+	},
+	{
+		"ReviewId" : 131523,
+		"RecipeId" : 3683,
+		"AuthorId" : 64203,
+		"AuthorName" : "Dine  Dish",
+		"Rating" : 5,
+		"Review" : "This is so easy to make with ingredients I already had on hand! I expected the glaze to be a little thicker, but it was delicious just the way it was. A nice sweet carott recipe. Thanks!",
+		"DateSubmitted" : "2004-11-03"
+	},
+	{
+		"ReviewId" : 131946,
+		"RecipeId" : 1171,
+		"AuthorId" : 71324,
+		"AuthorName" : "-Sylvie-",
+		"Rating" : 5,
+		"Review" : "This is a great mix. I used the cumin, but I didn't have any onion powder, so I substituted 1\/2 garlic salt and 1\/2 onion soup mix! Thanks for sharing!",
+		"DateSubmitted" : "2004-11-06"
+	},
+	{
+		"ReviewId" : 132405,
+		"RecipeId" : 834,
+		"AuthorId" : 64203,
+		"AuthorName" : "Dine  Dish",
+		"Rating" : 5,
+		"Review" : "I made the recipe exactly as written and I really enjoyed it! It has kind of a zesty taste and is a great way to dress up hamburger! Although I didn't, I recommend doubling the sauce like all the other reviews have suggested. As made, there really isn't any extra sauce. Great recipe! Thanks for sharing!",
+		"DateSubmitted" : "2004-11-08"
+	},
+	{
+		"ReviewId" : 134703,
+		"RecipeId" : 810,
+		"AuthorId" : 130663,
+		"AuthorName" : "NoraMarie",
+		"Rating" : 5,
+		"Review" : "I made these yesterday.They are very good.Had company today and they are almost gone.Will make them again but we,ll double the recipe.",
+		"DateSubmitted" : "2004-11-20"
+	},
+	{
+		"ReviewId" : 135294,
+		"RecipeId" : 4496,
+		"AuthorId" : 71324,
+		"AuthorName" : "-Sylvie-",
+		"Rating" : 5,
+		"Review" : "This was the first time I ever made or ate cornbread, so I can't compare it to others. I can say however that I really enjoyed it with a bowl of chilli. It was so easy to make, I added a can of corn and the sweet flavour complimented the spicy chilli wonderfully. Thanks for posting! I'll be making it again!",
+		"DateSubmitted" : "2004-11-23"
+	},
+	{
+		"ReviewId" : 136880,
+		"RecipeId" : 4627,
+		"AuthorId" : 10033,
+		"AuthorName" : "spatchcock",
+		"Rating" : 4,
+		"Review" : "Very good soup! We loved this with avocados and sour cream on top. I did have to cook it longer after I added the tortillas, but it was worth it. Thanks! ",
+		"DateSubmitted" : "2004-11-29"
+	},
+	{
+		"ReviewId" : 139158,
+		"RecipeId" : 463,
+		"AuthorId" : 67395,
+		"AuthorName" : "Dannygirl",
+		"Rating" : 5,
+		"Review" : "I found this in the Company's Coming Christmas book a few years ago and made it as Christmas gifts.  Everyone really enjoyed it. I actually didn't worry about drying the orange zest and it worked just fine.",
+		"DateSubmitted" : "2004-12-11"
+	},
+	{
+		"ReviewId" : 140122,
+		"RecipeId" : 2561,
+		"AuthorId" : 56112,
+		"AuthorName" : "Jellyqueen",
+		"Rating" : 5,
+		"Review" : "This is a great recipe.  I also add a small package of frozen coconut to mine, simply because I love coconut. Thanks for the great recipe.",
+		"DateSubmitted" : "2004-12-16"
+	},
+	{
+		"ReviewId" : 144532,
+		"RecipeId" : 3656,
+		"AuthorId" : 87236,
+		"AuthorName" : "truebrit",
+		"Rating" : 5,
+		"Review" : "Lisa, this was so tasty, and it was hard to stop at one bowl!  I like the fact that the meatballs don't need to be browned first, and can just be dropped into the soup.  I must admit, I've never added Cream of Wheat to meatballs before, but they turned out deliciously tender!  I only used about 1\/4 cup of onion, and added about 1\/2 cup of canned, drained chopped spinach. The taste (with the addition of spinach) was similar to Italian Wedding Soup.  Thanks!",
+		"DateSubmitted" : "2005-01-05"
+	},
+	{
+		"ReviewId" : 147684,
+		"RecipeId" : 76,
+		"AuthorId" : 47510,
+		"AuthorName" : "Dreamgoddess",
+		"Rating" : 5,
+		"Review" : "This was a delicious alfredo sauce and so easy to prepare.  Next time, I'll add just a little cornstarch to thicken it.  I made cajun sauteed shrimp and added to the sauce to serve over linguini.",
+		"DateSubmitted" : "2005-01-19"
+	},
+	{
+		"ReviewId" : 149558,
+		"RecipeId" : 4378,
+		"AuthorId" : 64203,
+		"AuthorName" : "Dine  Dish",
+		"Rating" : 5,
+		"Review" : "To quote my 3 year old after his first bite... \"Deeeeeeelicious!\" This were so easy to make and are very tasty. I used olive oil and cut the tortilla stack up with my kitchen shears, which was very simple. I addedd a little bit of coarse salt for flavoring and we were set. I've made these before on a baking stone, and that's a delicious way to bake them as well. Perfect! Thank you for sharing this quick and easy recipe!",
+		"DateSubmitted" : "2005-01-27"
+	},
+	{
+		"ReviewId" : 151935,
+		"RecipeId" : 4873,
+		"AuthorId" : 71324,
+		"AuthorName" : "-Sylvie-",
+		"Rating" : 0,
+		"Review" : "This is a great recipe! I used fresh rosemary and inserted it into the small cuts together with the garlic slivers. Beautiful flavours and so moist and juicy. I added a little veg stock (didn't have lamb stock) and cornflour to the drippings and it made a lovely, dark and rich  gravy.I used to be scared about making a lamb roast, but no anymore!!!!",
+		"DateSubmitted" : "2005-02-07"
+	},
+	{
+		"ReviewId" : 154462,
+		"RecipeId" : 519,
+		"AuthorId" : 10033,
+		"AuthorName" : "spatchcock",
+		"Rating" : 5,
+		"Review" : "Awesome! I woke up with a hankering for hash browns today and these were just spicy and crispy enough for us. They hit the spot! Thanks, Gay!",
+		"DateSubmitted" : "2005-02-18"
+	},
+	{
+		"ReviewId" : 154837,
+		"RecipeId" : 3166,
+		"AuthorId" : 71324,
+		"AuthorName" : "-Sylvie-",
+		"Rating" : 5,
+		"Review" : "This is a great recipe Marg, thanks for sharing. I used roast vegetable pasta sauce and fresh buffalo mozzarella rather than the  kind you can shred, so I just cut it into small chunks and added it while the chicken was still in the pan so that it would melt a little. It was delicious.",
+		"DateSubmitted" : "2005-02-19"
+	},
+	{
+		"ReviewId" : 154975,
+		"RecipeId" : 2278,
+		"AuthorId" : 64625,
+		"AuthorName" : "woodland hues",
+		"Rating" : 5,
+		"Review" : "We're enjoying this one..so simple to prepare..have made this using rice flour and Splenda and it's a great success..the recipe lends itself to the shortbread base very well...",
+		"DateSubmitted" : "2005-02-20"
+	},
+	{
+		"ReviewId" : 154976,
+		"RecipeId" : 379,
+		"AuthorId" : 56112,
+		"AuthorName" : "Jellyqueen",
+		"Rating" : 5,
+		"Review" : "This is a great recipe.  I made it exactly as directed except for the olives.  I knew that DH would prefer it without them. I used Apple Cider Vinegar but I am sure that it would be just as good with the Red Wine Vinegar. This will be a regular for me to made from now on.  Just takes a few minutes and well worth it.",
+		"DateSubmitted" : "2005-02-20"
+	},
+	{
+		"ReviewId" : 155081,
+		"RecipeId" : 3166,
+		"AuthorId" : 124030,
+		"AuthorName" : "foxysnana",
+		"Rating" : 5,
+		"Review" : "I saw pictures posted of this in the photo thread, and thought it looked so good I would have to try it.  Made this for dinner tonight.  Had to juggle ingredients a bit as I only used 2 chicken breast.  That did not matter a bit though.  This was wonderful stuff.  My hubby usually makes chicken parmesean in the oven, and he was shocked that I was not baking it.  I did this and had dinner on the table in about 30 minutes.  Thanks Marg for another great recipe.",
+		"DateSubmitted" : "2005-02-20"
+	},
+	{
+		"ReviewId" : 155534,
+		"RecipeId" : 2047,
+		"AuthorId" : 39547,
+		"AuthorName" : "Julesong",
+		"Rating" : 5,
+		"Review" : "I made this for my husband because he loves spicy foods and jerk seasoning.  We used chicken breasts and thighs.  Instead of broiling or roasting, however, I sauteed the breasts - when they were about 3\/4 done in the pan, I added about 1\/3 cup of sherry to aid in the cooking\/browning.  When the breasts were firm, and I removed them from the pan, I added about another 1\/4 cup of sherry to deglaze the pan. When it made a nifty sauce, I poured it over the breasts.  Steingrim *really* liked the sauce, and said it was sort of like a \"sherry pepper\" flavor, which is popular in Caribbean cooking.  The allspice made all the difference in this recipe, in my opinion - don't skip it!  An *excellent* recipe, well worth 5 stars.\n",
+		"DateSubmitted" : "2005-02-22"
+	},
+	{
+		"ReviewId" : 156476,
+		"RecipeId" : 2137,
+		"AuthorId" : 1533,
+		"AuthorName" : "Dancer",
+		"Rating" : 5,
+		"Review" : "OUTSTANDING was the only comments my guests made, Their mouths were busy devouring the pie.\nI used an egg wash and thats the only thing I added to the recipe. I was hoping for leftovers but there was none :-( Excellent recipe. Thanks so much.",
+		"DateSubmitted" : "2005-02-27"
+	},
+	{
+		"ReviewId" : 157598,
+		"RecipeId" : 3929,
+		"AuthorId" : 35526,
+		"AuthorName" : "riffraff",
+		"Rating" : 5,
+		"Review" : "Although there is enough of the flour mixture for a whole other batch I am giving 5 stars as the cooking method and times given are RIGHT ON.  I wish I had halfed the flour and kept the other ingredients the same.  We loved this recipe.",
+		"DateSubmitted" : "2005-03-04"
+	},
+	{
+		"ReviewId" : 157696,
+		"RecipeId" : 3029,
+		"AuthorId" : 86520,
+		"AuthorName" : "Dorel",
+		"Rating" : 5,
+		"Review" : "Very good!!!! I halved the recipe for 3 of us and because my oven was cooking pork tenderloin at 425° I used my toaster oven set at 350°. It turned out delicious and we ate it all. Thanks for the great recipe.",
+		"DateSubmitted" : "2005-03-04"
+	},
+	{
+		"ReviewId" : 159116,
+		"RecipeId" : 4077,
+		"AuthorId" : 86520,
+		"AuthorName" : "Dorel",
+		"Rating" : 5,
+		"Review" : "I had a problem with the batter being too thick, I don't know if it's my Canadian flour that is too heavy or maybe I should have sifted before measuring. They still tasted great. I increased the cinnamon to 2 teaspoons and the nutmeg to 1\/2 teaspoon. I also increased the walnuts to 3\/4 cup. I don't like sweet muffins so I decreased the sugar to 3\/4 cup brown sugar. I will make these again but I will try sifting the flour before measuring. Thanks Marg for posting the recipe.",
+		"DateSubmitted" : "2005-03-10"
+	},
+	{
+		"ReviewId" : 160265,
+		"RecipeId" : 6449,
+		"AuthorId" : 56112,
+		"AuthorName" : "Jellyqueen",
+		"Rating" : 5,
+		"Review" : "I love tomato juice, so it just stands to reason that I would love Bloody Marys!!!  This is a fantastic recipe.  My only change to the recipe was to add a little extra tobasco sauce, because I just happen to like mine extra spicy.  But that is just a personal preference.  ",
+		"DateSubmitted" : "2005-03-15"
+	},
+	{
+		"ReviewId" : 161049,
+		"RecipeId" : 2687,
+		"AuthorId" : 56112,
+		"AuthorName" : "Jellyqueen",
+		"Rating" : 5,
+		"Review" : "I made this recipe as part of the Adopted Recipe Swap #1.  It is a really great recipe and I will make it often.  The thing I loved most was that you can adapt this recipe to taste like your favorite pizza, just by adding your own favorite toppings.",
+		"DateSubmitted" : "2005-03-19"
+	},
+	{
+		"ReviewId" : 161275,
+		"RecipeId" : 659,
+		"AuthorId" : 22642,
+		"AuthorName" : "Heather Sullivan",
+		"Rating" : 5,
+		"Review" : "I used 0.5ounce (weight) dried sage and 0.5ounce (weight) of freshly ground pepper corns with 2 cups cider and soy sauce. Marinaded overnight and the chicken legs I used turned out beautiful! I was afraid the pepper would be too strong but it turned out that sage was the only flavour that got into the super tender meat. ",
+		"DateSubmitted" : "2005-03-20"
+	},
+	{
+		"ReviewId" : 161364,
+		"RecipeId" : 1379,
+		"AuthorId" : 64203,
+		"AuthorName" : "Dine  Dish",
+		"Rating" : 5,
+		"Review" : "This was my first time making an herbal vinegar and I can tell you this...it won't be the last! I really didn't think it would change the flavor of the vinegar that much at all, but it does. The garlic comes through in such a nice, subtle way and enhances the vinegar greatly! I used this to make a Ceasar Salad that called for regular white wine vinegar. This paired perfectly with the salad flavors. I will be using this bottle of vinegar time and time again and will start making more flavors as well! Delicious, yet subtle. Thanks Carla!",
+		"DateSubmitted" : "2005-03-20"
+	},
+	{
+		"ReviewId" : 162561,
+		"RecipeId" : 3294,
+		"AuthorId" : 35526,
+		"AuthorName" : "riffraff",
+		"Rating" : 5,
+		"Review" : "Very good!!  I used just chicken legs and they turned out with a crispy perfect coating.  Love it!",
+		"DateSubmitted" : "2005-03-26"
+	},
+	{
+		"ReviewId" : 164185,
+		"RecipeId" : 6582,
+		"AuthorId" : 29196,
+		"AuthorName" : "JustJanS",
+		"Rating" : 5,
+		"Review" : "Excellent rice dish to have with our curry. It was simple to make, tasted great and freed up a burner. I'll be making this again thanks Carla. I only cheated a little, I added stock powder at the end of step 4, then poured already boiling water over the rice before stirring and popping it all in the oven. I have found rice cooks better this way.",
+		"DateSubmitted" : "2005-04-02"
+	},
+	{
+		"ReviewId" : 165873,
+		"RecipeId" : 4213,
+		"AuthorId" : 1533,
+		"AuthorName" : "Dancer",
+		"Rating" : 5,
+		"Review" : "This is the best I have tasted, I have made it about 10 times now and it was time for the review. This is easy to make and always turns out great. Thanks it is a keeper trust me.",
+		"DateSubmitted" : "2005-04-10"
+	},
+	{
+		"ReviewId" : 166307,
+		"RecipeId" : 6505,
+		"AuthorId" : 39547,
+		"AuthorName" : "Julesong",
+		"Rating" : 5,
+		"Review" : "These were *excellent* ribs!  We made a half-batch, 2.5 lbs of short ribs, which equalled about 8 of them.  They came out rich and tender - so rich that Steingrim was full after only 3 1\/2 meaty ribs.  We served them with those wonderful balsamic shallot potatoes I keep fixing... a nice combination! :) You've got yourself a great recipe here, Julie!",
+		"DateSubmitted" : "2005-04-11"
+	},
+	{
+		"ReviewId" : 167268,
+		"RecipeId" : 1753,
+		"AuthorId" : 47510,
+		"AuthorName" : "Dreamgoddess",
+		"Rating" : 5,
+		"Review" : "I prepared this recipe as part of our Adopted Recipe Swap.  We really loved the taste that the marinade imparted to the chicken.  The combination of crunchy almonds and crispy chicken was simply delicious.  You picked a winner with this one!  ",
+		"DateSubmitted" : "2005-04-13"
+	},
+	{
+		"ReviewId" : 169086,
+		"RecipeId" : 468,
+		"AuthorId" : 10033,
+		"AuthorName" : "spatchcock",
+		"Rating" : 5,
+		"Review" : "Absolutely fabulous recipe. I used good-quality maple syrup, which caramelized really well. Served this with roasted asparagus with sea salt and homemade strawberry ice cream. Luscious!! ",
+		"DateSubmitted" : "2005-04-21"
+	},
+	{
+		"ReviewId" : 169634,
+		"RecipeId" : 3219,
+		"AuthorId" : 22015,
+		"AuthorName" : "Mysterygirl",
+		"Rating" : 5,
+		"Review" : "This is such a cool idea.  Making this gave me many ideas for different kinds of foccacia to make like this.   The only thing that I did differently was to omit the olives as I am not a fan of them.   ",
+		"DateSubmitted" : "2005-04-24"
+	},
+	{
+		"ReviewId" : 170057,
+		"RecipeId" : 314,
+		"AuthorId" : 39547,
+		"AuthorName" : "Julesong",
+		"Rating" : 5,
+		"Review" : "This salad was very good!  We made it for dinner as part of the adopted recipe support swap, and Steingrim enjoyed it a lot (even though he doesn't usually like having salads as a complete meal).  A good choice, Carla!  :)",
+		"DateSubmitted" : "2005-04-25"
+	},
+	{
+		"ReviewId" : 170848,
+		"RecipeId" : 2267,
+		"AuthorId" : 146310,
+		"AuthorName" : "CoffeeMom",
+		"Rating" : 5,
+		"Review" : "Thank to Mianbao to for bring this recipe to my attention!!! These are awesome! I made them exactly how the recipe stated and I WILL be making them again! :)",
+		"DateSubmitted" : "2005-04-29"
+	},
+	{
+		"ReviewId" : 171601,
+		"RecipeId" : 3683,
+		"AuthorId" : 138861,
+		"AuthorName" : "Winnipeg Mel",
+		"Rating" : 4,
+		"Review" : "I agree with the other reviews, it never does form a true glaze. I even added a bit of cornstarch hoping it would thicken a bit but it still didn't. I did enjoy the flavor and will make them again.",
+		"DateSubmitted" : "2005-05-02"
+	},
+	{
+		"ReviewId" : 173888,
+		"RecipeId" : 485,
+		"AuthorId" : 22642,
+		"AuthorName" : "Heather Sullivan",
+		"Rating" : 5,
+		"Review" : "This is my favourite sidedish that uses kale. I leave out the melted butter, though, as I don't think it's needed. It can be a little bit stressful because of juggling the different pots and pans but it's well worth it. ",
+		"DateSubmitted" : "2005-05-13"
+	},
+	{
+		"ReviewId" : 175966,
+		"RecipeId" : 1753,
+		"AuthorId" : 39547,
+		"AuthorName" : "Julesong",
+		"Rating" : 4,
+		"Review" : "The recipe doesn't tell you how thickly to slice the chicken - as a result, I sliced mine pretty thinly, and quickly ran out of the coating. I got a few nicely coated and cooked pieces, though, and got an okay photo of them which I've uploaded.\n\nI think that using a food processor to finely chop the almonds could be a good idea. If you don't chop them finely enough, they won't stick well.\n\nThe marinade could use some more flavor. I think that some minced green onion and garlic would help. And freshly ground black pepper.\n\nThe recipe is good. I think with more edits and additional flavor it could be a 5-star recipe!  :)",
+		"DateSubmitted" : "2005-05-22"
+	},
+	{
+		"ReviewId" : 177960,
+		"RecipeId" : 524,
+		"AuthorId" : 86520,
+		"AuthorName" : "Dorel",
+		"Rating" : 4,
+		"Review" : "The flavor is good but no way is there enough for 12 muffins. I barely got 6 jumbo muffins out of it and I used 2 cups chopped apricots and 1\/2 cup nuts.\nI used dried apricots that I rehydrated with boiling water. Instead of milk I used 1\/2 cup apricot water as I knew the rehydrated apricots would not have as much juice as the fresh. I only used 1\/3 cup sugar, that's my personal taste, I don't like muffins sweet. These were even too sweet for me. I would use 1\/4 cup sugar for my taste. Thanks for a tasty apricot muffin recipe.",
+		"DateSubmitted" : "2005-05-31"
+	},
+	{
+		"ReviewId" : 178220,
+		"RecipeId" : 2642,
+		"AuthorId" : 47510,
+		"AuthorName" : "Dreamgoddess",
+		"Rating" : 5,
+		"Review" : "We had tacos tonight and guess what I forgot to pick up at the store....yep, I forgot the taco seasoning.  Of course I came straight here and found this recipe.  I'll never again buy taco seasoning at the store.  This was definitely a much better taco seasoning.  I'll be using this recipe from now on.",
+		"DateSubmitted" : "2002-11-15"
+	},
+	{
+		"ReviewId" : 178243,
+		"RecipeId" : 2642,
+		"AuthorId" : 1891,
+		"AuthorName" : "Kim19068",
+		"Rating" : 5,
+		"Review" : "Wow had 1 packets of Taco seasoning 2 lbs of groundbeef needed more seasoning. What do I do but go to recipezaar and I was luck and found this recipe. Saved me from having to run into town and we got to eat on time.",
+		"DateSubmitted" : "2003-03-11"
+	},
+	{
+		"ReviewId" : 178812,
+		"RecipeId" : 605,
+		"AuthorId" : 29196,
+		"AuthorName" : "JustJanS",
+		"Rating" : 4,
+		"Review" : "This was perfect for a winter dinner tonight. I think this could have had a richer flavour, and if I could eat kidneys and had left them in-I'm sure it would have! I added more herbs and salt and pepper to compensate. I was worried about heating a Corning Ware casserole, then pouring in cold batter, so I made this in a cake pan. Out of interest, I found a six cup one in my cupboard. It wasn't large enough to hold all the batter and stew mixture, so I would suggest using an 8 cup dish\/pan. Thanks Honni for a dinner we all enjoyed.",
+		"DateSubmitted" : "2005-06-04"
+	},
+	{
+		"ReviewId" : 180137,
+		"RecipeId" : 550,
+		"AuthorId" : 35526,
+		"AuthorName" : "riffraff",
+		"Rating" : 5,
+		"Review" : "Simple and PERFECT.  Goes with anything you are grilling.  Leftovers work well on sandwiches.",
+		"DateSubmitted" : "2005-06-09"
+	},
+	{
+		"ReviewId" : 181034,
+		"RecipeId" : 4240,
+		"AuthorId" : 29196,
+		"AuthorName" : "JustJanS",
+		"Rating" : 4,
+		"Review" : "Very ice thanks Amanda. This has an interesting texture almost like a souffle when it first comes out of the oven. It needs to be well seasoned, some pepper would be a good addition, and next time I would sprinkle some cheese over.",
+		"DateSubmitted" : "2005-06-13"
+	},
+	{
+		"ReviewId" : 181259,
+		"RecipeId" : 4393,
+		"AuthorId" : 51011,
+		"AuthorName" : "Loves2Teach",
+		"Rating" : 5,
+		"Review" : "I also made this with a bread bowl.  It is soooooo good and simple to make.  I love it with sesamie sticks.  Made this for a class party and there wasnt any left.  Thanks for posting!",
+		"DateSubmitted" : "2003-01-06"
+	},
+	{
+		"ReviewId" : 181260,
+		"RecipeId" : 4393,
+		"AuthorId" : 35526,
+		"AuthorName" : "riffraff",
+		"Rating" : 5,
+		"Review" : "I make this recipe for every party my best friend will be at.  She says mine tastes better than other people's.  I think it's because I use about 5 green onions tather then 3.  We serve with little bread sticks.",
+		"DateSubmitted" : "2005-12-29"
+	},
+	{
+		"ReviewId" : 185806,
+		"RecipeId" : 4332,
+		"AuthorId" : 22015,
+		"AuthorName" : "Mysterygirl",
+		"Rating" : 5,
+		"Review" : "This was excellent.   My stepdaughter wanted something chocolatey so I allowed her to make this using my good dutch cocoa from the Netherlands.   It was sinfully rich.  Best while it's warm served with vanilla ice cream.  ",
+		"DateSubmitted" : "2005-07-05"
+	},
+	{
+		"ReviewId" : 191587,
+		"RecipeId" : 5170,
+		"AuthorId" : 37036,
+		"AuthorName" : "Kim D.",
+		"Rating" : 5,
+		"Review" : "Delicious light and fluffy pancakes!  I used 1\/4 cup measuring cup to pour the pancakes and it made eleven 5-inch pancakes.  This is the ONLY recipe I will use for pancakes from now on!  Thanks Bill!",
+		"DateSubmitted" : "2005-07-31"
+	},
+	{
+		"ReviewId" : 193210,
+		"RecipeId" : 4663,
+		"AuthorId" : 71324,
+		"AuthorName" : "-Sylvie-",
+		"Rating" : 0,
+		"Review" : "I'm not gonna give this any stars on this occassion because I altered the recipe and I think that led to my problems. So it's my own fault. I substituted 1\/2 of the sugar with Splenda, but otherwise stuck to the recipe. It rose nicely in the oven, but when I took it out and it cooled it kind of collapsed. I'm also not sure whether I underbaked t a little, I had it in the oven for 65 minutes and the bamboo skewer I inserted to test it came out clean. However, towards the bottom, where most of the bluenerries gathered the cake looked a littlle undone, I'm not sure it might have just been the moisture from the blueberries though. I will try and make this again as the flavour was good and very moist. ",
+		"DateSubmitted" : "2005-08-04"
+	},
+	{
+		"ReviewId" : 198641,
+		"RecipeId" : 2642,
+		"AuthorId" : 43083,
+		"AuthorName" : "Ang11002",
+		"Rating" : 5,
+		"Review" : "I used this in dip and have no complaints. Didnt really taste it on its own of course. Used mexican oregano:) Thanks for an easy recipe I will do again! ",
+		"DateSubmitted" : "2005-08-26"
+	},
+	{
+		"ReviewId" : 201488,
+		"RecipeId" : 2722,
+		"AuthorId" : 157425,
+		"AuthorName" : "lauralie41",
+		"Rating" : 5,
+		"Review" : "Great french toast recipe! I did double the recipe and used Splenda instead of sugar. Forgot to put my cookie sheet in the preheated oven and did have a problem with the toast sticking even though sheet was greased. Very nice and light tasting too! Will be replacing my old french toast recipe.",
+		"DateSubmitted" : "2005-09-07"
+	},
+	{
+		"ReviewId" : 203764,
+		"RecipeId" : 2658,
+		"AuthorId" : 146310,
+		"AuthorName" : "CoffeeMom",
+		"Rating" : 4,
+		"Review" : "This a simple and esay to make from scratch sauce. I used 10 tomatoes due to the size. (italian roma's)",
+		"DateSubmitted" : "2005-09-15"
+	},
+	{
+		"ReviewId" : 204451,
+		"RecipeId" : 2973,
+		"AuthorId" : 35635,
+		"AuthorName" : "_Pixie_",
+		"Rating" : 5,
+		"Review" : "Really really good crisp. I thought it tasted more peachy and my husband insisted it was more apple. Ww all agreed it was delicious! I doubled this recipe to use up a very ripe basket of peaches and added a tad more cinnamon. Just delicious, thanks Melanie.",
+		"DateSubmitted" : "2005-09-18"
+	},
+	{
+		"ReviewId" : 208905,
+		"RecipeId" : 4658,
+		"AuthorId" : 64203,
+		"AuthorName" : "Dine  Dish",
+		"Rating" : 5,
+		"Review" : "This was very tasty! I used seasoned bread crubs, a tbs of butter and a tbs of vegetable oil to cook the cutlets in. This was a very filling and full meal, great with mashed potatoes, green beans and a salad!\nThanks for sharing this easy and delicious recipe! Oh - and the fried onions with this are a must. Delicious!",
+		"DateSubmitted" : "2005-10-03"
+	},
+	{
+		"ReviewId" : 214073,
+		"RecipeId" : 1035,
+		"AuthorId" : 35526,
+		"AuthorName" : "riffraff",
+		"Rating" : 5,
+		"Review" : "This is part of the sweet treat trays I am making for the guys I work with.  I am putting this in tubs that are decorated for the holidays and will accompany cookies and spicy sweet nuts.  I only used 1\/4 cup of butter and 1 1\/2 cups of powdered sugar.  I also used half multi grain chex and half corn chex.  Thanks for posting!!",
+		"DateSubmitted" : "2003-12-06"
+	},
+	{
+		"ReviewId" : 216373,
+		"RecipeId" : 339,
+		"AuthorId" : 157425,
+		"AuthorName" : "lauralie41",
+		"Rating" : 5,
+		"Review" : "This was my first time working with phyllo pastry. Was a little worried at first but this was easy to put together and tasted so good. I used frozen spinach that I thawed in the microwave and let drain. Next time I will add some chopped tomatoes too. A definite keeper!",
+		"DateSubmitted" : "2005-10-28"
+	},
+	{
+		"ReviewId" : 224309,
+		"RecipeId" : 5200,
+		"AuthorId" : 35526,
+		"AuthorName" : "riffraff",
+		"Rating" : 5,
+		"Review" : "I made these with the intention of using them on my holiday cookie tray.  After my walnut loving boyfriend tried them I have enough left for one cookie tray, lol.  Thanks for a great, although very rich, recipe!",
+		"DateSubmitted" : "2005-11-27"
+	},
+	{
+		"ReviewId" : 232317,
+		"RecipeId" : 3671,
+		"AuthorId" : 35526,
+		"AuthorName" : "riffraff",
+		"Rating" : 5,
+		"Review" : "This is the best lemon pie I have ever made.  The filling was lemony without being too tart.  It didn't develop that \"twang\" that lemon pies sometimes get.  Also the filling did not turn the crust into mush.  Perfect.  This will be my standby recipe for next year as well.  Thanks for posting.",
+		"DateSubmitted" : "2005-12-27"
+	},
+	{
+		"ReviewId" : 233060,
+		"RecipeId" : 3671,
+		"AuthorId" : 51011,
+		"AuthorName" : "Loves2Teach",
+		"Rating" : 4,
+		"Review" : "This was good, but almost too tart for me.  I shared it with friends, and they said the same thing.  Next time I may add some whipped topping to the top.  Thanks for sharing!",
+		"DateSubmitted" : "2005-12-29"
+	},
+	{
+		"ReviewId" : 235896,
+		"RecipeId" : 4460,
+		"AuthorId" : 22015,
+		"AuthorName" : "Mysterygirl",
+		"Rating" : 5,
+		"Review" : "Sweet\/salty tastes are my favorite.   Together better than each one individually.   This dessert tops my list of sweet\/salty tastes.  Thanks for posting a great recipe.",
+		"DateSubmitted" : "2006-01-06"
+	},
+	{
+		"ReviewId" : 237212,
+		"RecipeId" : 4957,
+		"AuthorId" : 60989,
+		"AuthorName" : "Bekah",
+		"Rating" : 5,
+		"Review" : "This is great: easy to make meal, snap to prepare, tastes is delish, and the leftovers can be used in so many ways. We enjoyed our tacos, and I am looking forward to a chicken taco salad for lunch, and we are now having chicken enchiladas for dinner! I true winner. Thanks. ",
+		"DateSubmitted" : "2006-01-11"
+	},
+	{
+		"ReviewId" : 237662,
+		"RecipeId" : 55,
+		"AuthorId" : 53959,
+		"AuthorName" : "looneytunesfan",
+		"Rating" : 4,
+		"Review" : "I liked it. I was surprised since it didn't have sour cream  in it but it was pretty good. Thank you for sharing.",
+		"DateSubmitted" : "2006-01-12"
+	},
+	{
+		"ReviewId" : 238050,
+		"RecipeId" : 3180,
+		"AuthorId" : 125579,
+		"AuthorName" : "GrandmaIsCooking",
+		"Rating" : 5,
+		"Review" : "This is the recipe that I have always used.  I never wrote it down, just always got it off the Quaker oatmeal box.  I just made a batch this afternoon, and they were as delicious as always!",
+		"DateSubmitted" : "2005-03-27"
+	},
+	{
+		"ReviewId" : 240550,
+		"RecipeId" : 3671,
+		"AuthorId" : 125325,
+		"AuthorName" : "Liara",
+		"Rating" : 5,
+		"Review" : "I agree with riff, this is the best lemon pie I've ever made! It was the right creamy texture without being runny and great lemon flavor. I've been asked to make this again soon. Thanks!",
+		"DateSubmitted" : "2006-01-21"
+	},
+	{
+		"ReviewId" : 240675,
+		"RecipeId" : 47,
+		"AuthorId" : 53959,
+		"AuthorName" : "looneytunesfan",
+		"Rating" : 4,
+		"Review" : "These came out pretty good. I little on the dry side but maybe that is the way they were supposed to be? Thank you for sharing.",
+		"DateSubmitted" : "2006-01-21"
+	},
+	{
+		"ReviewId" : 240807,
+		"RecipeId" : 2496,
+		"AuthorId" : 22015,
+		"AuthorName" : "Mysterygirl",
+		"Rating" : 5,
+		"Review" : "Excellent!   I made this for my dear friend's birthday and it was a huge hit.   I used some wonderful dutch cocoa that another Zaarite sent me and it was dark, moist, rich and wonderful.    Exactly the kind of thing that I was looking for - thank you!",
+		"DateSubmitted" : "2006-01-21"
+	},
+	{
+		"ReviewId" : 242521,
+		"RecipeId" : 2811,
+		"AuthorId" : 35526,
+		"AuthorName" : "riffraff",
+		"Rating" : 5,
+		"Review" : "Very good cake.  Stays moist on the buffet table.  Made it exactly as written.  Thank you for a really good dessert.",
+		"DateSubmitted" : "2002-09-05"
+	},
+	{
+		"ReviewId" : 242942,
+		"RecipeId" : 565,
+		"AuthorId" : 64625,
+		"AuthorName" : "woodland hues",
+		"Rating" : 4,
+		"Review" : "This dip paired well with baguette slices as well as pita crisps at the get together to which I took it.  The red pepper is refreshing and I didn't use any sugar.  The cayenne adds the hint of something unexpected. Not bad!",
+		"DateSubmitted" : "2006-01-28"
+	},
+	{
+		"ReviewId" : 244807,
+		"RecipeId" : 3989,
+		"AuthorId" : 53959,
+		"AuthorName" : "looneytunesfan",
+		"Rating" : 5,
+		"Review" : "My husband really loved this. Thank you for sharing.",
+		"DateSubmitted" : "2006-02-03"
+	},
+	{
+		"ReviewId" : 257903,
+		"RecipeId" : 563,
+		"AuthorId" : 22015,
+		"AuthorName" : "Mysterygirl",
+		"Rating" : 3,
+		"Review" : "Interesting flavor.   I kept thinking about that mock apple pie with the crackers when eating this although the taste is more like pecan pie if I had to take a guess.   Probably won't be making this again.",
+		"DateSubmitted" : "2006-03-21"
+	},
+	{
+		"ReviewId" : 257905,
+		"RecipeId" : 228,
+		"AuthorId" : 22015,
+		"AuthorName" : "Mysterygirl",
+		"Rating" : 5,
+		"Review" : "This was a big hit with my friends.   Nice warming drink on a winter's evening.",
+		"DateSubmitted" : "2006-03-21"
+	},
+	{
+		"ReviewId" : 266452,
+		"RecipeId" : 4571,
+		"AuthorId" : 10033,
+		"AuthorName" : "spatchcock",
+		"Rating" : 5,
+		"Review" : "BF loves stuff like this for his long bike expeditions. These were wonderful--really comfort food at its finest, and not too hard either. Nice change with the butterscotch chips! Thanks for posting!",
+		"DateSubmitted" : "2002-09-09"
+	},
+	{
+		"ReviewId" : 266465,
+		"RecipeId" : 4571,
+		"AuthorId" : 22015,
+		"AuthorName" : "Mysterygirl",
+		"Rating" : 5,
+		"Review" : "These are a wonderful and easy bar cookie.  Very rich and addictive!",
+		"DateSubmitted" : "2004-02-21"
+	},
+	{
+		"ReviewId" : 267955,
+		"RecipeId" : 938,
+		"AuthorId" : 157425,
+		"AuthorName" : "lauralie41",
+		"Rating" : 5,
+		"Review" : "We really enjoyed these potatoes. I didnt peel them and my DH put them on the grill to cook in a glass casserole dish. Added some onion that had to be used but these potatoes would be great without them too.",
+		"DateSubmitted" : "2006-04-24"
+	},
+	{
+		"ReviewId" : 276390,
+		"RecipeId" : 1522,
+		"AuthorId" : 157425,
+		"AuthorName" : "lauralie41",
+		"Rating" : 5,
+		"Review" : "We really enjoyed these enchiladas. Instead of black beans I used a can of mexican dark red beans and shredded the chicken instead of cutting into bite size pieces. So easy to make!",
+		"DateSubmitted" : "2006-05-24"
+	},
+	{
+		"ReviewId" : 287441,
+		"RecipeId" : 4417,
+		"AuthorId" : 157425,
+		"AuthorName" : "lauralie41",
+		"Rating" : 5,
+		"Review" : "This is a wonderful bread pudding recipe! I served it warm, added a little extra cinnamon, and also fresh ground nutmeg. Very easy to make and taste's great! Thank you Marg!",
+		"DateSubmitted" : "2006-06-28"
+	},
+	{
+		"ReviewId" : 288952,
+		"RecipeId" : 3250,
+		"AuthorId" : 125388,
+		"AuthorName" : "Ginny Sue",
+		"Rating" : 5,
+		"Review" : "I've made this several times now, and consider it my \"House Dressing\".  The only thing I do differently in to use crushed garlic.  The stand-time of 24 hours is important to allow the flavors to mellow.  I tasted it about 4 hours after preparing and found it too sweet.  However by the next day, it tasted great.",
+		"DateSubmitted" : "2006-07-03"
+	},
+	{
+		"ReviewId" : 295289,
+		"RecipeId" : 4725,
+		"AuthorId" : 64642,
+		"AuthorName" : "Molly53",
+		"Rating" : 5,
+		"Review" : "Made this three times now and have been successful each time.  A perfect accompaniment to any meat dish.",
+		"DateSubmitted" : "2006-07-20"
+	},
+	{
+		"ReviewId" : 297086,
+		"RecipeId" : 3595,
+		"AuthorId" : 64642,
+		"AuthorName" : "Molly53",
+		"Rating" : 3,
+		"Review" : "A lovely, VERY sweet dessert.  Extremely easy to make.",
+		"DateSubmitted" : "2006-07-27"
+	},
+	{
+		"ReviewId" : 297087,
+		"RecipeId" : 5287,
+		"AuthorId" : 64642,
+		"AuthorName" : "Molly53",
+		"Rating" : 4,
+		"Review" : "So very easy to make.  We like nuts, but didn't have any walnuts or pecans so used crushed mixed nuts.  We really had them guessing!",
+		"DateSubmitted" : "2006-07-27"
+	},
+	{
+		"ReviewId" : 297470,
+		"RecipeId" : 4368,
+		"AuthorId" : 51011,
+		"AuthorName" : "Loves2Teach",
+		"Rating" : 3,
+		"Review" : "I made this recipe tonight to go with steaks.  It was okay- Ended up having to add more butter, and salt.  Thanks for sharing.",
+		"DateSubmitted" : "2006-07-28"
+	},
+	{
+		"ReviewId" : 299506,
+		"RecipeId" : 3596,
+		"AuthorId" : 51011,
+		"AuthorName" : "Loves2Teach",
+		"Rating" : 5,
+		"Review" : "Wow!  I have never been able to make thick & creamy potato soup before.  Here were my changes. 1. I cut it in half (still made 4 servings). 2. I used 1 cup of half and half and 2 cups of skim milk. 3. I used chicken broth instead of bouillon.  This soup was sooooooo very good.  Thanks for sharing!",
+		"DateSubmitted" : "2006-08-04"
+	},
+	{
+		"ReviewId" : 307114,
+		"RecipeId" : 3989,
+		"AuthorId" : 71324,
+		"AuthorName" : "-Sylvie-",
+		"Rating" : 4,
+		"Review" : "Great recipe and very simple and quick to put together. I wasn't too sure when I took it out of the oven, because the mayonnaise smells a little funny when baked, but the flavour was really good. I didn't have any of the suggested seasoning salt, so I used Penzey's Northwood Fire seasoning instead. I'll be making this again. I served it with steamed broccoli and twice baked potatoes. Thanks for sharing.",
+		"DateSubmitted" : "2006-08-30"
+	},
+	{
+		"ReviewId" : 310913,
+		"RecipeId" : 6596,
+		"AuthorId" : 130663,
+		"AuthorName" : "NoraMarie",
+		"Rating" : 5,
+		"Review" : "I didn,t make these but had some at a get-together and I enjoyed them.",
+		"DateSubmitted" : "2006-09-10"
+	},
+	{
+		"ReviewId" : 314048,
+		"RecipeId" : 4842,
+		"AuthorId" : 47510,
+		"AuthorName" : "Dreamgoddess",
+		"Rating" : 5,
+		"Review" : "I've tried several recipes for mac and cheese, but this one is my favorite by far.  Easy to make and the texture was perfect.  Thanks for sharing the recipe!",
+		"DateSubmitted" : "2006-09-19"
+	},
+	{
+		"ReviewId" : 315816,
+		"RecipeId" : 5209,
+		"AuthorId" : 185139,
+		"AuthorName" : "ElleFirebrand",
+		"Rating" : 4,
+		"Review" : "I basically used this recipe as a guide and made a lot of changes.  I used whole wheat penne, frozen green beans and corn, oregano and a colby\/jack cheese blend.  Okay, so I changed the whole recipe.  I was a little nervous and thought that the milk\/cream cheese mixture would be a bit thin, but it thickened up.  I added another handful of cheese since it didn't seem very cheesy.  It satisfied my craving for mac and cheese and I didn't have to resort to a box mix.  Thanks Dancer.",
+		"DateSubmitted" : "2006-09-24"
+	},
+	{
+		"ReviewId" : 319374,
+		"RecipeId" : 5170,
+		"AuthorId" : 64203,
+		"AuthorName" : "Dine  Dish",
+		"Rating" : 5,
+		"Review" : "Fantastic fluffy and flavorful pancakes. I made the recipe exactly except I added 1 tablespoon of vanilla... we like vanilla!\nDelicious! A Keeper, for sure!",
+		"DateSubmitted" : "2006-10-04"
+	},
+	{
+		"ReviewId" : 320590,
+		"RecipeId" : 5247,
+		"AuthorId" : 35635,
+		"AuthorName" : "_Pixie_",
+		"Rating" : 5,
+		"Review" : "Thanks for posting this, it worked perfectly.",
+		"DateSubmitted" : "2006-10-08"
+	},
+	{
+		"ReviewId" : 333255,
+		"RecipeId" : 3361,
+		"AuthorId" : 138861,
+		"AuthorName" : "Winnipeg Mel",
+		"Rating" : 3,
+		"Review" : "I made this with my kids today. It was a very easy recipe to make and was enjoyed by all. I did make a minor change to the ingredients. I used someone else's suggestion and replaced the rum and nutmeg(neither of which I had at home),with cinnamon and vanilla. The kids really enjoyed this so I'm sure we will make it again.",
+		"DateSubmitted" : "2006-11-10"
+	},
+	{
+		"ReviewId" : 335570,
+		"RecipeId" : 5366,
+		"AuthorId" : 97901,
+		"AuthorName" : "Zaney1",
+		"Rating" : 5,
+		"Review" : "This was my first attempt at a pumpkin roll and it came out great!! I also used a cookie sheet and the only change I would make is to not use all of the filling in it. The filling layer was thicker than the cake layer!! LOL!!\nI will be making this again!",
+		"DateSubmitted" : "2006-11-16"
+	},
+	{
+		"ReviewId" : 340656,
+		"RecipeId" : 243,
+		"AuthorId" : 138861,
+		"AuthorName" : "Winnipeg Mel",
+		"Rating" : 5,
+		"Review" : "I made these today with the help of my 5 yr old. They were so easy and I loved the texture. I tried a different meringue recipe earlier today and they did not hold their shape as well as these did. I added a bit of green food coloring as well as mint extract and then piped them onto a cookie sheet with a large star tip. They looked so pretty and tasted great. I made 50 cookies approximatelt 1 1\/2 -2 \" in size. I will definately make these again. Thank-you for posting an easy but wonderful recipe.",
+		"DateSubmitted" : "2006-11-29"
+	},
+	{
+		"ReviewId" : 345557,
+		"RecipeId" : 481,
+		"AuthorId" : 47510,
+		"AuthorName" : "Dreamgoddess",
+		"Rating" : 5,
+		"Review" : "I've made this several times and realized I had never reviewed it.  This has quickly become one of my family's favorite soups.  It's super easy to prepare, comes together quickly and has a wonderful flavor.",
+		"DateSubmitted" : "2006-12-12"
+	},
+	{
+		"ReviewId" : 347402,
+		"RecipeId" : 3386,
+		"AuthorId" : 1891,
+		"AuthorName" : "Kim19068",
+		"Rating" : 5,
+		"Review" : "This is truley a 5 start recipe. I browned the meat then put it all in the slower cooker and about 8 hour late had a wonderful meal. The last 10 minutes I added the flour and water to thicken it up.",
+		"DateSubmitted" : "2006-12-17"
+	},
+	{
+		"ReviewId" : 351904,
+		"RecipeId" : 4957,
+		"AuthorId" : 125388,
+		"AuthorName" : "Ginny Sue",
+		"Rating" : 5,
+		"Review" : "So good and so easy.  I made a double batch when chicken breasts were on sale.  I used half immediately and froze the rest for a future meal.  This will be a regular for OAMC.",
+		"DateSubmitted" : "2006-12-28"
+	},
+	{
+		"ReviewId" : 355359,
+		"RecipeId" : 690,
+		"AuthorId" : 37036,
+		"AuthorName" : "Kim D.",
+		"Rating" : 4,
+		"Review" : "This was a very good garlic bread recipe, but my family felt the thyme and marjoram was too strong.  I might decrease the quantity on those two herbs next time around.  I liked the addition of paprika, as it gave it a nice kick.",
+		"DateSubmitted" : "2007-01-05"
+	},
+	{
+		"ReviewId" : 357663,
+		"RecipeId" : 1236,
+		"AuthorId" : 51011,
+		"AuthorName" : "Loves2Teach",
+		"Rating" : 5,
+		"Review" : "I made this tonight for dinner.  Halved it for the two of us.  I did make one change- instead of putting the bacon inside the chicken, I wrapped it around the outside.  I really enjoyed it, as did dh.  Thanks for sharing!",
+		"DateSubmitted" : "2007-01-10"
+	},
+	{
+		"ReviewId" : 357700,
+		"RecipeId" : 6536,
+		"AuthorId" : 64203,
+		"AuthorName" : "Dine  Dish",
+		"Rating" : 5,
+		"Review" : "I made this frosting to go with Easy Lemon Pound Cake. It was so good! I added about a tsp of lemon juice because I wanted it to be lemon flavored to go with the cake, but other than that the recipe stayed the same. This will be my go to cream cheese frosting recipe from now on! Delicioius and so easy!",
+		"DateSubmitted" : "2007-01-10"
+	},
+	{
+		"ReviewId" : 359941,
+		"RecipeId" : 4999,
+		"AuthorId" : 130663,
+		"AuthorName" : "NoraMarie",
+		"Rating" : 4,
+		"Review" : "Was very good,all I did dfferent was at the end put it under the broiler.Will make again.",
+		"DateSubmitted" : "2007-01-15"
+	},
+	{
+		"ReviewId" : 365065,
+		"RecipeId" : 6547,
+		"AuthorId" : 130663,
+		"AuthorName" : "NoraMarie",
+		"Rating" : 4,
+		"Review" : "This was very good and I will make it again",
+		"DateSubmitted" : "2007-01-27"
+	},
+	{
+		"ReviewId" : 379745,
+		"RecipeId" : 240,
+		"AuthorId" : 60989,
+		"AuthorName" : "Bekah",
+		"Rating" : 4,
+		"Review" : "Good and easy. I liked the addition of the rice wine vinegar. I used olive oil cooking spray instead of vegetable oil to cut down on the fat. Thanks!",
+		"DateSubmitted" : "2007-03-01"
+	},
+	{
+		"ReviewId" : 388882,
+		"RecipeId" : 5049,
+		"AuthorId" : 43083,
+		"AuthorName" : "Ang11002",
+		"Rating" : 5,
+		"Review" : "These tasted awesome! Soft and chocolatey and peanut buttery:) My only complaint is they were very hard to work with after cooking. Mine got really smushed when I tried to get them off of the pan:( But the taste still merits 5 stars! THANKS!",
+		"DateSubmitted" : "2005-10-05"
+	},
+	{
+		"ReviewId" : 389007,
+		"RecipeId" : 153,
+		"AuthorId" : 51011,
+		"AuthorName" : "Loves2Teach",
+		"Rating" : 5,
+		"Review" : "I have a parent who made me a batch of starter, and sent in this recipe w\/ some of the bread.  The starter seems very easy to keep, and the bread is very tasty (a bit dense for my taste, but it has good flavor).  She also included other additions she has made (ex: chocolate pudding isntead of vanilla, or adding chocolate chips or chopped candy bars).  I am looking forward to making the bread myself.  Thanks for sharing.",
+		"DateSubmitted" : "2007-03-21"
+	},
+	{
+		"ReviewId" : 397420,
+		"RecipeId" : 2886,
+		"AuthorId" : 60989,
+		"AuthorName" : "Bekah",
+		"Rating" : 5,
+		"Review" : "Very good bread. Nice and dense, the way we like it. Thanks!",
+		"DateSubmitted" : "2007-04-09"
+	},
+	{
+		"ReviewId" : 398377,
+		"RecipeId" : 5194,
+		"AuthorId" : 51011,
+		"AuthorName" : "Loves2Teach",
+		"Rating" : 4,
+		"Review" : "I made this tonight to use up a bit of leftover ham from Easter. I did make a couple of changes...  1. I halved the recipe for dh & I.  2. I omitted the green pepper, and used green onions for regular onions.  3.  I parboiled the potatoes. added about a cup of leftover mashed potatoes, and sprinkled some cheese on top.  Due to me cooking the potatoes before hand, I only cooked it for about 30 minutes.  Really good & I loved how simple it was to throw together.  Thanks for sharing!",
+		"DateSubmitted" : "2007-04-11"
+	},
+	{
+		"ReviewId" : 403918,
+		"RecipeId" : 3059,
+		"AuthorId" : 104600,
+		"AuthorName" : "CoolMonday",
+		"Rating" : 5,
+		"Review" : "It's been a long time since I made stuffed cabbage rolls and this recipe was very enticing...  It was delicious..  Contained everything needed for a healthy meal including taste and looks.  Will make it many times.",
+		"DateSubmitted" : "2007-04-22"
+	},
+	{
+		"ReviewId" : 418540,
+		"RecipeId" : 3989,
+		"AuthorId" : 64203,
+		"AuthorName" : "Dine  Dish",
+		"Rating" : 5,
+		"Review" : "This is the second time I've made salmon this week and we're hooked! This recipe was so easy to put together and very tasty. I had to use Miracle Whip because I was out of mayo. I also didn't have any season salt, but used a little bit of garlic salt, salt and pepper. The picture I took doesn't do this dish justice! I didn't have much time to snap it though because we wanted to get to it while it was hot.\nThanks for posting this tasty recipe!",
+		"DateSubmitted" : "2007-05-21"
+	},
+	{
+		"ReviewId" : 453481,
+		"RecipeId" : 6536,
+		"AuthorId" : 39547,
+		"AuthorName" : "Julesong",
+		"Rating" : 5,
+		"Review" : "I don't bake very often (hardly ever, actually), but when a friend recently had a birthday I gave it a try and made him a cake.  Not wanting to make an overly-sweet icing, I chose this cream cheese frosting and I'm *glad* I did!  It was easy to make, and delicious!  I beat it in my machine for longer than I probably was supposed to and it came out really nice and frothy, but we liked it that way.  :)  Next time I make it I'll probably beat it for less time.  Thanks so much for posting the recipe!",
+		"DateSubmitted" : "2007-07-25"
+	},
+	{
+		"ReviewId" : 470511,
+		"RecipeId" : 4154,
+		"AuthorId" : 157425,
+		"AuthorName" : "lauralie41",
+		"Rating" : 5,
+		"Review" : "Very flavorful for only having 3 ingredients! I used Campbell's Vegetable Beef soup and cubed my potatoes instead of slicing. The mixture seemed to thick so I added 1\/2 cup of water and it worked great, we had a nice gravy. This would be also be good on a cold day with a loaf of warm  bread.",
+		"DateSubmitted" : "2007-08-28"
+	},
+	{
+		"ReviewId" : 473843,
+		"RecipeId" : 1209,
+		"AuthorId" : 138861,
+		"AuthorName" : "Winnipeg Mel",
+		"Rating" : 4,
+		"Review" : "We enjoyed this but I think that next time I make it I will use mozza in place of at least half of the parmesan. Otherwise, it was very nice to have something that we occasionally splurge for in a restaraunt at home. I will definitely make this again with the few minor adjustments mentioned.",
+		"DateSubmitted" : "2007-09-04"
+	},
+	{
+		"ReviewId" : 481655,
+		"RecipeId" : 2642,
+		"AuthorId" : 35635,
+		"AuthorName" : "_Pixie_",
+		"Rating" : 5,
+		"Review" : "Excellent! Great combo of spices with a nice little bit of kick from the dried red peppers. Made the perfect amount for immediate use. Thanks for posting!",
+		"DateSubmitted" : "2007-09-18"
+	},
+	{
+		"ReviewId" : 491402,
+		"RecipeId" : 1267,
+		"AuthorId" : 138861,
+		"AuthorName" : "Winnipeg Mel",
+		"Rating" : 4,
+		"Review" : "I made this tonight for supper and we all really enjoyed it. I used pineapple juice with a dash of balsamic vinegar in place of the sherry, and the flavor was delicious.",
+		"DateSubmitted" : "2007-10-04"
+	},
+	{
+		"ReviewId" : 492801,
+		"RecipeId" : 5343,
+		"AuthorId" : 64625,
+		"AuthorName" : "woodland hues",
+		"Rating" : 5,
+		"Review" : "A lovely loaf (couldn't wait a day to sample!)with rich date flavour and undertones of orange. It's no butter, no milk, low sugar, and lends itself to various sizes of baking dishes. Made 2 medium sized loaves in 50 minutes of baking. Hearty and comforting autumn fare. No fuss recipe, well presented, easy to follow.  Thanks, Dancer!",
+		"DateSubmitted" : "2007-10-07"
+	},
+	{
+		"ReviewId" : 507243,
+		"RecipeId" : 4811,
+		"AuthorId" : 157425,
+		"AuthorName" : "lauralie41",
+		"Rating" : 4,
+		"Review" : "Chili Mac is DH's favorite meal and so was this one. I cooked my ground round until lightly browned with the onions and garlic. Instead of water and broth I used all beef broth and dried parsley. For us I will use less macaroni noodles next time. A easy meal to make and good comfort food.",
+		"DateSubmitted" : "2007-10-31"
+	},
+	{
+		"ReviewId" : 508997,
+		"RecipeId" : 2496,
+		"AuthorId" : 146310,
+		"AuthorName" : "CoffeeMom",
+		"Rating" : 5,
+		"Review" : "So simple yet so good. If I could give this 10 stars I would. It has that perfect moistness that box mixes seem to have. \n\nWe have also tried it with less then one cup of boiling water and we prefer 1\/2 to 2\/3 cups. Use get a slighter firmer but still incredibly moist cake\/cupcakes.",
+		"DateSubmitted" : "2007-11-03"
+	},
+	{
+		"ReviewId" : 518369,
+		"RecipeId" : 3564,
+		"AuthorId" : 64642,
+		"AuthorName" : "Molly53",
+		"Rating" : 5,
+		"Review" : "Easy and delicious!",
+		"DateSubmitted" : "2007-11-19"
+	},
+	{
+		"ReviewId" : 525143,
+		"RecipeId" : 3057,
+		"AuthorId" : 64642,
+		"AuthorName" : "Molly53",
+		"Rating" : 0,
+		"Review" : "A terrific Southern dish, very nice served with sausage on a Sunday morning.",
+		"DateSubmitted" : "2007-11-29"
+	},
+	{
+		"ReviewId" : 526602,
+		"RecipeId" : 5247,
+		"AuthorId" : 37036,
+		"AuthorName" : "Kim D.",
+		"Rating" : 5,
+		"Review" : "Thank you so much for posting this recipe.  I don't keep self-rising flour on hand in my pantry because I don't use it often.  However, I came across a recipe that called for it.  Instead of going to the store, I tried this recipe and it worked great.  Thanks!",
+		"DateSubmitted" : "2007-12-02"
+	},
+	{
+		"ReviewId" : 530485,
+		"RecipeId" : 3596,
+		"AuthorId" : 64203,
+		"AuthorName" : "Dine  Dish",
+		"Rating" : 5,
+		"Review" : "Delicious and simple! Pure comfort food for a chilly winters night! I added some bacon. I also had some leftover baked ham and those who wanted to add that, did. Thanks for sharing this definite keeper!",
+		"DateSubmitted" : "2007-12-08"
+	},
+	{
+		"ReviewId" : 542226,
+		"RecipeId" : 3926,
+		"AuthorId" : 107651,
+		"AuthorName" : "Elly in Canada",
+		"Rating" : 5,
+		"Review" : "Smells terrific, can't wait to use it for tarts at Christmas. I used apple cider vinegar and added 1\/2 cup cognac after it was cooked. Update: now December, my kitchen smells lovely, the mincemeat is excellent!!\nAnother update 12\/07! I had a jar of this delicious mincemeat from the last batch I made in October 2006 and used it to make my mincemeat tarts this week, it was so good. Keeps well and tastes great!  Thanks for posting Helen!",
+		"DateSubmitted" : "2007-12-27"
+	},
+	{
+		"ReviewId" : 557737,
+		"RecipeId" : 1982,
+		"AuthorId" : 37036,
+		"AuthorName" : "Kim D.",
+		"Rating" : 5,
+		"Review" : "Great dressing recipe and so easy to mix together!  I followed the directions for the mix exactly, except that I reduced the amount of salt. I used regular vinegar and vegetable oil for the dressing.  Next time I might try red wine vinegar and olive oil.  Thanks Carrie in Indiana for a great recipe! ",
+		"DateSubmitted" : "2005-03-28"
+	},
+	{
+		"ReviewId" : 569532,
+		"RecipeId" : 2121,
+		"AuthorId" : 107651,
+		"AuthorName" : "Elly in Canada",
+		"Rating" : 3,
+		"Review" : "I used butter to replace the shortening and reduced the flour by 1\/4 cup as I wanted to drop the biscuits. It worked out fine! Enjoyed a nice hot biscuit with our soup for dinner!",
+		"DateSubmitted" : "2008-01-30"
+	},
+	{
+		"ReviewId" : 585311,
+		"RecipeId" : 1048,
+		"AuthorId" : 86520,
+		"AuthorName" : "Dorel",
+		"Rating" : 4,
+		"Review" : "I followed the recipe exactly. We all found it too sweet. I would only use 1 1\/2 cups sugar next time. I could taste the vinegar but the others couldn't. It's a very rich pie and a small slice is about all you can eat at one time. Thanks for posting Grandmothers recipe, CeeDee.",
+		"DateSubmitted" : "2008-02-22"
+	},
+	{
+		"ReviewId" : 707209,
+		"RecipeId" : 5028,
+		"AuthorId" : 60989,
+		"AuthorName" : "Bekah",
+		"Rating" : 4,
+		"Review" : "A very good recipe for tuna casserole. Thanks!",
+		"DateSubmitted" : "2008-09-15"
+	},
+	{
+		"ReviewId" : 775122,
+		"RecipeId" : 4392,
+		"AuthorId" : 67395,
+		"AuthorName" : "Dannygirl",
+		"Rating" : 5,
+		"Review" : "My Dad called me from the grocery store and asked what he needed to make spinach dip.  I did a search and found this recipe or him :)  It was really good!  Much better than store-bought!",
+		"DateSubmitted" : "2008-12-29"
+	},
+	{
+		"ReviewId" : 776089,
+		"RecipeId" : 1778,
+		"AuthorId" : 125388,
+		"AuthorName" : "Ginny Sue",
+		"Rating" : 4,
+		"Review" : "Very good-tasting chicken.  The recipe didn't specify, so I covered the pan for the last 30 minutes of cooking time.  Maybe it would have been better left uncovered to thicken the sauce more.",
+		"DateSubmitted" : "2008-12-29"
+	},
+	{
+		"ReviewId" : 798156,
+		"RecipeId" : 4178,
+		"AuthorId" : 51011,
+		"AuthorName" : "Loves2Teach",
+		"Rating" : 5,
+		"Review" : "Threw this together tonight for a quick side dish.  It was easy and tasty too!  Threw in some diced onion also.  Thanks for sharing!",
+		"DateSubmitted" : "2009-01-27"
+	},
+	{
+		"ReviewId" : 802636,
+		"RecipeId" : 916,
+		"AuthorId" : 64203,
+		"AuthorName" : "Dine  Dish",
+		"Rating" : 5,
+		"Review" : "Very good recipe. I made a couple of additions to the batter... 1 tbs of vanilla and 1\/2 tsp of cinnamon.\nI did not have a funnel so I used cherylo's great suggestion of using an empty squeezable ketchup bottle. That made this recipe such a breeze & I am able to store leftover batter for another day! Thanks for sharing this great recipe.",
+		"DateSubmitted" : "2009-02-03"
+	},
+	{
+		"ReviewId" : 875550,
+		"RecipeId" : 1209,
+		"AuthorId" : 157425,
+		"AuthorName" : "lauralie41",
+		"Rating" : 5,
+		"Review" : "Oh gosh this is so very good! A request from my DD for spinach artichoke dip and I found this one. Creamy and perfect amount of artichokes and spinach. Served with crackers and tortilla chips. I think this was tastier than our favorite restaurants dip. Thank you Juli for posting this recipe.",
+		"DateSubmitted" : "2009-05-26"
+	},
+	{
+		"ReviewId" : 950469,
+		"RecipeId" : 1861,
+		"AuthorId" : 125388,
+		"AuthorName" : "Ginny Sue",
+		"Rating" : 5,
+		"Review" : "This was very good and so easy to make.  I used leftover chicken, which made this even easier.  I marinated the cooked chicken in some the sauce for a few minutes while I was making the rice and stir-frying the vegetables.  Then I added the chicken to the vegetables to heat through, and then served it over the rice.  I especially liked the pineapple rice.",
+		"DateSubmitted" : "2009-09-19"
+	},
+	{
+		"ReviewId" : 950922,
+		"RecipeId" : 4957,
+		"AuthorId" : 43083,
+		"AuthorName" : "Ang11002",
+		"Rating" : 5,
+		"Review" : "YUM! I have had this recipe in my cookbook for a while. (You dont want to know how long..lol) Well, today I finally made it and Im so glad I did! I usually dont care for chicken breasts as they are too dry to me but with this recipe they were great. I eat low carb and I ate the chicken with sour cream, salsa verde & white shredded cheese. MMM! Q Bueno. Thanks Pamela:) I am going to freeze the leftovers into individual servings!",
+		"DateSubmitted" : "2009-09-20"
+	},
+	{
+		"ReviewId" : 980858,
+		"RecipeId" : 4496,
+		"AuthorId" : 87236,
+		"AuthorName" : "truebrit",
+		"Rating" : 5,
+		"Review" : "Fantastic!  I doubled the recipe, and used a 9\" x 13\" pan.  This was a great success, and flew out of the pan!  A keeper ~ THANKS!",
+		"DateSubmitted" : "2009-11-01"
+	},
+	{
+		"ReviewId" : 981397,
+		"RecipeId" : 319,
+		"AuthorId" : 148316,
+		"AuthorName" : "- Carla -",
+		"Rating" : 4,
+		"Review" : "This is a lovely recipe I am happy to have come across. Quick, Healthy & Delicious!\nI make this recipe pretty much as listed, with the exception of using 4 cups fish broth instead of the boiling water, skim milk instead of regular milk and slightly more vegetables, instead of potato to make this dish less in carbohydrates.  I also add Tarragon as well.  I have made this soup with Cod, Pangasius and Tilapia and it always comes out brilliant!",
+		"DateSubmitted" : "2009-11-02"
+	},
+	{
+		"ReviewId" : 987334,
+		"RecipeId" : 822,
+		"AuthorId" : 43083,
+		"AuthorName" : "Ang11002",
+		"Rating" : 4,
+		"Review" : "I used French Vanilla cake mix and made these today. I didnt wait until they cooled (I love warm cookies!) and they tasted fine to me. SUPER easy. Thanks Marg!",
+		"DateSubmitted" : "2009-11-11"
+	},
+	{
+		"ReviewId" : 1037163,
+		"RecipeId" : 552,
+		"AuthorId" : 64642,
+		"AuthorName" : "Molly53",
+		"Rating" : 4,
+		"Review" : "Very nice and quite easy to make.  Full of flavor and a perfect complement to our pork chops tonight!  Thanks, Dancer.",
+		"DateSubmitted" : "2010-01-21"
+	},
+	{
+		"ReviewId" : 1064382,
+		"RecipeId" : 3386,
+		"AuthorId" : 130663,
+		"AuthorName" : "NoraMarie",
+		"Rating" : 5,
+		"Review" : "We really enjoyed this meal.The only difference I will do next time is to cut everything smaller,as hubby likes it better.",
+		"DateSubmitted" : "2010-03-06"
+	},
+	{
+		"ReviewId" : 1067868,
+		"RecipeId" : 3051,
+		"AuthorId" : 64642,
+		"AuthorName" : "Molly53",
+		"Rating" : 2,
+		"Review" : "We weren't 100% wild about this recipe and probably won't be making it again.  The combination of herbs\/spices were overpowering in relation to the seafood and chicken.",
+		"DateSubmitted" : "2010-03-12"
+	},
+	{
+		"ReviewId" : 1073451,
+		"RecipeId" : 822,
+		"AuthorId" : 107651,
+		"AuthorName" : "Elly in Canada",
+		"Rating" : 4,
+		"Review" : "I used a French vanilla cake mix, added the eggs and 1\/4 cup oil and 1\/4 cup softened butter. I added coconut and skor bits to some of the batter, topped some with butterscotch chips, cinnamon sugar and dried strawberries. It looks like five different batches of cookies! I will use this recipe again!",
+		"DateSubmitted" : "2009-09-17"
+	},
+	{
+		"ReviewId" : 1074968,
+		"RecipeId" : 4292,
+		"AuthorId" : 157425,
+		"AuthorName" : "lauralie41",
+		"Rating" : 5,
+		"Review" : "A very good taco seasoning mix that is easy to make and I always have the ingredients on hand so that is a plus too. We used this when making tacos instead of the packaged brand and the flavor was a lot better, not as salty as the store brand and I liked that a lot. Will be keeping the container full to use with more recipes. Thank you CoffeeB for sharin! Made and reviewed for the Went to the Market tag game.",
+		"DateSubmitted" : "2009-03-11"
+	},
+	{
+		"ReviewId" : 1086253,
+		"RecipeId" : 1460,
+		"AuthorId" : 138047,
+		"AuthorName" : "HappyBunny",
+		"Rating" : 5,
+		"Review" : "Yum yum yum! This is very refreshing and will be made often this summer. I added fresh mint with the strawberries and it added a wonderful flavour. Thanks Paula :-)",
+		"DateSubmitted" : "2010-04-18"
+	},
+	{
+		"ReviewId" : 1089626,
+		"RecipeId" : 1078,
+		"AuthorId" : 138047,
+		"AuthorName" : "HappyBunny",
+		"Rating" : 5,
+		"Review" : "Superb salsa! I ran out of lime juice so I used the vinegar from my pickled jalapenos. Delicious :-)",
+		"DateSubmitted" : "2010-04-24"
+	},
+	{
+		"ReviewId" : 1090972,
+		"RecipeId" : 1209,
+		"AuthorId" : 60989,
+		"AuthorName" : "Bekah",
+		"Rating" : 5,
+		"Review" : "I used lite versions of sour cream, mayo and parm. Great.",
+		"DateSubmitted" : "2010-04-26"
+	},
+	{
+		"ReviewId" : 1147905,
+		"RecipeId" : 3267,
+		"AuthorId" : 185139,
+		"AuthorName" : "ElleFirebrand",
+		"Rating" : 4,
+		"Review" : "I thought this was pretty tasty. When I tasted the sauce as it was cooking, I was worried that it would overwhelm the elk, but actually the flavors worked really well and did not overpower the delicate meat. Instead of green peppercorns I used a mix of szechuan and black. I added some sugar to taste to balance out the wine and vinegar and a pat of butter at the very end.",
+		"DateSubmitted" : "2010-09-19"
+	},
+	{
+		"ReviewId" : 1161431,
+		"RecipeId" : 5031,
+		"AuthorId" : 56112,
+		"AuthorName" : "Jellyqueen",
+		"Rating" : 4,
+		"Review" : "Great seasoning.  I made up a batch this past weekend and seasoned some homemade soup with it.  It was great.  Thanks for the great recipe.  Look forward to keeping a batch of this stuff made up all the time.\n",
+		"DateSubmitted" : "2004-03-01"
+	},
+	{
+		"ReviewId" : 1161443,
+		"RecipeId" : 5031,
+		"AuthorId" : 29196,
+		"AuthorName" : "JustJanS",
+		"Rating" : 5,
+		"Review" : "I have no idea what the \"real\" stuff tastes like, but you saved my soup tonight Lennie with this recipe. I found a recipe needing Essence of Emeril, and thought that there ought to be a copycat version here on 'zaar, and there  was! Thanks heaps.",
+		"DateSubmitted" : "2004-04-21"
+	},
+	{
+		"ReviewId" : 1161445,
+		"RecipeId" : 5031,
+		"AuthorId" : 135566,
+		"AuthorName" : "LainieBug",
+		"Rating" : 5,
+		"Review" : "Great combination of flavors.  I sprinkled this on chicken tenders and it really made them zippy (as in BAM).  I did not use any salt (due to dietary restrictions) and didn't miss it at all.  I also only made 1\/2 of the recipe and it still makes a lot of seasoning.",
+		"DateSubmitted" : "2009-02-28"
+	},
+	{
+		"ReviewId" : 1161464,
+		"RecipeId" : 5031,
+		"AuthorId" : 125388,
+		"AuthorName" : "Ginny Sue",
+		"Rating" : 5,
+		"Review" : "Great, flavorful seasoning mix.  I made a half-recipe, which still makes a lot.  I'll be using this to season all kinds of things.",
+		"DateSubmitted" : "2009-08-22"
+	},
+	{
+		"ReviewId" : 1204651,
+		"RecipeId" : 2267,
+		"AuthorId" : 43083,
+		"AuthorName" : "Ang11002",
+		"Rating" : 5,
+		"Review" : "SO easy to make and enjoyed by myself & my son. I had to break into pieces but that was fine with me. Thanks for sharing!",
+		"DateSubmitted" : "2011-03-27"
+	},
+	{
+		"ReviewId" : 1212209,
+		"RecipeId" : 4219,
+		"AuthorId" : 123897,
+		"AuthorName" : "Vnut-Beyond Redempt",
+		"Rating" : 2,
+		"Review" : "Friends liked this.  I didn't.  Will do this again to see if it can be improved.  Not quite a keeper.  Must keep an eye on the dough in the machine, may need to add a bit more water. Crust was hard.",
+		"DateSubmitted" : "2011-04-22"
+	},
+	{
+		"ReviewId" : 1235002,
+		"RecipeId" : 667,
+		"AuthorId" : 87236,
+		"AuthorName" : "truebrit",
+		"Rating" : 5,
+		"Review" : "These are awesome!  Absolutely scrumptious.  Taste like the authentic British crumpets I used to eat back home.  I prepared the batter in the bread machine, and used 1 packet (2 1\/4 tsp.) of dried yeast instead of the compressed yeast.  I've made these twice now, and both times, they turned out GREAT!  They can be refrigerated or frozen, and then toasted.  Slather with butter, let it melt into the holes, then enjoy!!!<br\/><br\/>Edited to say that I've made these many times over the years, and they have never failed me!  It is the only recipe I'll use!  :)",
+		"DateSubmitted" : "2011-07-14"
+	},
+	{
+		"ReviewId" : 1245746,
+		"RecipeId" : 246,
+		"AuthorId" : 43083,
+		"AuthorName" : "Ang11002",
+		"Rating" : 4,
+		"Review" : "This was delicious and super simple to make. However, I felt like it was missing something. Maybe I'll add some Old Bay next time. Thanks for sharing.",
+		"DateSubmitted" : "2011-08-28"
+	},
+	{
+		"ReviewId" : 1280699,
+		"RecipeId" : 4627,
+		"AuthorId" : 67395,
+		"AuthorName" : "Dannygirl",
+		"Rating" : 4,
+		"Review" : "This was very good.  We can't get Rotel tomatoes in Canada so I improvised with stewed tomatoes, salsa and hot sauce.  Will make again, thanks!",
+		"DateSubmitted" : "2012-01-17"
+	},
+	{
+		"ReviewId" : 1286840,
+		"RecipeId" : 5483,
+		"AuthorId" : 135566,
+		"AuthorName" : "LainieBug",
+		"Rating" : 5,
+		"Review" : "Loved this dip.  I added 3 tablespoons of maraschino cherry juice that I needed to use up.  Served with both fruit and sugar cookies.",
+		"DateSubmitted" : "2012-02-11"
+	},
+	{
+		"ReviewId" : 1301758,
+		"RecipeId" : 3368,
+		"AuthorId" : 47510,
+		"AuthorName" : "Dreamgoddess",
+		"Rating" : 5,
+		"Review" : "I picked dewberries Sunday morning and by Sunday afternoon, we were eating this wonderful pie.  It received the highest praise from my husband.  He said he believed it was the best pie I had ever made.  It was simply delicious and I can't wait to make it again.",
+		"DateSubmitted" : "2012-04-19"
+	},
+	{
+		"ReviewId" : 1337327,
+		"RecipeId" : 3728,
+		"AuthorId" : 29196,
+		"AuthorName" : "JustJanS",
+		"Rating" : 5,
+		"Review" : "I can't believe I didn't spot this recipe over all the years I've been here and all the times I've looked for lamb shank recipes! This was ever so simple and really, really yummy comfort food that I highly recommend to other lamb lovers. I added in a teaspoon of brown sugar, heaps of black pepper and used fresh thyme instead of dried. I checked it a couple of times as it cooked and added a bit more water (maybe 3\/4 cup in total) each time.",
+		"DateSubmitted" : "2012-10-04"
+	},
+	{
+		"ReviewId" : 1474458,
+		"RecipeId" : 5000,
+		"AuthorId" : 64203,
+		"AuthorName" : "Dine  Dish",
+		"Rating" : 5,
+		"Review" : "What a simple, comfort food recipe. \nI used boneless chicken thighs and although I didn&#039;t this time, I would double the water next time for more broth. Other than that, I followed the recipe exactly and my whole family loved it! Thanks!",
+		"DateSubmitted" : "2015-04-23"
+	},
+	{
+		"ReviewId" : 2013462,
+		"RecipeId" : 2886,
+		"AuthorId" : 2001438755,
+		"AuthorName" : "Carol H",
+		"Rating" : 5,
+		"Review" : "Super happy with this recipe! I used three bananas as that's what I had; it came out perfect. I could easily imagine it being just as good but wetter with four, and\/or just as good but less sweet with less sugar. Or adding chocolate chips and making it into a true dessert. But this was just the perfect basic, classic recipe that I was hoping for. One to save and reuse for sure!",
+		"DateSubmitted" : "2017-03-16"
+	}
+]}
