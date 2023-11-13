@@ -321,7 +321,10 @@ router.get('/signup', (req, res) => {
 
 router.get('/kurtriecken', (req, res) => {
   try {
-    res.render('kurt');
+    res.render('kurt', {
+      logged_in: req.session.logged_in,
+      user: req.session.username,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -329,7 +332,10 @@ router.get('/kurtriecken', (req, res) => {
 
 router.get('/brandonbarnes', (req, res) => {
   try {
-    res.render('brandon');
+    res.render('brandon', {
+      logged_in: req.session.logged_in,
+      user: req.session.username,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -337,7 +343,10 @@ router.get('/brandonbarnes', (req, res) => {
 
 router.get('/jaredmorrison', (req, res) => {
   try {
-    res.render('jared');
+    res.render('jared', {
+      logged_in: req.session.logged_in,
+      user: req.session.username,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
