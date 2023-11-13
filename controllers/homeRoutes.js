@@ -103,7 +103,45 @@ router.get('/search/:term', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-})
+});
+
+router.get('/searchAuthor/:id', async (req, res) => {
+  try {
+    // console.trace(req.params.id);
+
+    // Grab all recipes where 'term' matches in category, name, or description
+    const recipeQuery = await Recipe.findAll({
+      where: {
+        user_id: req.params.id,
+      },
+    });
+
+    const recipes = await recipeQuery.map((rec) => rec.get({ plain: true }));
+
+    // Grabs the first image and creates a new attribute for it
+    recipes.forEach((recipe) => {
+      recipe.image = recipe.images.split(', ')[0].slice(1);
+      if (recipe.image.charAt(recipe.image.length - 1) === ']') {
+        recipe.image = recipe.image.slice(0, recipe.image.length - 1);
+      }
+    });
+
+    // console.trace(recipes[0]);
+
+    const userNameQuery = await User.findByPk(req.params.id);
+    let username = userNameQuery.dataValues.username;
+
+
+    res.render('searchResults', {
+      recipes,
+      term: username,
+      logged_in: req.session.logged_in,
+      user: req.session.username,
+    })
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // Get recipe by ID
 router.get('/recipes/:id', async (req, res) => {
@@ -162,6 +200,8 @@ router.get('/recipes/:id', async (req, res) => {
     // console.trace(newRecipe);
 
     recipe.instructions = recipe.instructions.slice(1, -1).split('., ');
+
+    console.trace(recipe);
 
     res.render('recipe', {
       recipe,

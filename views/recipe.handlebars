@@ -5,6 +5,9 @@
   </div>
   <div class="d-flex flex-wrap justify-content-between">
     <p class="my-auto">By: {{recipe.user.username}}</p>
+    <a href="/searchAuthor/{{recipe.user_id}}">
+      <button class="btn btn-success">Find more recipes by {{recipe.user.username}}</button>
+    </a>
     <div class="">
       {{#if logged_in}}
       {{#if is_favorite}}
