@@ -247,6 +247,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
     userRecipes.reverse();
     favorites.reverse();
 
+    console.trace(userRecipes[0]);
+
     res.render('dashboard', {
       userRecipes,
       favorites,

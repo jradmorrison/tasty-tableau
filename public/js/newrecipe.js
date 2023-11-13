@@ -5,7 +5,20 @@ $(function () {
     let name = $('#name').val();
     let category_id = $('#Input-Category').val();
     let description = $('#description').val();
-    let time_total = `PT${$('time-prep-hours').val()}H${$('time-prep-minute').val()}M`;
+
+    let timeHours = $('#time-prep-hours').val();
+    let timeMinutes = $('#time-prep-minutes').val();
+    let time_total = `PT${timeHours}H${timeMinutes}M`;
+
+    // Sanitizes for 0 hours or 0 minutes
+    if (timeHours == 0) {
+      time_total = `PT${timeMinutes}M`;
+    } else if (timeMinutes == 0) {
+      time_total = `PT${timeHours}H`;
+    };
+
+    // console.trace(time_total);
+    // console.trace($('#time-prep-hours').val());
     let instructions = $('#instructions').val();
 
     //Ingredients
