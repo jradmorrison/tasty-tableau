@@ -12,6 +12,19 @@ const findTagRecipes = async (search) => {
   }
 };
 
+const searchByTerm = async (event) => {
+  event.preventDefault();
+
+  if (event.key === 'Enter') {
+    console.log("entery enterer");
+    var searchTerm = $('#search-input').val();
+    console.log(searchTerm);
+
+    document.location.replace(`/search/${searchTerm}`);
+  };
+};
+
+
 $('#search-input').on('input', UpdateSearch);
 $('#search-input').on('keyup', searchByTerm);
 
@@ -52,13 +65,3 @@ function UpdateDropdown(Results, ResultsToDisplay) {
     $('#Drop-Down').append(dropdownItem);
   }
 };
-
-function searchByTerm(event) {
-  event.preventDefault();
-
-  if (event.key === 'Enter') {
-    console.log("entery enterer");
-    var searchTerm = $(this).val();
-    console.log(searchTerm);
-  };
-}
