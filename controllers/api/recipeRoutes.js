@@ -81,15 +81,17 @@ router.post('/', withAuth, async (req, res) => {
     const recipeData = await Recipe.create({
       name: req.body.name,
       user_id: req.session.user_id,
+      time_total: req.body.time_total,
       date_created: newDate,
       description: req.body.description,
-      time_total: req.body.time_total,
       category_id: req.body.category_id,
       instructions: req.body.instructions,
+      rating: 0,
     });
     console.trace('TEST 2 ======================');
-    for (const ing of req.body.ingrediants) {
-      const ingrediantThroughData = await Ingredients_Through.create({
+    console.trace(req.body.ingredients);
+    for (const ing of req.body.ingredients) {
+      const ingredientThroughData = await Ingredients_Through.create({
         recipe_id: recipeData.id,
         ingredient_id: ing.ing,
         quantity: ing.quantity,

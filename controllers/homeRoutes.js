@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
 
     // Reformat cards for display to page
     // Grab first image and use for display
-    for (let i=0; i<cards.length; i++) {
+    for (let i = 0; i < cards.length; i++) {
       cards[i] = formatRecipe(cards[i]);
     }
 
@@ -133,37 +133,16 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const userRecipes = userRecipesData.map((rec) => rec.get({ plain: true }));
     const favorites = favoritesData.map((fav) => fav.get({ plain: true }));
 
-    for (let i=0; i<userRecipes.length; i++) {
+    for (let i = 0; i < userRecipes.length; i++) {
       userRecipes[i] = formatRecipe(userRecipes[i]);
     }
 
-<<<<<<< HEAD
-    favorites.forEach((favorite) => {
-      favorite.recipe.image = favorite.recipe.images.split(', ')[0].slice(1);
-      if (favorite.recipe.image.charAt(favorite.recipe.image.length - 1) === ']') {
-        favorite.recipe.image = favorite.recipe.image.slice(0, favorite.recipe.image.length - 1);
-      }
-      if (!favorite.recipe.time_total.startsWith('PT')) {
-        favorite.recipe.time_total = 'Cook time not available';
-      } else {
-        favorite.recipe.time_total = favorite.recipe.time_total.slice(2);
-        favorite.recipe.time_total = formatTime(favorite.recipe.time_total);
-        if (favorite.time_total == '0 seconds') {
-          favorite.time_total = 'Cook time not available';
-        }
-      }
-    });
-
-    userRecipes.reverse();
-    console.trace(userRecipes);
-=======
-    for (let i=0; i<favorites.length; i++) {
+    for (let i = 0; i < favorites.length; i++) {
       favorites[i].recipe = formatRecipe(favorites[i].recipe);
     }
 
     userRecipes.reverse();
     favorites.reverse();
->>>>>>> 002147befd88817cc23aa67bbb1e635374662267
 
     res.render('dashboard', {
       userRecipes,
