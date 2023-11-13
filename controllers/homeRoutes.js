@@ -119,6 +119,11 @@ router.get('/searchAuthor/:id', async (req, res) => {
     const userNameQuery = await User.findByPk(req.params.id);
     let username = userNameQuery.dataValues.username;
 
+    console.trace(recipes);
+
+    // recipes.sort((a,b) => (a.))
+    recipes.sort((a, b) => (a.name < b.name ? -1 : 1));
+
 
     res.render('searchResults', {
       recipes,
