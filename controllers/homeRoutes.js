@@ -83,13 +83,17 @@ router.get('/search/:term', async (req, res) => {
 
     const recipes = await recipeQuery.map((rec) => rec.get({ plain: true }));
 
+    for (let i = 0; i < recipes.length; i++) {
+      recipes[i] = formatRecipe(recipes[i]);
+    }
+
     // Grabs the first image and creates a new attribute for it
-    recipes.forEach((recipe) => {
-      recipe.image = recipe.images.split(', ')[0].slice(1);
-      if (recipe.image.charAt(recipe.image.length - 1) === ']') {
-        recipe.image = recipe.image.slice(0, recipe.image.length - 1);
-      }
-    });
+    // recipes.forEach((recipe) => {
+    //   recipe.image = recipe.images.split(', ')[0].slice(1);
+    //   if (recipe.image.charAt(recipe.image.length - 1) === ']') {
+    //     recipe.image = recipe.image.slice(0, recipe.image.length - 1);
+    //   }
+    // });
 
     console.trace(recipes);
 
