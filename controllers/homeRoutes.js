@@ -89,6 +89,7 @@ router.get('/search/:term', async (req, res) => {
 
     res.render('searchResults', {
       recipes,
+      phrase: "Recipes that include ",
       term: req.params.term,
       logged_in: req.session.logged_in,
       user: req.session.username,
@@ -121,6 +122,7 @@ router.get('/searchAuthor/:id', async (req, res) => {
 
     res.render('searchResults', {
       recipes,
+      phrase: "Recipes by",
       term: username,
       logged_in: req.session.logged_in,
       user: req.session.username,
