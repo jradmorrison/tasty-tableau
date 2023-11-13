@@ -8,7 +8,7 @@ const formatRecipe = (recipe) => {
     if (recipe.image.charAt(recipe.image.length - 1) === ']') {
       recipe.image = recipe.image.slice(0, recipe.image.length - 1);
     }
-    console.trace(recipe.time_total);
+    // console.trace(recipe.time_total);
     if (!recipe.time_total.startsWith('PT') || recipe.time_total == 'PT0S' || recipe.time_total == 'PT') {
       recipe.time_total = 'Cook time not available'
     }
