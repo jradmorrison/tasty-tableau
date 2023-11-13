@@ -61,7 +61,7 @@ Recipe.init(
     },
     rating: {
       type: DataTypes.DECIMAL,
-      defaultValue: 0,
+      defaultValue: 5,
       allowNull: false,
     },
     servings: {
