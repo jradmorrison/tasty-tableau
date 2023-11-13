@@ -310,9 +310,10 @@ label #cancel {
   display: flex;
 
   position: absolute;
-  top: 25;
-  right: 25;
+  top: 10;
+  right: 10;
 }
+
 
 .profile:hover {
   scale: 105%;

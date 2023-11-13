@@ -14,12 +14,20 @@ const loginFormHandler = async (event) => {
 
     let location = localStorage.getItem('location');
     localStorage.removeItem('location');
+    console.trace(location);
+    // if (location == 'null') {
+    //   window.location.replace('/');
+    // }
     // console.trace(location);
-    // location = location.slice(21);
+    location = location.slice(21);
 
+    if (location == 'login') {
+      location = '/';
+    };
+    
     if (response.ok) {
       window.location.href = location;
-      // document.location.replace(`/`);
+      document.location.replace(`/`);
     } else {
       await alert('Incorrect username or password');
       // document.location.reload();
