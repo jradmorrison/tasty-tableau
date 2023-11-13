@@ -1,4 +1,7 @@
 $(function () {
+  let newLocation = $(location).attr('href');
+  localStorage.setItem('location', newLocation);
+
   $('[data-toggle="popover"]').popover();
   $('.add-to-favorites-btn').addClass('loaded');
   $('#review-form').toggle();
@@ -49,8 +52,8 @@ $(function () {
 
   const goToLogin = () => {
     // console.log($(location).attr('href'));
-    let newLocation = $(location).attr('href');
-    localStorage.setItem('location', newLocation);
+    // let newLocation = $(location).attr('href');
+    // localStorage.setItem('location', newLocation);
     document.location.replace('/login');
   };
 
