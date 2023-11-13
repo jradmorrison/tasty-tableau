@@ -88,6 +88,8 @@ $(function () {
   $('.add-to-favorites-btn').on('click', updateFavorites);
   $('.remove-from-favorites-btn').on('click', updateFavorites);
   $('#login-to-save').on('click', goToLogin);
+  $('#login-to-review').on('click', goToLogin);
+
 
   $('#show-review-form').on('click', showReview);
   $('#review-submit-button').on('click', addReview);
