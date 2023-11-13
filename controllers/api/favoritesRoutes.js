@@ -62,16 +62,16 @@ router.post('/user/:id', async (req, res) => {
     let mailOptions = {
       from: process.env.MAILER_EMAIL,
       to: process.env.MAILER_EMAIL,
-      subject: 'Recipe Favorited',
-      text: `${req.session.username} has favorited ${recipeData.user.username}'s recipe: ${recipeName}`,
+      subject: 'Recipe Saved',
+      text: `${req.session.username} has saved ${recipeData.user.username}'s recipe: ${recipeName}`,
     };
 
     if (authorEmail != 'NULL') {
       mailOptions = {
         from: process.env.MAILER_EMAIL,
         to: authorEmail,
-        subject: 'Recipe Favorited',
-        text: `Someone has favorited your recipe: ${recipeName}`,
+        subject: 'Recipe Saved',
+        text: `Someone has saved your recipe: ${recipeName}`,
       };
     }
 
