@@ -88,7 +88,6 @@ router.get('/search/:term', async (req, res) => {
 
     res.render('searchResults', {
       recipes,
-      phrase: 'Recipes that include ',
       term: req.params.term,
       logged_in: req.session.logged_in,
       user: req.session.username,
@@ -118,14 +117,8 @@ router.get('/searchAuthor/:id', async (req, res) => {
     const userNameQuery = await User.findByPk(req.params.id);
     let username = userNameQuery.dataValues.username;
 
-    console.trace(recipes);
-
-    // recipes.sort((a,b) => (a.))
-    recipes.sort((a, b) => (a.name < b.name ? -1 : 1));
-
     res.render('searchResults', {
       recipes,
-      phrase: 'Recipes by user',
       term: username,
       logged_in: req.session.logged_in,
       user: req.session.username,
