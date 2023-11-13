@@ -83,16 +83,9 @@ router.get('/search/:term', async (req, res) => {
 
     const recipes = await recipeQuery.map((rec) => rec.get({ plain: true }));
 
-    // Grabs the first image and creates a new attribute for it
-    recipes.forEach((recipe) => {
-      recipe.image = recipe.images.split(', ')[0].slice(1);
-      if (recipe.image.charAt(recipe.image.length - 1) === ']') {
-        recipe.image = recipe.image.slice(0, recipe.image.length - 1);
-      }
-    });
-
-    console.trace(recipes);
-
+    for (let i = 0; i < recipes.length; i++) {
+      recipes[i] = formatRecipe(recipes[i]);
+    }
 
     res.render('searchResults', {
       recipes,
@@ -118,15 +111,9 @@ router.get('/searchAuthor/:id', async (req, res) => {
 
     const recipes = await recipeQuery.map((rec) => rec.get({ plain: true }));
 
-    // Grabs the first image and creates a new attribute for it
-    recipes.forEach((recipe) => {
-      recipe.image = recipe.images.split(', ')[0].slice(1);
-      if (recipe.image.charAt(recipe.image.length - 1) === ']') {
-        recipe.image = recipe.image.slice(0, recipe.image.length - 1);
-      }
-    });
-
-    // console.trace(recipes[0]);
+    for (let i = 0; i < recipes.length; i++) {
+      recipes[i] = formatRecipe(recipes[i]);
+    }
 
     const userNameQuery = await User.findByPk(req.params.id);
     let username = userNameQuery.dataValues.username;
@@ -247,6 +234,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
     userRecipes.reverse();
     favorites.reverse();
 
+    console.trace(userRecipes[0]);
+
     res.render('dashboard', {
       userRecipes,
       favorites,
@@ -332,7 +321,10 @@ router.get('/signup', (req, res) => {
 
 router.get('/kurtriecken', (req, res) => {
   try {
-    res.render('kurt');
+    res.render('kurt', {
+      logged_in: req.session.logged_in,
+      user: req.session.username,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -340,7 +332,10 @@ router.get('/kurtriecken', (req, res) => {
 
 router.get('/brandonbarnes', (req, res) => {
   try {
-    res.render('brandon');
+    res.render('brandon', {
+      logged_in: req.session.logged_in,
+      user: req.session.username,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -348,7 +343,10 @@ router.get('/brandonbarnes', (req, res) => {
 
 router.get('/jaredmorrison', (req, res) => {
   try {
-    res.render('jared');
+    res.render('jared', {
+      logged_in: req.session.logged_in,
+      user: req.session.username,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
