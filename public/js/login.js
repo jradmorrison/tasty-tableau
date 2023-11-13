@@ -12,8 +12,14 @@ const loginFormHandler = async (event) => {
       headers: { 'Content-Type': 'application/json' },
     });
 
+    let location = localStorage.getItem('location');
+    localStorage.removeItem('location');
+    // console.trace(location);
+    // location = location.slice(21);
+
     if (response.ok) {
-      document.location.replace('/');
+      window.location.href = location;
+      // document.location.replace(`/`);
     } else {
       await alert('Incorrect username or password');
       // document.location.reload();
