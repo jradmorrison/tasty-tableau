@@ -13,6 +13,7 @@ const findTagRecipes = async (search) => {
 };
 
 $('#search-input').on('input', UpdateSearch);
+$('#search-input').on('keyup', searchByTerm);
 
 let search = '';
 function UpdateSearch(e) {
@@ -50,4 +51,14 @@ function UpdateDropdown(Results, ResultsToDisplay) {
     // Append the dropdown item to the dropdown list
     $('#Drop-Down').append(dropdownItem);
   }
+};
+
+function searchByTerm(event) {
+  event.preventDefault();
+
+  if (event.key === 'Enter') {
+    console.log("entery enterer");
+    var searchTerm = $(this).val();
+    console.log(searchTerm);
+  };
 }

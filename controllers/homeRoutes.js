@@ -42,6 +42,10 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/search', async (req, res) => {
+  
+})
+
 // Get recipe by ID
 router.get('/recipes/:id', async (req, res) => {
   try {
