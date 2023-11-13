@@ -1,0 +1,24 @@
+<div class='d-flex flex-column align-items-center my-5 mx-auto col-md-10' id='maincard'>
+    <div class='text-center pt-5'>
+        <p id="main-header" class='fs-2'>Discover delicious recipes for every occasision</p>
+    </div>
+
+    <div class='col-md-8 p-5 position-relative'>
+        <input type='text' class='form-control' placeholder='Search by recipe name, category, or keywords'
+            id='search-input' />
+        <div class='dropdownmenu' id='Drop-Down'>
+        </div>
+    </div>
+
+</div>
+
+<div class="d-flex flex-column align-items-center rounded-5 my-5 p-3">
+    <div>
+        <p class="fs-4 fw-semibold">Sample recipes:</p>
+    </div>
+    <div class="d-flex flex-wrap justify-content-center">
+        {{#each cards as |card|}}
+        {{> recipe-preview}}
+        {{/each}}
+    </div>
+</div>
