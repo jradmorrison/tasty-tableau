@@ -122,7 +122,7 @@ router.get('/searchAuthor/:id', async (req, res) => {
 
     res.render('searchResults', {
       recipes,
-      phrase: "Recipes by",
+      phrase: "Recipes by user",
       term: username,
       logged_in: req.session.logged_in,
       user: req.session.username,
