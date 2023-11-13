@@ -311,6 +311,8 @@ router.get('/newrecipe', withAuth, async (req, res) => {
 
 // Login form
 router.get('/login', (req, res) => {
+  
+
   if (req.session.logged_in) {
     res.redirect('/dashboard');
     return;

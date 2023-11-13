@@ -48,6 +48,9 @@ $(function () {
   };
 
   const goToLogin = () => {
+    // console.log($(location).attr('href'));
+    let newLocation = $(location).attr('href');
+    localStorage.setItem('location', newLocation);
     document.location.replace('/login');
   };
 
