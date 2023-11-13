@@ -1,73 +1,94 @@
 $(function () {
   const addNewRecipe = async (event) => {
     event.preventDefault();
+    submitRecipe('POST');
+  };
 
-    let name = $('#name').val();
-    let category_id = $('#Input-Category').val();
-    let description = $('#description').val();
-
-    let timeHours = $('#time-prep-hours').val();
-    let timeMinutes = $('#time-prep-minutes').val();
-    let time_total = `PT${timeHours}H${timeMinutes}M`;
-
-    // Sanitizes for 0 hours or 0 minutes
-    if (timeHours == 0) {
-      time_total = `PT${timeMinutes}M`;
-    } else if (timeMinutes == 0) {
-      time_total = `PT${timeHours}H`;
-    };
-
-    // console.trace(time_total);
-    // console.trace($('#time-prep-hours').val());
-    let instructions = $('#instructions').val();
-
-    //Ingredients
-    let formIng = $('#Ingredient-Container').children();
-    let ingredients = [];
-    for (const inputIng of formIng) {
-      let name = $(inputIng).children().eq(0).text().split('-');
-      let newing = {
-        ing: $(inputIng).attr('id'),
-        quantity: name[0].trim(),
-      };
-      ingredients.push(newing);
-    }
-    console.log(ingredients);
-
-    //Tags
-    let tags = [];
-    for (const inputTag of alltags) {
-      tags.push(inputTag);
-    }
-
-    console.log(name);
-    console.log(description);
-
-    if (name && description && category_id) {
-      console.log('Posting');
-      const response = await fetch(`../api/recipes`, {
-        method: 'POST',
-        body: JSON.stringify({ name, description, time_total, category_id, instructions, ingredients, tags }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        document.location.replace('/dashboard');
-      } else {
-        await alert('Error adding recipe');
-        document.location.reload();
-      }
-    }
+  const updateRecipe = async (event) => {
+    event.preventDefault();
+    submitRecipe('PUT');
   };
 
   $('#recipe-submit').on('click', addNewRecipe);
+  $('#recipe-update-submit').on('click', updateRecipe);
   $('#Tag-Button').on('click', addTag);
   $('#Tag-Container').on('click', '.Tag-Remove-Button', removeTag);
   $('#Ingredient-Button').on('click', addIngredient);
   $('#Ingredient-Container').on('click', '.Ing-Remove-Button', removeIngredient);
+
+  Initilize();
 });
+
+const Initilize = () => {
+  for (const child of $('#Tag-Container').children()) {
+    alltags.push($(child).attr('id'));
+  }
+
+  for (const child of $('#Ingredient-Container').children()) {
+    const newIng = {
+      ingredient_id: $(child).attr('id'),
+      quantity: $(child).children().eq(0).text().split(' - ')[0].match(/\d+/)[0],
+    };
+
+    allIngredients.push(newIng);
+  }
+
+  console.log(allIngredients);
+};
+
+const submitRecipe = async (type) => {
+  let name = $('#name').val();
+  let category_id = $('#Input-Category').val();
+  let description = $('#description').val();
+  let time_total = `PT${$('time-prep-hours').val()}H${$('time-prep-minute').val()}M`;
+  let instructions = $('#instructions').val();
+
+  //Ingredients
+  let formIng = $('#Ingredient-Container').children();
+  let ingredients = [];
+  for (const inputIng of formIng) {
+    let name = $(inputIng).children().eq(0).text().split('-');
+    let newing = {
+      ing: $(inputIng).attr('id'),
+      quantity: name[0].trim(),
+    };
+    ingredients.push(newing);
+  }
+  console.log(ingredients);
+
+  //Tags
+  let tags = [];
+  for (const inputTag of alltags) {
+    tags.push(inputTag);
+  }
+
+  console.log(name);
+  console.log(description);
+  let fetchLocation = `../api/recipes`;
+  if (type === 'PUT') {
+    let url = window.location.href.split('/');
+    let recipeID = url[url.length - 1];
+    fetchLocation = `../${recipeID}`;
+    console.log(recipeID);
+  }
+  if (name && description && category_id) {
+    console.log(type);
+    const response = await fetch(fetchLocation, {
+      method: type,
+      body: JSON.stringify({ name, description, time_total, category_id, instructions, ingredients, tags }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      document.location.replace('/dashboard');
+    } else {
+      await alert('Error adding recipe');
+      document.location.reload();
+    }
+  }
+};
 //TAGS SECTION
 //Variable user for submitting tags at the end
 const alltags = [];
@@ -87,8 +108,7 @@ const addTag = async (event) => {
     }).append(
       $('<div>').append(
         $('<p>', {
-          class: 'mb-0',
-          style: 'width: 16rem; background-color:#ffffff; border-radius: 50px; text-align: center;',
+          class: 'mb-0 add-recipe-item',
           text: $('#Input-Tag option:selected').text(),
         })
       ),
@@ -103,6 +123,7 @@ const addTag = async (event) => {
       )
     )
   );
+  console.log(alltags);
 };
 
 const removeTag = async (event) => {
@@ -139,8 +160,7 @@ const addIngredient = async (event) => {
     }).append(
       $('<div>').append(
         $('<p>', {
-          class: 'mb-0',
-          style: 'width: 16rem; background-color:#ffffff; border-radius: 50px; text-align: center;',
+          class: 'mb-0 add-recipe-item',
           text: `${newIng.quantity} - ${name}`,
         })
       ),

@@ -58,6 +58,7 @@ router.post('/user/:id', async (req, res) => {
     const recipeName = recipe.name;
     const authorEmail = recipeData.user.email;
 
+    //Send Email to our Email if it's an old user
     let mailOptions = {
       from: process.env.MAILER_EMAIL,
       to: process.env.MAILER_EMAIL,
@@ -66,7 +67,6 @@ router.post('/user/:id', async (req, res) => {
     };
 
     if (authorEmail != 'NULL') {
-      //NODE MAILER
       mailOptions = {
         from: process.env.MAILER_EMAIL,
         to: authorEmail,

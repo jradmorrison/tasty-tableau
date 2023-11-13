@@ -426,3 +426,14 @@ ul {
   height: auto;
   margin: auto;
 } */
+
+.add-recipe-item {
+  width: 16rem;
+  background-color: #ffffff;
+  border-radius: 50px;
+  text-align: center;
+  overflow: hidden;
+  padding: 0px 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
