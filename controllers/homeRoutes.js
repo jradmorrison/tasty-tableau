@@ -44,7 +44,6 @@ router.get('/', async (req, res) => {
 
 router.get('/search/:term', async (req, res) => {
   try {
-
     // Grab all recipes where 'term' matches in category, name, or description
     const categoryQuery = await Category.findAll({
       attributes: ['id'],
@@ -92,7 +91,7 @@ router.get('/search/:term', async (req, res) => {
       term: req.params.term,
       logged_in: req.session.logged_in,
       user: req.session.username,
-    })
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -118,13 +117,12 @@ router.get('/searchAuthor/:id', async (req, res) => {
     const userNameQuery = await User.findByPk(req.params.id);
     let username = userNameQuery.dataValues.username;
 
-
     res.render('searchResults', {
       recipes,
       term: username,
       logged_in: req.session.logged_in,
       user: req.session.username,
-    })
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -242,6 +240,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
       logged_in: req.session.logged_in,
       user: req.session.username,
+      user_id: req.session.user_id,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -300,8 +299,6 @@ router.get('/newrecipe', withAuth, async (req, res) => {
 
 // Login form
 router.get('/login', (req, res) => {
-  
-
   if (req.session.logged_in) {
     res.redirect('/dashboard');
     return;

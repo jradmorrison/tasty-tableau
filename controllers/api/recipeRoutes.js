@@ -1,6 +1,8 @@
 router = require('express').Router();
+const { Session } = require('express-session');
 const { Recipe, Tag, Macros, User, Ingredients_Through, Tag_Through, Ingredient, Category } = require('../../models');
 const withAuth = require('../../utils/auth');
+const session = require('express-session');
 
 // ROUTE: /api/recipes
 
@@ -146,6 +148,11 @@ router.get('/edit/:id', async (req, res) => {
       ],
     });
     const recipe = recipeData.get({ plain: true });
+
+    if (recipe.user_id !== req.session.user_id) {
+      // Redirect to the home page if the user does not own the recipe
+      return res.redirect('/');
+    }
 
     const ingredientThroughData = await Ingredients_Through.findAll({
       where: {
