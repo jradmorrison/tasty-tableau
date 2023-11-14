@@ -15,7 +15,7 @@ const formatRecipe = require('../utils/formatRecipe');
 // Home
 router.get('/', async (req, res) => {
   try {
-    let catNum = Math.floor(Math.random() * 113);
+    let catNum = 7;
     const cardData = await Recipe.findAll({
       where: { category_id: catNum },
       include: { model: User, attributes: ['username'] },
@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
     const cards = cardData.map((card) => card.get({ plain: true }));
     // cards.forEach(card => card.image = card.images.split(', ')[0].slice(1, -1));
 
-    cards.splice(5); // Change to effect how many cards are shown on the screen
+    cards.splice(6); // Change to effect how many cards are shown on the screen
 
     // Reformat cards for display to page
     // Grab first image and use for display
