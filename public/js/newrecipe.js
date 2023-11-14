@@ -1,14 +1,7 @@
 $(function () {
-  const addNewRecipe = async (event) => {
-    event.preventDefault();
-    submitRecipe('POST');
-  };
-
-  const updateRecipe = async (event) => {
-    event.preventDefault();
-    submitRecipe('PUT');
-  };
-
+  ///////////////////////////////////////////////////////////////////
+  //                      Event Listenters
+  ///////////////////////////////////////////////////////////////////
   $('#recipe-submit').on('click', addNewRecipe);
   $('#recipe-update-submit').on('click', updateRecipe);
   $('#Button-Delete-Recipe').on('click', deleteRecipe);
@@ -20,6 +13,11 @@ $(function () {
   Initilize();
 });
 
+/**
+ * Initializes the application by populating arrays with tag and ingredient information from specific containers.
+ * Adds tag IDs to the 'alltags' array and extracts ingredient details (ID and quantity) into the 'allIngredients' array.
+ * @returns {void}
+ */
 const Initilize = () => {
   for (const child of $('#Tag-Container').children()) {
     alltags.push($(child).attr('id'));
@@ -37,6 +35,31 @@ const Initilize = () => {
   console.log(allIngredients);
 };
 
+/**
+ * ==========================================================================================================================================
+ * Handles the submission of a new recipe form by sending a POST and PUT request to the server with the provided recipe details.
+ * Calls the common 'submitRecipe' function with the 'POST' or 'PUT' type.
+ * @param {Event} event - The event object triggering the function (usually a form submission event).
+ * @returns {Promise<void>} - Redirects to the dashboard on successful recipe addition; displays an alert on error.
+ */
+const addNewRecipe = async (event) => {
+  event.preventDefault();
+  submitRecipe('POST');
+};
+
+const updateRecipe = async (event) => {
+  event.preventDefault();
+  submitRecipe('PUT');
+};
+// ===========================================================================================================================================
+
+/**
+ * Submits a recipe to the server based on the specified request type ('POST' or 'PUT').
+ * Extracts recipe details from the form elements and sends them in the request body.
+ * Redirects to the dashboard on successful submission; displays an alert on error.
+ * @param {string} type - The type of request ('POST' for new recipe, 'PUT' for recipe update).
+ * @returns {Promise<void>} - Redirects to the dashboard on successful submission; displays an alert on error.
+ */
 const submitRecipe = async (type) => {
   let name = $('#name').val();
   let category_id = $('#Input-Category').val();
@@ -102,6 +125,12 @@ const submitRecipe = async (type) => {
   }
 };
 
+/**
+ * Handles the deletion of a recipe by sending a DELETE request to the server.
+ * Redirects to the dashboard on successful deletion; displays an alert on error.
+ * @param {Event} e - The event object triggering the function (usually a button click event).
+ * @returns {Promise<void>} - Redirects to the dashboard on successful deletion; displays an alert on error.
+ */
 const deleteRecipe = async (e) => {
   e.preventDefault();
   try {
@@ -123,10 +152,18 @@ const deleteRecipe = async (e) => {
     console.error(err);
   }
 };
-//TAGS SECTION
-//Variable user for submitting tags at the end
+
+///////////////////////////////////////////////////////////////////
+//                      Handle Tags
+///////////////////////////////////////////////////////////////////
 const alltags = [];
 
+/**
+ * Handles the addition of a new tag by updating the 'alltags' array and modifying the DOM to display the new tag.
+ * Prevents the addition of duplicate tags.
+ * @param {Event} event - The event object triggering the function (usually a button click event).
+ * @returns {void}
+ */
 const addTag = async (event) => {
   event.preventDefault();
 
@@ -160,6 +197,11 @@ const addTag = async (event) => {
   console.log(alltags);
 };
 
+/**
+ * Handles the removal of a tag by updating the 'alltags' array and removing the corresponding DOM element.
+ * @param {Event} event - The event object triggering the function (usually a button click event).
+ * @returns {void}
+ */
 const removeTag = async (event) => {
   event.preventDefault();
   const tagID = $(event.target).attr('id');
@@ -172,8 +214,18 @@ const removeTag = async (event) => {
   $(event.target.parentNode.parentNode).remove();
 };
 
-//INGREDIENT SECTION
+///////////////////////////////////////////////////////////////////
+//                      Handle Ingredients
+///////////////////////////////////////////////////////////////////
 const allIngredients = [];
+
+/**
+ * Handles the addition of a new ingredient by updating the 'allIngredients' array
+ * and modifying the DOM to display the new ingredient.
+ * Prevents the addition of duplicate ingredients.
+ * @param {Event} event - The event object triggering the function (usually a button click event).
+ * @returns {void}
+ */
 const addIngredient = async (event) => {
   event.preventDefault();
 
@@ -210,6 +262,12 @@ const addIngredient = async (event) => {
   );
 };
 
+/**
+ * Handles the removal of an ingredient by updating the 'allIngredients' array
+ * and removing the corresponding DOM element.
+ * @param {Event} event - The event object triggering the function (usually a button click event).
+ * @returns {void}
+ */
 const removeIngredient = async (event) => {
   event.preventDefault();
   const ingId = $(event.target).attr('id');

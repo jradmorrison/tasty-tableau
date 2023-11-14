@@ -17,7 +17,7 @@ Ingredients_Through.init(
       references: {
         model: 'recipe',
         key: 'id',
-      }
+      },
     },
     ingredient_id: {
       type: DataTypes.INTEGER,
@@ -25,7 +25,7 @@ Ingredients_Through.init(
       references: {
         model: 'ingredient',
         key: 'id',
-      }
+      },
     },
     quantity: {
       type: DataTypes.STRING,
@@ -41,7 +41,6 @@ Ingredients_Through.init(
     indexes: [
       {
         name: 'ingredient_recipe_index',
-        // type: DataTypes.INTEGER,
         unique: true,
         fields: ['ingredient_id', 'recipe_id'],
       },
