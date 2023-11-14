@@ -40,8 +40,20 @@ const submitRecipe = async (type) => {
   let name = $('#name').val();
   let category_id = $('#Input-Category').val();
   let description = $('#description').val();
-  let time_total = `PT${$('time-prep-hours').val()}H${$('time-prep-minute').val()}M`;
+  let timeHours = $('#time-prep-hours').val();
+  let timeMinutes = $('#time-prep-minutes').val();
+
+  let time_total = `PT${timeHours}H${timeMinutes}M`;
+  if (timeHours == 0) {
+    time_total = `PT${timeMinutes}M`
+  } else if (timeMinutes == 0) {
+    time_total = `PT${timeHours}H`
+  };
+
+
   let instructions = $('#instructions').val();
+  instructions = instructions.replaceAll('.', '.,');
+  instructions = '[' + instructions.slice(0, -2) + ']';
 
   //Ingredients
   let formIng = $('#Ingredient-Container').children();
