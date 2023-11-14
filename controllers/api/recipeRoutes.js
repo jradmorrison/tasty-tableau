@@ -164,6 +164,7 @@ router.get('/edit/:id', async (req, res) => {
         },
       ],
     });
+
     const recipeIngredients = ingredientThroughData.map((data) => data.get({ plain: true }));
 
     const categoryData = await Category.findAll();
@@ -198,6 +199,14 @@ router.post('/', withAuth, async (req, res) => {
   try {
     let newDate = new Date();
 
+    const imageData = await Recipe.findOne({
+      where: {
+        category_id: req.body.category_id,
+      }
+    });
+    console.trace(imageData);
+    console.trace(imageData.images);
+
     console.trace('TEST 1 ======================');
     const recipeData = await Recipe.create({
       name: req.body.name,
@@ -207,7 +216,8 @@ router.post('/', withAuth, async (req, res) => {
       description: req.body.description,
       category_id: req.body.category_id,
       instructions: req.body.instructions,
-      rating: 0,
+      images: imageData.images,
+      // rating: 0,
     });
     console.trace('TEST 2 ======================');
     console.trace(req.body.ingredients);
