@@ -53,7 +53,7 @@ const submitRecipe = async (type) => {
 
   let instructions = $('#instructions').val();
   instructions = instructions.replaceAll('.', '.,');
-  instructions = '[' + instructions.slice(0, -2) + ']';
+  instructions = '[' + instructions + ']';
 
   //Ingredients
   let formIng = $('#Ingredient-Container').children();
