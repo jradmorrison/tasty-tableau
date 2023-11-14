@@ -30,7 +30,6 @@ router.get('/:id', async (req, res) => {
 // category, or description
 router.get('/search/:text', async (req, res) => {
   try {
-    console.trace('TEST=================');
     const categoryQuery = await Category.findAll({
       attributes: ['id'],
       where: {
@@ -75,8 +74,6 @@ router.get('/search/:text', async (req, res) => {
         recipe.image = recipe.image.slice(0, recipe.image.length - 1);
       }
     });
-
-    // console.trace(recipes);
 
     res.status(200).json(recipes);
   } catch (err) {

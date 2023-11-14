@@ -102,8 +102,6 @@ router.get('/search/:term', async (req, res) => {
 // Open Search page with author
 router.get('/searchAuthor/:id', async (req, res) => {
   try {
-    // console.trace(req.params.id);
-
     // Grab all recipes where 'term' matches in category, name, or description
     const recipeQuery = await Recipe.findAll({
       where: {
@@ -186,13 +184,9 @@ router.get('/recipes/:id', async (req, res) => {
     const recipe = recipeData.get({ plain: true });
     const ingredients = ingredientData.map((ing) => ing.get({ plain: true }));
 
-    // console.trace(recipe);
     newRecipe = formatRecipe(recipe);
-    // console.trace(newRecipe);
 
     recipe.instructions = recipe.instructions.slice(1, -1).split('., ');
-
-    // console.trace(recipe);
 
     res.render('recipe', {
       recipe,
@@ -240,8 +234,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
     // favorites.reverse();
 
     favorites.sort((a, b) => (a.name < b.name ? -1 : 1));
-
-    // console.trace(userRecipes[0]);
 
     res.render('dashboard', {
       userRecipes,
