@@ -10,7 +10,6 @@ const tagthroughRoutes = require('./tag_throughRoutes');
 const recipeRoutes = require('./recipeRoutes');
 
 // ROUTE: /api
-
 router.use('/users', userRoutes);
 router.use('/favorites', favoritesRoutes);
 router.use('/ingredients', ingredientRoutes);
