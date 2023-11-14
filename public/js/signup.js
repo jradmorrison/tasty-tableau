@@ -18,8 +18,19 @@ const signupFormHandler = async (event) => {
       headers: { 'Content-Type': 'application/json' },
     });
 
+
+    let locFromStorage = localStorage.getItem('location');
+    let location = JSON.parse(locFromStorage);
+    localStorage.removeItem('location');
+
+
     if (response.ok) {
-      document.location.replace('/');
+      if (location == null) {
+        window.location.replace('/');
+      }
+      window.location.href = location;
+      // document.location.replace('/');
+
     } else {
       alert(response.statusText);
     }

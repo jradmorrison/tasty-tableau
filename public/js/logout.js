@@ -9,6 +9,8 @@ const logout = async () => {
     headers: { 'Content-Type': 'application/json' },
   });
 
+  localStorage.removeItem('location');
+
   if (response.ok) {
     document.location.replace('/');
   } else {

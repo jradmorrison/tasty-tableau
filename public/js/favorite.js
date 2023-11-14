@@ -4,6 +4,8 @@ $(function () {
   ///////////////////////////////////////////////////////////////////
   let newLocation = $(location).attr('href');
   if (newLocation.startsWith('https://cryptic-tundra-53497-2c1c36d10121.herokuapp.com/recipes')) {
+  // if (newLocation.startsWith('http://localhost:3001/recipes')) {
+    localStorage.removeItem('location');
     console.log('correct!');
     let locInStorage = JSON.stringify(newLocation);
     localStorage.setItem('location', locInStorage);

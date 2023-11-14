@@ -32,7 +32,7 @@ const Initilize = () => {
     allIngredients.push(newIng);
   }
 
-  console.log(allIngredients);
+  // console.log(allIngredients);
 };
 
 /**
