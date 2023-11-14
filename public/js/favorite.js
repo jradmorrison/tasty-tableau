@@ -18,9 +18,7 @@ $(function () {
         $(reviews[i]).prepend($('<span class = "my-auto fa fa-star">'));
       }
     }
-
   }
-
 
   const updateFavorites = async (event) => {
     const id = event.target.dataset.id;
@@ -71,14 +69,12 @@ $(function () {
     const review = $('#review').val();
     const id = $('#review-form').attr("data-id");
 
-
     if (rating && review) {
       const response = await fetch(`/api/reviews/${id}`, {
         method: 'POST',
         body: JSON.stringify({ rating, review }),
         headers: { 'Content-Type': 'application/json' },
       });
-
 
       if (response.ok) {
         document.location.reload();
