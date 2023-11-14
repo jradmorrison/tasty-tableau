@@ -1,11 +1,12 @@
 <div class="d-flex justify-content-around mt-5">
-    <p style="font-size: 42px">Your Dashboard</p>
+    <p class="my-auto fs-1">Your Dashboard</p>
     <a href="/newrecipe" class="btn btn-warning my-auto">Add a new recipe</a>
 </div>
 
+<hr>
 
 <div>
-    <p class="fs-4">Saved recipes:</p>
+    <p class="fs-4 fw-semibold">Saved recipes:</p>
     <div class="d-flex flex-wrap">
         {{#each favorites as |favorite|}}
         {{>favorite-preview}}
@@ -15,7 +16,7 @@
 
 
 <div>
-    <p class="fs-4">Your Recipes:</p>
+    <p class="fs-4 fw-semibold">Your Recipes:</p>
     <div class="d-flex flex-wrap">
         {{#each userRecipes as |recipe|}}
         {{>recipe-preview}}
