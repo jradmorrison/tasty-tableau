@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const { Category, Recipe, User, Tag, Macros, Favorite, Ingredient, Ingredients_Through, Review } = require('../models');
-const { findAll } = require('../models/xuser');
+const { findAll } = require('../models/user');
 
 const withAuth = require('../utils/auth');
 const { Op } = require('sequelize');
