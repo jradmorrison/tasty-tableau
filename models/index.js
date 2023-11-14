@@ -1,5 +1,4 @@
 // Model imports
-const User = require('./user');
 const Recipe = require('./recipe');
 const Macros = require('./macros');
 const Review = require('./review');
@@ -7,6 +6,7 @@ const Favorite = require('./favorites');
 const Ingredient = require('./ingredient');
 const Category = require('./category');
 const Tag = require('./tag');
+const User = require('./user');
 
 // Through tables
 const Ingredients_Through = require('./through_tables/ingredients_through');
