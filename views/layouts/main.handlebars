@@ -10,13 +10,12 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-  {{!--
-  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"> --}}
   <script src="https://kit.fontawesome.com/206b7f0e4d.js" crossorigin="anonymous"></script>
   <link rel="icon" href="/Assets/Logo.png" type="image/x-icon">
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 
+{{!-- Side navigation --}}
 <body>
   <input type="checkbox" id="check" onchange="dimMainScreen(this)">
   <label for="check">
@@ -53,6 +52,7 @@
       <span>The Team</span>
     </a>
   </div>
+  {{!-- User banner --}}
   {{#if logged_in}}
   <a id="profile-button-in" href='/dashboard' class='profile'>
     <div class='bar'>
@@ -68,9 +68,10 @@
   {{/if}}
 </body>
 
+{{!-- Overlay to dim screen when side naviagtion is viewed --}}
 <div id="main-body"  class="overlay" style="visibility: hidden;"></div>
 
-
+{{!-- Main content --}}
 <div class="container mx-auto col-8 scrolling-div">
   {{{body}}}
 </div>
