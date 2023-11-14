@@ -13,7 +13,7 @@
   </p>
   <p> – Tasty Tableau - Where Every Dish Tells a Story, Yours Included.</p>
 
-<h3 font size="1" align="right"><a href="" target="_blank">Visit Site🚀</a></h3>
+<h3 font size="1" align="right"><a href="https://cryptic-tundra-53497-2c1c36d10121.herokuapp.com/" target="_blank">Visit Site🚀</a></h3>
 
 ## Table of Contents
 
@@ -50,7 +50,11 @@
 ## Sneak Peek
 
 <a name="sneak-peek"></a>
-![mockup720]()
+
+<img src="./Assets/Screenshot1.png" alt="Screenshot of landing page" width="400px">
+<img src="./Assets/Screenshot2.png" alt="Screenshot of recipe page" width="400px">
+<img src="./Assets/Screenshot3.png" alt="Screenshot of dashboard page" width="400px">
+<img src="./Assets/Screenshot4.png" alt="Screenshot of new recipe page" width="400px">
 
 <!-- ### <a href="https://thatziro.github.io/Listy-Flix/" target="_blank">Visit Site</a> 🚀 -->
 
@@ -71,7 +75,7 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Team - CtrlAltDefeat
+## Team - SCRUMptious
 
 <a name="team"></a>
 
