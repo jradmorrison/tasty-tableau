@@ -101,11 +101,11 @@ router.put('/:id', withAuth, async (req, res) => {
       },
     });
     console.trace('TEST 5 =============================');
-    console.log(req.params.id);
-    console.log(req.body.tags);
+    // console.log(req.params.id);
+    // console.log(req.body.tags);
 
     const createTagThrough = req.body.tags.map(async (tag) => {
-      console.log(tag);
+      // console.log(tag);
       await Tag_Through.create({
         recipe_id: req.params.id,
         tag_id: tag,
