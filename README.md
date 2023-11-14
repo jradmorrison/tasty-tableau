@@ -20,7 +20,7 @@
 <p align="center">Welcome to Tasty Tableau, a comprehensive culinary platform that empowers users to explore, discover, and savor a world of recipes. Our app offers a delightful and engaging experience, enabling users to create personalized accounts, search for a wide variety of recipes, access and contribute reviews, and save their favorite recipes for future reference. Whether you're a seasoned chef or a home cook looking for culinary inspiration, Tasty Tableau is your go-to destination for a delectable journey through the world of gastronomy. Join us today to embark on your culinary adventure!</p>
 
   
-<p> – Tasty Tableau - Where Every Dish Tells a Story, Yours Included.</p>
+<p align="center"> – Tasty Tableau - Where Every Dish Tells a Story, Yours Included.</p>
 
 <h3 font size="1" align="right"><a href="https://cryptic-tundra-53497-2c1c36d10121.herokuapp.com/" target="_blank">Visit Site🚀</a></h3>
 
@@ -32,7 +32,6 @@
   <ol>
     <li><a href="#tech-stack">Tech Stack</a></li>
     <li><a href="#sneak-peek">Sneak Peek</a></li>
-    <li><a href="#development">Development</a></li>
     <li><a href="#team">Team</a></li>
   </ol>
 </details>
@@ -60,28 +59,14 @@
 
 <a name="sneak-peek"></a>
 
-<img src="./Assets/Screenshot1.png" alt="Screenshot of landing page" width="480px"> <img src="./Assets/Screenshot2.png" alt="Screenshot of recipe page" width="480px">
-<img src="./Assets/Screenshot3.png" alt="Screenshot of dashboard page" width="480px"> <img src="./Assets/Screenshot4.png" alt="Screenshot of new recipe page" width="480px">
+<img src="./Assets/Screenshot1.png" alt="Screenshot of landing page" width="360px"> <img src="./Assets/Screenshot2.png" alt="Screenshot of recipe page" width="360px">
+<img src="./Assets/Screenshot3.png" alt="Screenshot of dashboard page" width="360px"> <img src="./Assets/Screenshot4.png" alt="Screenshot of new recipe page" width="360px">
 
 
 <!-- ### <a href="https://thatziro.github.io/Listy-Flix/" target="_blank">Visit Site</a> 🚀 -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Development
-
-<a name="development"></a>
-
-<details>
-  <summary  style="font-size:18px">Responsive Layouts</summary>
-  <!-- <img src="" alt="Logo" width="1000"> -->
-</details>
-<details>
-  <summary  style="font-size:18px">Burndown</summary>
-  <!-- <img src="" alt="Logo" width="1000"> -->
-</details>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Team - SCRUMptious
 
