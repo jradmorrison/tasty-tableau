@@ -17,7 +17,7 @@ Tag_Through.init(
       references: {
         model: 'recipe',
         key: 'id',
-      }
+      },
     },
     tag_id: {
       type: DataTypes.INTEGER,
@@ -25,7 +25,7 @@ Tag_Through.init(
       references: {
         model: 'tag',
         key: 'id',
-      }
+      },
     },
   },
   {
@@ -37,10 +37,9 @@ Tag_Through.init(
     indexes: [
       {
         name: 'recipe_tag_index',
-        // type: DataTypes.INTEGER,
         unique: true,
         fields: ['recipe_id', 'tag_id'],
-      }
+      },
     ],
   }
 );

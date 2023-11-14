@@ -12,10 +12,14 @@ const {
   Category,
 } = require('../models');
 
+// RAW data from old database json file
 const rawData = require('./database/recipes_1000.json');
+// Limit data for deployment to 500 items
 const recipesData = {
   recipes_sanitized: rawData.recipes_sanitized.slice(0, 500),
 };
+
+// RAW data from old database json file
 const reviewData = require('./database/reviews_1000.json');
 
 //=============================================================
@@ -339,6 +343,12 @@ const linkThroughTags = async () => {
   return throughTags;
 };
 
+/**
+ * Seeds the database with initial data, including users, categories, tags, ingredients,
+ * recipes, macros, recipe ingredients, through tags, and reviews.
+ * Note: This script uses data from external sources like recipesData and reviewData.
+ * @returns {Promise<void>} - Exits the Node.js process on completion.
+ */
 const seedDatabase = async () => {
   // INITILIZE
   await sequelize.sync({ force: true });

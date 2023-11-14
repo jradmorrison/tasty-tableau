@@ -15,9 +15,6 @@ const Tag_Through = require('./through_tables/tag_through');
 ///////////////////////////////////////////////////////
 // THROUGH TABLE ASSOCIATIONS                        //
 ///////////////////////////////////////////////////////
-// Recipe/Ingredient
-// Recipe.belongsToMany(Ingredient, { through: Ingredients_Through });
-// Ingredient.belongsToMany(Recipe, { through: Ingredients_Through });
 
 Recipe.belongsToMany(Ingredient, { through: Ingredients_Through, foreignKey: 'recipe_id' });
 Ingredient.belongsToMany(Recipe, { through: Ingredients_Through, foreignKey: 'ingredient_id' });
@@ -54,19 +51,6 @@ Review.belongsTo(Recipe, { foreignKey: 'recipe_id' });
 // User to Review -- one to many
 User.hasMany(Review, { foreignKey: 'user_id' });
 Review.belongsTo(User, { foreignKey: 'user_id' });
-
-// Commenting out to test
-// IngredientsThrough.belongsTo(Recipe, { foreignKey: 'recipe_id' });
-// Recipe.hasMany(IngredientsThrough, { foreignKey: 'recipe_id' });
-// Ingredient.belongsTo(IngredientsThrough, { foreignKey: 'ingredient_id' });
-
-// Commenting out to test
-// TagThrough.belongsTo(Recipe, { foreignKey: 'recipe_id' });
-// CategoryThrough.belongsTo(Recipe, { foreignKey: 'recipe_id' });
-// Tag.belongsTo(TagThrough, { foreignKey: 'tag_id' });
-
-// Commenting out to test
-// Category.belongsTo(CategoryThrough, { foreignKey: 'category_id' });
 
 module.exports = {
   User,
