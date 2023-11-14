@@ -8,10 +8,10 @@
 
 <h3 align="center">SCRUMptious</h3>
 
-  <p align="center">Welcome to Tasty Tableau, a comprehensive culinary platform that empowers users to explore, discover, and savor a world of recipes. Our app offers a delightful and engaging experience, enabling users to create personalized accounts, search for a wide variety of recipes, access and contribute reviews, and save their favorite recipes for future reference. Whether you're a seasoned chef or a home cook looking for culinary inspiration, Tasty Tableau is your go-to destination for a delectable journey through the world of gastronomy. Join us today to embark on your culinary adventure!
+<p align="center">Welcome to Tasty Tableau, a comprehensive culinary platform that empowers users to explore, discover, and savor a world of recipes. Our app offers a delightful and engaging experience, enabling users to create personalized accounts, search for a wide variety of recipes, access and contribute reviews, and save their favorite recipes for future reference. Whether you're a seasoned chef or a home cook looking for culinary inspiration, Tasty Tableau is your go-to destination for a delectable journey through the world of gastronomy. Join us today to embark on your culinary adventure!</p>
 
-  </p>
-  <p> – Tasty Tableau - Where Every Dish Tells a Story, Yours Included.</p>
+  
+<p> – Tasty Tableau - Where Every Dish Tells a Story, Yours Included.</p>
 
 <h3 font size="1" align="right"><a href="https://cryptic-tundra-53497-2c1c36d10121.herokuapp.com/" target="_blank">Visit Site🚀</a></h3>
 
@@ -51,10 +51,9 @@
 
 <a name="sneak-peek"></a>
 
-<img src="./Assets/Screenshot1.png" alt="Screenshot of landing page" width="400px">
-<img src="./Assets/Screenshot2.png" alt="Screenshot of recipe page" width="400px">
-<img src="./Assets/Screenshot3.png" alt="Screenshot of dashboard page" width="400px">
-<img src="./Assets/Screenshot4.png" alt="Screenshot of new recipe page" width="400px">
+<img src="./Assets/Screenshot1.png" alt="Screenshot of landing page" width="480px"> <img src="./Assets/Screenshot2.png" alt="Screenshot of recipe page" width="480px">
+<img src="./Assets/Screenshot3.png" alt="Screenshot of dashboard page" width="480px"> <img src="./Assets/Screenshot4.png" alt="Screenshot of new recipe page" width="480px">
+
 
 <!-- ### <a href="https://thatziro.github.io/Listy-Flix/" target="_blank">Visit Site</a> 🚀 -->
 
