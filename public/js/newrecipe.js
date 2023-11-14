@@ -11,6 +11,7 @@ $(function () {
 
   $('#recipe-submit').on('click', addNewRecipe);
   $('#recipe-update-submit').on('click', updateRecipe);
+  $('#Button-Delete-Recipe').on('click', deleteRecipe);
   $('#Tag-Button').on('click', addTag);
   $('#Tag-Container').on('click', '.Tag-Remove-Button', removeTag);
   $('#Ingredient-Button').on('click', addIngredient);
@@ -45,11 +46,10 @@ const submitRecipe = async (type) => {
 
   let time_total = `PT${timeHours}H${timeMinutes}M`;
   if (timeHours == 0) {
-    time_total = `PT${timeMinutes}M`
+    time_total = `PT${timeMinutes}M`;
   } else if (timeMinutes == 0) {
-    time_total = `PT${timeHours}H`
-  };
-
+    time_total = `PT${timeHours}H`;
+  }
 
   let instructions = $('#instructions').val();
   instructions = instructions.replaceAll('.', '.,');
@@ -99,6 +99,28 @@ const submitRecipe = async (type) => {
       await alert('Error adding recipe');
       document.location.reload();
     }
+  }
+};
+
+const deleteRecipe = async (e) => {
+  e.preventDefault();
+  try {
+    let url = window.location.href.split('/');
+    let recipeID = url[url.length - 1];
+    const response = await fetch(`../${recipeID}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    console.log(response.ok);
+    if (response.ok) {
+      document.location.replace('/dashboard');
+    } else {
+      await alert('Error deleting recipe');
+      document.location.reload();
+    }
+  } catch (err) {
+    console.error(err);
   }
 };
 //TAGS SECTION
@@ -199,16 +221,3 @@ const removeIngredient = async (event) => {
 
   $(event.target.parentNode.parentNode).remove();
 };
-
-// <div class="m-1 d-flex justify-content-center gap-1 align-items-center" style="height: 30px;">
-//   <div>
-//     <p class="mb-0" style="width: 16rem; background-color:#ffffff; border-radius: 50px; text-align: center;">
-//       1.5 lb - Chicken
-//     </p>
-//   </div>
-//   <div>
-//     <button type="button" style="width: 30px; border-radius: 5px; text-align: center;">
-//       -
-//     </button>
-//   </div>
-// </div>;

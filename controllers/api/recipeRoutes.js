@@ -3,6 +3,7 @@ const { Session } = require('express-session');
 const { Recipe, Tag, Macros, User, Ingredients_Through, Tag_Through, Ingredient, Category } = require('../../models');
 const withAuth = require('../../utils/auth');
 const session = require('express-session');
+// const router = require('.');
 
 // ROUTE: /api/recipes
 
@@ -49,25 +50,6 @@ router.get('/user/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-// router.get('/edit/:id', async (req, res) => {
-//   try {
-//     const recipeData = await Recipe.findAll({
-//       where: {
-//         user_id: req.params.id,
-//       },
-//     });
-
-//     if (!recipeData) {
-//       res.status(404).json({ message: `No recipes found for user with id: ${id}.` });
-//       return;
-//     }
-
-//     res.status(200).json(recipeData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 // Get recipe by ID
 router.get('/:id', async (req, res) => {
@@ -202,7 +184,7 @@ router.post('/', withAuth, async (req, res) => {
     const imageData = await Recipe.findOne({
       where: {
         category_id: req.body.category_id,
-      }
+      },
     });
     console.trace(imageData);
     console.trace(imageData.images);
@@ -241,6 +223,24 @@ router.post('/', withAuth, async (req, res) => {
     }
 
     res.status(200).json(recipeData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.delete('/:id', async (req, res) => {
+  try {
+    const recipeData = await Recipe.findByPk(req.params.id, {});
+    const recipe = recipeData.get({ plain: true });
+
+    if (recipe.user_id !== req.session.user_id) {
+      // Redirect to the home page if the user does not own the recipe
+      return res.redirect('/');
+    }
+
+    await recipeData.destroy();
+
+    res.status(200).json({ message: 'Recipe deleted successfully' });
   } catch (err) {
     res.status(500).json(err);
   }
