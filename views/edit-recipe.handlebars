@@ -34,12 +34,14 @@
         <div class='sm-6 d-flex justify-content-between'>
           <label class='form-label'>Total time</label><br />
           <div>
-            <input value='{{getTimeComponent recipe.time_total "H"}}' maxlength='4' size='4' type='text' id='time-prep-hours' placeholder='' />
+            <input value='{{getTimeComponent recipe.time_total "H"}}' oninput="validateInput(this)"
+            maxlength='2' size='2' type='text' id='time-prep-hours' placeholder='' />
             <label for='time-prep-hours'>H</label>
           </div>
 
           <div>
-            <input value='{{getTimeComponent recipe.time_total "M"}}' maxlength='2' size='4' type='text' id='time-prep-minutes' placeholder='' />
+            <input value='{{getTimeComponent recipe.time_total "M"}}' oninput="validateInput(this)"
+            maxlength='2' size='2' type='text' id='time-prep-minutes' placeholder='' />
             <label for='time-prep-minutes'>M</label><br />
           </div>
         </div>
@@ -173,3 +175,10 @@
     </form>
   </div>
 </div>
+
+<script>
+  function validateInput(input) {
+    // Remove 'e' if present
+    input.value = input.value.replace(/[^0-9]/gi, '');
+  }
+</script>

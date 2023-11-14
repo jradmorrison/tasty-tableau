@@ -234,7 +234,9 @@ router.get('/dashboard', withAuth, async (req, res) => {
     }
 
     userRecipes.reverse();
-    favorites.reverse();
+    // favorites.reverse();
+
+    favorites.sort((a, b) => (a.name < b.name ? -1 : 1));
 
     console.trace(userRecipes[0]);
 
