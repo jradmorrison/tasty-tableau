@@ -1,4 +1,9 @@
-// Handle user login
+/**
+ * Handles the submission of the login form by sending a POST request to the server with the provided username and password.
+ * Redirects the user to the previously stored location or the homepage on successful login; displays an alert on login failure.
+ * @param {Event} event - The event object triggering the function (usually a form submission event).
+ * @returns {Promise<void>} - Redirects the user upon successful login; displays an alert on login failure.
+ */
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -19,10 +24,12 @@ const loginFormHandler = async (event) => {
 
     // location = location.slice(56);
 
+
     // if (location == 'login') {
     //   location = '/';
     // };
     
+
     if (response.ok) {
       console.log(location);
       if (location == null || location == undefined || location == 'undefined') {
@@ -37,5 +44,9 @@ const loginFormHandler = async (event) => {
     }
   }
 };
+
+///////////////////////////////////////////////////////////////////
+//                      Event Listenters
+///////////////////////////////////////////////////////////////////
 
 document.querySelector('#login-form').addEventListener('submit', loginFormHandler);

@@ -1,4 +1,9 @@
-// Handles creating a new user
+/**
+ * Handles the submission of the signup form by sending a POST request to the server with the provided user details.
+ * Redirects to the homepage on successful signup; displays an alert on signup failure.
+ * @param {Event} event - The event object triggering the function (usually a form submission event).
+ * @returns {Promise<void>} - Redirects to the homepage on successful signup; displays an alert on signup failure.
+ */
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
@@ -13,6 +18,7 @@ const signupFormHandler = async (event) => {
       headers: { 'Content-Type': 'application/json' },
     });
 
+
     let locFromStorage = localStorage.getItem('location');
     let location = JSON.parse(locFromStorage);
     localStorage.removeItem('location');
@@ -24,12 +30,14 @@ const signupFormHandler = async (event) => {
       }
       window.location.href = location;
       // document.location.replace('/');
+
     } else {
       alert(response.statusText);
     }
   }
 };
 
-document
-  .querySelector('#submit')
-  .addEventListener('click', signupFormHandler);
+///////////////////////////////////////////////////////////////////
+//                      Event Listenters
+///////////////////////////////////////////////////////////////////
+document.querySelector('#submit').addEventListener('click', signupFormHandler);

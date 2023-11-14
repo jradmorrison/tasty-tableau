@@ -1,6 +1,4 @@
-const { findByPk } = require('../models/macros');
-const { User } = require('../models');
-
+// Helper functions
 module.exports = {
   format_date: (date) => {
     return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
@@ -25,11 +23,3 @@ module.exports = {
     return displayInstructions;
   },
 };
-
-// console.trace(`
-// ============================================================================================
-// loggedInUsername : ${loggedInUsername}
-// recipeAuthorID : ${recipeAuthorID}
-// authorData.username : ${author_username}
-// status : ${isMine}
-// `);
