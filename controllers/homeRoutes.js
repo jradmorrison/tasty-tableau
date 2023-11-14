@@ -42,6 +42,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Open Search page by term
 router.get('/search/:term', async (req, res) => {
   try {
     // Grab all recipes where 'term' matches in category, name, or description
@@ -97,6 +98,7 @@ router.get('/search/:term', async (req, res) => {
   }
 });
 
+// Open Search page with author
 router.get('/searchAuthor/:id', async (req, res) => {
   try {
     // console.trace(req.params.id);
@@ -130,7 +132,7 @@ router.get('/searchAuthor/:id', async (req, res) => {
   }
 });
 
-// Get recipe by ID
+// Open Recipe By ID Page
 router.get('/recipes/:id', async (req, res) => {
   try {
     const recipeData = await Recipe.findByPk(req.params.id, {
@@ -202,6 +204,7 @@ router.get('/recipes/:id', async (req, res) => {
   }
 });
 
+// Open Dashboard
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const userRecipesData = await Recipe.findAll({
@@ -251,6 +254,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
+// Open Abount Page
 router.get('/about', async (req, res) => {
   try {
     res.render('about', {
@@ -262,6 +266,7 @@ router.get('/about', async (req, res) => {
   }
 });
 
+// Open Team Page
 router.get('/team', async (req, res) => {
   try {
     res.render('team', {
@@ -273,6 +278,7 @@ router.get('/team', async (req, res) => {
   }
 });
 
+// Open new recipe page
 router.get('/newrecipe', withAuth, async (req, res) => {
   try {
     const categoryData = await Category.findAll();
@@ -301,7 +307,7 @@ router.get('/newrecipe', withAuth, async (req, res) => {
   }
 });
 
-// Login form
+// Open login form
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/dashboard');
@@ -311,7 +317,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// Signup form
+// Open Signup form
 router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/dashboard');
@@ -320,6 +326,8 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+// =========================================
+// Open Profile page routes
 router.get('/kurtriecken', (req, res) => {
   try {
     res.render('kurt', {
@@ -352,7 +360,9 @@ router.get('/jaredmorrison', (req, res) => {
     res.status(500).json(err);
   }
 });
+//===========================================
 
+// Open 404 Page
 router.get('*', (req, res) => {
   try {
     res.render('404');
