@@ -6,6 +6,13 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/jradmorrison/tasty-tableau">
+    <img src="./public/Assets/Logo.png" alt="Logo" width="320" height="320">
+  </a>
+
 <h3 align="center">SCRUMptious</h3>
 
   <p align="center">Welcome to Tasty Tableau, a comprehensive culinary platform that empowers users to explore, discover, and savor a world of recipes. Our app offers a delightful and engaging experience, enabling users to create personalized accounts, search for a wide variety of recipes, access and contribute reviews, and save their favorite recipes for future reference. Whether you're a seasoned chef or a home cook looking for culinary inspiration, Tasty Tableau is your go-to destination for a delectable journey through the world of gastronomy. Join us today to embark on your culinary adventure!
