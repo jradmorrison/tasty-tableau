@@ -12,14 +12,16 @@ const loginFormHandler = async (event) => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    let location = localStorage.getItem('location');
+    let locFromStorage = localStorage.getItem('location');
+    let location = JSON.parse(locFromStorage);
     localStorage.removeItem('location');
     console.trace(location);
-    // if (location == 'null') {
-    //   window.location.replace('/');
-    // }
-    // console.trace(location);
-    location = location.slice(56);
+    if (location == null) {
+      window.location.replace('/');
+    }
+    console.trace(location);
+    // location = location.slice(56);
+    console.log(location);
 
     if (location == 'login') {
       location = '/';
@@ -27,7 +29,7 @@ const loginFormHandler = async (event) => {
     
     if (response.ok) {
       window.location.href = location;
-      document.location.replace(`/`);
+      // document.location.replace(`/`);
     } else {
       await alert('Incorrect username or password');
       // document.location.reload();

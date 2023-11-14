@@ -1,6 +1,12 @@
 $(function () {
   let newLocation = $(location).attr('href');
-  localStorage.setItem('location', newLocation);
+  if (newLocation.startsWith('https://cryptic-tundra-53497-2c1c36d10121.herokuapp.com/recipes')) {
+    console.log('correct!');
+    let locInStorage = JSON.stringify(newLocation);
+    localStorage.setItem('location', locInStorage);
+    console.log(locInStorage);
+  }
+
 
   $('[data-toggle="popover"]').popover();
   $('.add-to-favorites-btn').addClass('loaded');
