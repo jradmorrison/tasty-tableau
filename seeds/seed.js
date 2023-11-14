@@ -351,12 +351,7 @@ const seedDatabase = async () => {
     Ingredient.bulkCreate(allIngredients, {}),
   ]);
 
-<<<<<<< HEAD
-  //SEED RECIPES
-  const [allRecipes] = await Promise.all([getRecipes(users)]);
-=======
   const [allRecipes] = await Promise.all([getRecipes()]);
->>>>>>> 002147befd88817cc23aa67bbb1e635374662267
   const recipe = await Recipe.bulkCreate(allRecipes, {});
 
   //SEED ALT TABLES
@@ -367,12 +362,9 @@ const seedDatabase = async () => {
     Ingredients_Through.bulkCreate(allRecipesIngredients, {}),
     Tag_Through.bulkCreate(allThroughTags, {}),
   ]);
-<<<<<<< HEAD
-=======
 
   const allReviews = await getReviews(recipe, users);
   const review = await Review.bulkCreate(allReviews, {});
->>>>>>> 002147befd88817cc23aa67bbb1e635374662267
   process.exit(0);
 };
 
