@@ -1,5 +1,5 @@
 // Model imports
-const User = require('./user');
+const User = require('./xuser');
 const Recipe = require('./recipe');
 const Macros = require('./macros');
 const Review = require('./review');
