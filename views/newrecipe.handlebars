@@ -13,28 +13,50 @@
         <select id='Input-Category' class='form-select' aria-label='Default select example'>
           <option selected>Choose a cateogory</option>
           {{#each categories as |category|}}
-          <option value='{{category.id}}'>{{category.name}}</option>
+            <option value='{{category.id}}'>{{category.name}}</option>
           {{/each}}
         </select>
       </div>
       <div class='mb-3'>
         <label class='form-label'>Description</label>
-        <textarea class='form-control' id='description' cols='30' rows='2'
-          placeholder='Fried chicken breast served with red sauce and lots of melty cheese.'></textarea>
+        <textarea
+          class='form-control'
+          id='description'
+          cols='30'
+          rows='2'
+          placeholder='Fried chicken breast served with red sauce and lots of melty cheese.'
+        ></textarea>
       </div>
 
       <div class='mb-3'>
         <div class='sm-6 d-flex justify-content-between'>
           <label class='form-label'>Total time</label><br />
           <div>
-            <input maxlength='2' size='2' type='text' step="1" pattern="\d+" title="Please enter a valid integer"
-              id='time-prep-hours' placeholder='1' oninput="validateInput(this)" />
+            <input
+              maxlength='2'
+              size='2'
+              type='text'
+              step='1'
+              pattern='\d+'
+              title='Please enter a valid integer'
+              id='time-prep-hours'
+              placeholder='1'
+              oninput='validateInput(this)'
+            />
             <label for='time-prep-hours'>H</label>
           </div>
 
           <div>
-            <input maxlength='2' size='2' type='text' step="1" pattern="\d+" title="Please enter a valid integer"
-              id='time-prep-minutes' placeholder='30' />
+            <input
+              maxlength='2'
+              size='2'
+              type='text'
+              step='1'
+              pattern='\d+'
+              title='Please enter a valid integer'
+              id='time-prep-minutes'
+              placeholder='30'
+            />
             <label for='time-prep-minutes'>M</label><br />
           </div>
         </div>
@@ -42,8 +64,13 @@
 
       <div class='mb-3'>
         <label class='form-label'>Instructions</label>
-        <textarea class='form-control' id='instructions' cols='30' rows='5'
-          placeholder='Please be as detailed as possible'></textarea>
+        <textarea
+          class='form-control'
+          id='instructions'
+          cols='30'
+          rows='5'
+          placeholder='Please be as detailed as possible'
+        ></textarea>
       </div>
 
       {{! Ingredients }}
@@ -53,15 +80,14 @@
           <select id='Input-Ingredient' class='form-select' aria-label='Default select example'>
             <option selected disabled>Ingredient</option>
             {{#each ingredients as |ing|}}
-            <option value='{{ing.id}}'>{{ing.name}}</option>
+              <option value='{{ing.id}}'>{{ing.name}}</option>
             {{/each}}
           </select>
         </div>
         <div class='col-4'>
           <label class='form-label col-12'>Amount</label>
           <div class='d-flex gap-1 col-12'>
-            <input id='Input-Quantity' class='col-4' maxlength='4' size='4' type='text' id='time-prep-hours'
-              placeholder='1' />
+            <input id='Input-Quantity' class='col-4' maxlength='4' size='4' type='text' id='time-prep-hours' placeholder='1' />
             <select id='Input-Unit' class='form-select col-8' aria-label='Default select example'>
               <option selected disabled>Measurement</option>
 
@@ -128,7 +154,7 @@
           <select id='Input-Tag' class='form-select' aria-label='Default select example'>
             <option selected disabled>Select Tag</option>
             {{#each tags as |tag|}}
-            <option value='{{tag.id}}'>{{tag.name}}</option>
+              <option value='{{tag.id}}'>{{tag.name}}</option>
             {{/each}}
           </select>
         </div>
@@ -146,8 +172,5 @@
 </div>
 
 <script>
-  function validateInput(input) {
-    // Remove 'e' if present
-    input.value = input.value.replace(/[^0-9]/gi, '');
-  }
+  function validateInput(input) { // Remove 'e' if present input.value = input.value.replace(/[^0-9]/gi, ''); }
 </script>
