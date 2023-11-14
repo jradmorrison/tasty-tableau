@@ -19,7 +19,7 @@ const loginFormHandler = async (event) => {
     //   window.location.replace('/');
     // }
     // console.trace(location);
-    location = location.slice(21);
+    location = location.slice(56);
 
     if (location == 'login') {
       location = '/';
