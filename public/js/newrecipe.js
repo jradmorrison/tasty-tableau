@@ -51,7 +51,14 @@ const submitRecipe = async (type) => {
     time_total = `PT${timeHours}H`;
   }
 
-  let instructions = $('#instructions').val();
+  let instructions = $('#instructions').val().trim();
+  if (instructions.endsWith('.')) {
+    console.trace('ends with period');
+    instructions = instructions.slice(0, -1);
+  } else {
+    console.trace('doesnt end with period');
+  }
+
   instructions = instructions.replaceAll('.', '.,');
   instructions = '[' + instructions + ']';
 

@@ -190,7 +190,7 @@ router.get('/recipes/:id', async (req, res) => {
 
     recipe.instructions = recipe.instructions.slice(1, -1).split('., ');
 
-    console.trace(recipe);
+    // console.trace(recipe);
 
     res.render('recipe', {
       recipe,
@@ -238,7 +238,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     favorites.sort((a, b) => (a.name < b.name ? -1 : 1));
 
-    console.trace(userRecipes[0]);
+    // console.trace(userRecipes[0]);
 
     res.render('dashboard', {
       userRecipes,
