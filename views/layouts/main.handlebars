@@ -57,9 +57,6 @@
     <div class='bar'>
       <p>{{user}}</p>
     </div>
-    <div class='bubble'>
-      <i class="fas fa-user" id="btn"></i>
-    </div>
   </a>
   {{else}}
   <a id="profile-button-out" href='http://localhost:3001/dashboard' class='profile'>
@@ -70,12 +67,12 @@
   {{/if}}
 </body>
 
-<div id="main-body"  class="overlay" style="visibility: hidden;">
+<div id="main-body"  class="overlay" style="visibility: hidden;"></div>
 
+
+<div class="container mx-auto col-8 scrolling-div">
+  {{{body}}}
 </div>
-  <div class="container mx-auto col-8 scrolling-div">
-    {{{body}}}
-  </div>
 
 
 
