@@ -14,25 +14,26 @@ const loginFormHandler = async (event) => {
 
     let locFromStorage = localStorage.getItem('location');
     let location = JSON.parse(locFromStorage);
-    localStorage.removeItem('location');
+    // localStorage.removeItem('location');
     console.trace(location);
-    if (location == null) {
-      window.location.replace('/');
-    }
-    console.trace(location);
-    // location = location.slice(56);
-    console.log(location);
 
-    if (location == 'login') {
-      location = '/';
-    };
+    // location = location.slice(56);
+
+    // if (location == 'login') {
+    //   location = '/';
+    // };
     
     if (response.ok) {
-      window.location.href = location;
+      console.log(location);
+      if (location == null || location == undefined || location == 'undefined') {
+        window.location.replace('/');
+      } else {
+        window.location.href = location;
+      }
       // document.location.replace(`/`);
     } else {
       await alert('Incorrect username or password');
-      // document.location.reload();
+      document.location.reload();
     }
   }
 };

@@ -1,6 +1,8 @@
 $(function () {
   let newLocation = $(location).attr('href');
   if (newLocation.startsWith('https://cryptic-tundra-53497-2c1c36d10121.herokuapp.com/recipes')) {
+  // if (newLocation.startsWith('http://localhost:3001/recipes')) {
+    localStorage.removeItem('location');
     console.log('correct!');
     let locInStorage = JSON.stringify(newLocation);
     localStorage.setItem('location', locInStorage);
@@ -17,7 +19,7 @@ $(function () {
   for (let i = 0; i < reviews.length; i++) {
     console.log(`rating is: ${reviews[i].dataset.rating}`);
 
-    for (let j=5; j >= 1; j--) {
+    for (let j = 5; j >= 1; j--) {
       if (j <= reviews[i].dataset.rating) {
         $(reviews[i]).prepend($('<span class = "my-auto fa fa-star checked">'));
       } else {
