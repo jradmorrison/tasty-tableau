@@ -16,9 +16,9 @@ body {
   /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  /* width: 100vw;
-  height: 100vh; */
+  align-items: center; */
+  width: 100vw;
+  height: 100vh;
 
   /* background-image: linear-gradient(-45deg, #eeede9 0%, #fffcec 100%); */
   /* background-image: linear-gradient(-45deg, #83DFF6 0%, #CBF0C7 100%);
@@ -304,47 +304,51 @@ label #cancel {
 }
 
 .profile {
-  width: 250px;
+  width: 275px;
   height: 50px;
 
   display: flex;
 
-  position: absolute;
-  top: 10;
-  right: 10;
+  position: fixed;
+  top: -10;
+  right: -20px;
+  z-index: 50;
 }
 
 
-.profile:hover {
+/* .profile:hover {
   scale: 105%;
-}
+} */
 
 .profile .bar {
-  position: absolute;
-  top: 12.5px;
-  height: 50px;
+  /* position: fixed;
+  top: 0px; */
+  /* height: 50px; */
   width: 100%;
-  border-radius: 50px;
-  border: 4px solid #000;
-  background: #bdd0ff;
+  border-radius: 25px;
+  border: 3px solid #000;
+  background: #F5EBD6;
 
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
 }
 
 .profile .bar p {
-  width: 100%;
-  font-size: 18px;
+  width: 80%;
+  font-size: 24px;
   padding: 10px;
-  margin: 0;
+  margin: 0 0 0 5px;
   color: #000;
   font-weight: bolder;
 }
 
-.profile .bar .login-center {
+/* .profile .bar .login-center {
+  position: absolute;
+  left: 0px;
+  
   text-align: center;
-  font-size: 32px;
-}
+  font-size: 28px;
+} */
 
 .profile .bubble {
   position: absolute;
@@ -367,9 +371,9 @@ label #cancel {
   margin-bottom: 5px;
 }
 
-#main-header {
-  /* color: white; */
-}
+/* #main-header {
+  color: white;
+} */
 
 @media (max-width: 860px) {
   .sidebar {
