@@ -1,6 +1,7 @@
 <a name="readme-top"></a>
 
 [![Contributors][contributors-shield]][contributors-url]
+![Commits][commits-shield]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
@@ -12,6 +13,7 @@
   <a href="https://github.com/jradmorrison/tasty-tableau">
     <img src="./public/Assets/Logo.png" alt="Logo" width="320" height="320">
   </a>
+</div>
 
 <h3 align="center">SCRUMptious</h3>
 
@@ -118,3 +120,4 @@
 [issues-url]: https://github.com/jradmorrison/tasty-tableau/issues
 [license-shield]: https://img.shields.io/github/license/ThatZiro/Listy-Flix.svg?style=for-the-badge
 [license-url]: https://github.com/jradmorrison/tasty-tableau/blob/main/LICENSE
+[commits-shield]: https://img.shields.io/github/commit-activity/t/jradmorrison/tasty-tableau.svg?style=for-the-badge
