@@ -114,7 +114,6 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// Get edit recipe page
 router.get('/edit/:id', async (req, res) => {
   try {
     const recipeData = await Recipe.findByPk(req.params.id, {

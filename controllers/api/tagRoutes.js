@@ -76,7 +76,7 @@ router.get('/search/:text', async (req, res) => {
       }
     });
 
-    console.trace(recipes);
+    // console.trace(recipes);
 
     res.status(200).json(recipes);
   } catch (err) {
