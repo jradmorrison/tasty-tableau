@@ -1,9 +1,12 @@
+const { findByPk } = require('../models/macros');
+const { User } = require('../models');
+
 module.exports = {
   format_date: (date) => {
     return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
   },
 
-  equal: function (value1, value2, options) {
+  equal: function (value1, value2) {
     return value1 == value2 ? true : false;
   },
 
@@ -22,3 +25,11 @@ module.exports = {
     return displayInstructions;
   },
 };
+
+// console.trace(`
+// ============================================================================================
+// loggedInUsername : ${loggedInUsername}
+// recipeAuthorID : ${recipeAuthorID}
+// authorData.username : ${author_username}
+// status : ${isMine}
+// `);

@@ -9,10 +9,10 @@
         </div>
         <div class='d-flex justify-content-between'>
           <div class='d-flex gap-1'><i class='fa-solid fa-star checked'></i>{{rating}}</div>
-          <button type='submit' id='Button-Edit-Recipe' class='btn btn-primary'>Edit</button>
-          {{!-- {{#if isMine}}
-          <button type='submit' id='Button-Edit-Recipe' class='btn btn-primary'>Edit</button>
-        {{/if}} --}}
+          {{log @root.user_id}}
+          {{#if (equal @root.user_id user_id)}}
+            <button type='submit' id='Button-Edit-Recipe' class='btn btn-primary'>Edit</button>
+          {{/if}}
         </div>
       </div>
     </a>
