@@ -37,12 +37,11 @@ router.get('/:id', async (req, res) => {
 // POST a new favorite
 router.post('/user/:id', async (req, res) => {
   try {
-    console.trace('TEST ============================');
     const favoritesData = await Favorite.create({
       recipe_id: req.params.id,
       user_id: req.session.user_id,
     });
-    console.trace('TEST ============================');
+
     const recipeData = await Recipe.findByPk(req.params.id, {
       include: [
         {
@@ -53,8 +52,6 @@ router.post('/user/:id', async (req, res) => {
 
     let recipe = recipeData.get({ plain: true });
 
-    console.trace('TEST ============================');
-    console.trace(recipe);
     const recipeName = recipe.name;
     const authorEmail = recipeData.user.email;
 
@@ -75,7 +72,6 @@ router.post('/user/:id', async (req, res) => {
       };
     }
 
-    console.trace(mailOptions);
     transporter.sendMail(mailOptions, (err, info) => {
       if (err) {
         return console.error('Error', err);

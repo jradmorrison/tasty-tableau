@@ -17,10 +17,7 @@ router.post('/', withAuth, async (req, res) => {
         category_id: req.body.category_id,
       },
     });
-    console.trace(imageData);
-    console.trace(imageData.images);
 
-    console.trace('TEST 1 ======================');
     const recipeData = await Recipe.create({
       name: req.body.name,
       user_id: req.session.user_id,
@@ -32,8 +29,7 @@ router.post('/', withAuth, async (req, res) => {
       images: imageData.images,
       // rating: 0,
     });
-    console.trace('TEST 2 ======================');
-    console.trace(req.body.ingredients);
+
     for (const ing of req.body.ingredients) {
       const ingredientThroughData = await Ingredients_Through.create({
         recipe_id: recipeData.id,
@@ -41,7 +37,7 @@ router.post('/', withAuth, async (req, res) => {
         quantity: ing.quantity,
       });
     }
-    console.trace('TEST 3 ======================');
+
     for (const tag of req.body.tags) {
       const tagThrough = await Tag_Through.create({
         recipe_id: recipeData.id,
@@ -175,7 +171,6 @@ router.get('/edit/:id', async (req, res) => {
 // Update recipe by ID
 router.put('/:id', withAuth, async (req, res) => {
   try {
-    console.trace('TEST 1 =============================');
     const updatedRecipeData = await Recipe.update(
       {
         name: req.body.name,
@@ -191,13 +186,13 @@ router.put('/:id', withAuth, async (req, res) => {
         },
       }
     );
-    console.trace('TEST 2 =============================');
+
     const removeIngredientThrough = await Ingredients_Through.destroy({
       where: {
         recipe_id: req.params.id,
       },
     });
-    console.trace('TEST 3 =============================');
+
     const createIngredientThrough = req.body.ingredients.map(async (ing) => {
       await Ingredients_Through.create({
         recipe_id: req.params.id,
@@ -205,25 +200,20 @@ router.put('/:id', withAuth, async (req, res) => {
         quantity: ing.quantity,
       });
     });
-    console.trace('TEST 4 =============================');
+
     const removeTags = await Tag_Through.destroy({
       where: {
         recipe_id: req.params.id,
       },
     });
-    console.trace('TEST 5 =============================');
-    console.log(req.params.id);
-    console.log(req.body.tags);
 
     const createTagThrough = req.body.tags.map(async (tag) => {
-      console.log(tag);
       await Tag_Through.create({
         recipe_id: req.params.id,
         tag_id: tag,
       });
     });
 
-    console.trace('TEST 6 =============================');
     res.status(200).json(updatedRecipeData);
   } catch (err) {
     res.status(500).json(err);
